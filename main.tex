@@ -35,15 +35,19 @@ Ryan P. Kelly$^1$}
 ADEN
 \section{Methods}
 
-We model the upstream migration of coho salmon (\textit{Oncorhynchus kisutch}) to spawn, during which individuals accumulate at a river dam (hatchery). The hatchery crew periodically opens the dam gate at time $i$ to allow passage for spawning. Between successive gate-opening events ($\Delta i$), coho salmon gets accumulated. Let $\lambda$ represent the true daily accumulation rate (also fish density at the river dam) in units of fish/day at time $i$, and E denote the number of days elapsed between consecutive gate openings ($ E_i =\Delta i; E_{i=1} = 0$). Prior to each gate opening, the crew conducts a visual count $N_i$ of accumulated fish. Assuming $\lambda_i$ remains relatively constant between successive gate-opening events ($\Delta i$), we model the observed fish counts as a Poisson process:
+We model the upstream migration of coho salmon (\textit{Oncorhynchus kisutch}) to spawn, during which individuals accumulate at a river dam (hatchery). The hatchery crew periodically opens the dam gate at time $i$ to allow passage for spawning. Between successive gate-opening events ($\Delta i$), coho salmon gets accumulated. Let $X$ represent the true daily accumulation rate (also fish density at the river dam) in units of fish/day at time $i$, and E denote the number of days elapsed between consecutive gate openings ($ E_i =\Delta i; E_{i=1} = 0$). Prior to each gate opening, the crew conducts a visual count $N_i$ of accumulated fish.
+Assuming $X_i$ remains relatively constant between successive gate-opening events ($\Delta i$), we model the observed fish counts as a Poisson process:
 \begin{equation}
-N_i \sim Poisson(\lambda_i \cdot E_i)
+\lambda_i = X_i \cdot E_i \\
 \end{equation}
-where, $\lambda_i \cdot E_i$ represents the expected number of fish accumulated over the $E_i$-day interval.\\
 
-Let $W$ be the unobserved eDNA concentration (copies/$\mu$L) in the water at time $i$ and let $\omega$ be the 'integrated eDNA factor'--the conversion factor between $\lambda$ and $W$. We can write that the water eDNA concentration can be expressed as:
 \begin{equation}
-W_{i} = \lambda_{i} \cdot \omega
+N_i \sim Poisson(\lambda_i)
+\end{equation}
+
+where, $\lambda_i$ represents the expected number of fish accumulated over the $E_i$-day interval. Let $W$ be the unobserved eDNA concentration (copies/$\mu$L) in the water at time $i$ and let $\omega$ be the ``integrated eDNA factor" -- the conversion factor between $X$ and $W$ (see \cite{guri2024a} for further interpretation of this parameter). We can express the relation between the fish density and water eDNA concentration as:
+\begin{equation}
+X_{i} = W_{i} \cdot \omega
 \end{equation}
 
 Let $A$ be the unobserved eDNA concentration (copies/$\mu$L) in the air at time $i$ that is filtered using passive filter $j$. We model the air eDNA as a function of aerosolization of the water DNA through a log-linear function with intercept $\eta$, slope = 1, and error term $\varepsilon$ (variability; time and filter specific):
@@ -56,12 +60,16 @@ SSE_j = \sum_{i=1}^{I}\varepsilon_{ij}^2
 \end{equation*}
 For some filter types we had biological replicate and we used the mean of those biological replicate to determine the average concentration in the air $A$ at time $i$
 \begin{equation}
-A_{ij} = \frac{1}{B} \cdot \sum_{b=1}^{B} A_{ijb}
+%A_{ij} = \frac{1}{B} \cdot \sum_{b=1}^{B} A_{ijb}
+A_{ij} = A_{ijb} + \delta_b
 \end{equation}
 
 \begin{equation}
 \delta_{b} = A_{ij} - A_{ijb}
 \end{equation}
+
+The error term $\varepsilon_{ij}$ captures variability and is assumed to follow a normal distribution with mean 0; $\varepsilon_{ij} \sim \mathcal{N}(0,\tau)$ 
+
 
 
 \newpage
