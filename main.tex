@@ -100,9 +100,21 @@ Subsequently we build the same model compartment for estimating eDNA concentrati
 \subsection{Model conditions}
 The joint model (DAG XXX) was implemented using the Stan language as implemented in R (package: Rstan) running four independent MCMC chains using 4000 XXX warmup and 6000 XXX sampling iterations (Table XXX for parameters and their priors). The posterior predictions were diagnosed using statistics (Gelman and Rubin 1992) and considered convergence for values less than 1.05 and effective sample size (ESS) greater than 1000 for all parameters.
 
+\begin{figure}[tbhp] 
+\centering
+\includegraphics[width=16.5cm]{Plots/DAG.pdf}  
+\caption{Correlation plot describing species co-abundance and co-occurance. Spearman’s $\rho$ correlation coefficient are expressed in numbers and colors ranging from -1 (red) negatively correlated to 1 (blue) positively correlated. Species are ordered in known ecological groups (surface, midwater, and deepwater) to visually indicate the gradual change of species co-occurance.}
+\label{fig:DAG}
+\end{figure}
+
 \section{Results}
 
-
+\begin{figure}[tbhp] 
+\centering
+\includegraphics[width=18cm]{Plots/Figure_1.jpg}  
+\caption{Correlation plot describing species co-abundance and co-occurance. Spearman’s $\rho$ correlation coefficient are expressed in numbers and colors ranging from -1 (red) negatively correlated to 1 (blue) positively correlated. Species are ordered in known ecological groups (surface, midwater, and deepwater) to visually indicate the gradual change of species co-occurance.}
+\label{fig:fig1}
+\end{figure}
 
 
 \begin{table}[h!]
