@@ -37,11 +37,12 @@
 
 
 %%%%%%%%%%% Air %%%%%%%%%%%
-\node (air) [node, below=of Fish_TRUE, fill=myBlue]  at (8,0.25) {
+\node (air) [node, below=of Fish_TRUE, fill=myBlue]  at (8,0.20) {
     $\begin{array}{c}
-        \ln(W_{i}) = \eta_{j} + \ln(A_{ij}) + \varepsilon_{ij} \\
-        \ln(A_{ij}) = \ln(A_{ijb}) + \delta_{b} \\
-        \delta_{b} \sim \mathcal{N}(0,\tau)
+        \ln(W_{i}) = \eta_{j} + \ln(A_{ijb}) + \varepsilon_{ij} + \delta_{ijb} \\
+        \varepsilon_{ij} \sim \mathcal{N}(0,\tau_j) \\
+        \delta_{ijb} \sim \mathcal{N}(0,\rho_j)
+        %\ln(A_{ij}) = \ln(A_{ijb}) + \delta_{b} \\
         %\ln(A_{ij}) = \eta_{j} + \ln(W_{i}) + \varepsilon_{ij} \vspace{3px}\\
         %A_{ij} = \frac{1}{B} \cdot \sum_{b=1}^{B} A_{ijb} \vspace{3px}\\
         %\delta_{b} = A_{ij} - A_{ijb} \\
@@ -113,7 +114,7 @@
  % Arrows
         \draw [->, thick] (Fish_TRUE) -- node[midway, left] {E} (visual);
         \draw [->, thick] (Fish_TRUE) -- node[midway, left] {$\omega$} (water);
-        \draw [<->, thick] (water) -- node[midway, above] {$\varepsilon_{ij}, \eta_j$} (air);
+        \draw [<->, thick] (water) -- node[midway, above] {$\eta_j,\varepsilon_{ij},\delta_{ijb}$} (air);
         \draw [<-, thick] (qPCR_en_air) -- node[midway, left] {$A_{ijb}$} (air);
         \draw [<-, thick] (qPCR_en_wat) -- node[midway, left] {$W_i$} (water);
 
@@ -142,9 +143,9 @@ align=left, right=of qPCR_st, text width=8.1cm, fill=myGrey] at (-11.63,-10.5) {
     &DNA concentration (K and W or A) \\
     $\omega$&conversion parameter between fish density\\
     &and DNA concentration\\
-    $\varepsilon$&error term (residual) \\
     $\eta$&dilution factor of DNA concentration\\
     &from water to air \\
+    $\varepsilon$&error term (residual) \\
     $\delta$&biological replicate error (bio-rep residual)
     \end{tabular}
     }

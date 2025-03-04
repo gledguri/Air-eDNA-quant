@@ -4,7 +4,7 @@
 \usepackage{hyperref}
 \usepackage{natbib}
 \usepackage{soul}
-\bibliographystyle{plain}
+\bibliographystyle{apalike}
 \usepackage{amsmath}
 
 \title{Fish can fly}
@@ -68,11 +68,7 @@ Let $A$ be the unobserved eDNA concentration (copies/$\mu$L) in the air at time 
 \ln(A_{ij}) = \eta_{j} + \ln(W_{i}) + \varepsilon_{ij}
 \end{equation}
 
-Here the intercept $\eta$ can be interpreted as the aerosolization factor and error term $\varepsilon$ as parameter of the sum of squares error (SEE) as following:
-
-\begin{equation*}
-SSE_j = \sum_{i=1}^{I}\varepsilon_{ij}^2
-\end{equation*}
+Here the intercept $\eta$ can be interpreted as the aerosolization factor and error term $\varepsilon$ as parameter of the sum of squares error (SEE) from a linear regression where $\varepsilon_{ij} \sim \mathcal{N}(0,\tau_j)$.
 
 For some filter types $j$ (PTFE filters (${j=P})$; gelatin filters (${j=G}$)) we had biological replicates and we used the mean of those biological replicate to determine the average concentration in the air $A$ at time $i$ as following:
 
@@ -85,7 +81,7 @@ A_{ij} = A_{ijb} + \delta_{ijb} \qquad \text{for} \ j \in \{P,G\}
 %\delta_b \sim \mathcal{N}(0,\tau)
 %\end{equation}
 
-where $\delta_b$ indicates the deviation of individual biological replicate from the average concentration ($A_{ij}$), following a normal distribution with mean 0, $\delta_b \sim \mathcal{N}(0,\tau)$, with $\tau_j$ indicating the magnitude of the replicates deviation from the mean bottles. Because we have only two replicates at each sampled time, we impose a sum to zero constraint on the replicates ($b$) collected from a single sampling time ($\sum_b \delta_{ij} = 0$). 
+where $\delta_b$ indicates the deviation of individual biological replicate from the average concentration ($A_{ij}$), following a normal distribution with mean 0, $\delta_{ijb} \sim \mathcal{N}(0,\rho_j)$, with $\rho_j$ indicating the magnitude of the replicates deviation from the mean sample. Because we have only two replicates at each sampled time, we impose a sum to zero constraint on the replicates ($b$) collected from a single sampling time ($\sum_b \delta_{ij} = 0$).
 
 To estimate the levels of eDNA concentration in water ($W$) and air ($A$) we make use of the qPCR observation models (as described in \cite{guri2024, shelton2022}, with slight modifications). The model compartment use the standard samples to estimate the intercept ($\phi,\beta0,\gamma0$) and slope ($\beta1, \gamma1$) parameters between the known concentration ($K$) and the observed data ($Z$ and $Y$) from qPCR machine as follow:
 
@@ -101,14 +97,36 @@ where $Z$ is the binary outcome for sample ($k$) and technical replicate ($r$) b
 
 Subsequently we build the same model compartment for estimating eDNA concentration in water ($W$) and air ($A$) by substituting $W_i$ and $A_{ij}$ (and $A_{ijb}$ for $j \in \{P,G\}$) respectively with $K_k$ through equation 6-10 (see DAG) where intercept and slope parameters between DNA concentration and qPCR observation are shared between model compartments.
 
+\subsection{Model conditions}
+The joint model (DAG XXX) was implemented using the Stan language as implemented in R (package: Rstan) running four independent MCMC chains using 4000 XXX warmup and 6000 XXX sampling iterations (Table XXX for parameters and their priors). The posterior predictions were diagnosed using statistics (Gelman and Rubin 1992) and considered convergence for values less than 1.05 and effective sample size (ESS) greater than 1000 for all parameters.
 
-\newpage
+\section{Results}
+
+
+
+
+\begin{table}[h!]
+\centering
+\caption{Error measurements for different filter types}
+\label{tab:filter_error}
+
+\begin{tabular}{llll}
+\textbf{Filter type} & \textbf{Dilution ($\eta$)} & \textbf{Error ($\overline{|\varepsilon|}$)} & \textbf{Biological rep error ($\overline{|\delta|}$)} \\
+Gelatin & $e^{-9.25}$ & 0.788 & 0.230 \\
+PTFE & $e^{-8.39}$ & 0.570 & 0.106 \\
+MCE Air & $e^{-9.77}$ & 1.370 & - \\
+MCE DI water & $e^{-5.33}$ & 0.974 & - \\
+\end{tabular}
+\end{table}
+
+\bibliography{Bib.bib}
+\end{document}
+
 
 \begin{table}[h]
     \centering
     \begin{tabular}{llll}
-        \textbf{Filter type} & \textbf{Dilution ($\eta$)} & \textbf{Error 
-        ($\overline\varepsilon$)} & \textbf{Biological rep error ($\overline\delta$)} \\
+        \textbf{Filter type} & \textbf{Dilution ($\eta$)} & \textbf{Error ($\overline\varepsilon$)} & \textbf{Biological rep error ($\overline\delta$)} \\
         Gelatin & $e^{-9.5}$ & 0.628 & 1.315 \\
         PTFE & $e^{-8.8}$ & 0.666 & 0.682 \\
         MCE air filter & $e^{-10.2}$ & 1.133 & - \\
@@ -117,9 +135,6 @@ Subsequently we build the same model compartment for estimating eDNA concentrati
     \caption{Error measurements for different filter types}
     \label{tab:filter_error}
 \end{table}
-
-
-\end{document}
 
 
 
