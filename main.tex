@@ -98,21 +98,84 @@ where $Z$ is the binary outcome for sample ($k$) and technical replicate ($r$) b
 Subsequently we build the same model compartment for estimating eDNA concentration in water ($W$) and air ($A$) by substituting $W_i$ and $A_{ij}$ (and $A_{ijb}$ for $j \in \{P,G\}$) respectively with $K_k$ through equation 6-10 (see DAG) where intercept and slope parameters between DNA concentration and qPCR observation are shared between model compartments.
 
 \subsection{Model conditions}
-The joint model (DAG XXX) was implemented using the Stan language as implemented in R (package: Rstan) running four independent MCMC chains using 4000 XXX warmup and 6000 XXX sampling iterations (Table XXX for parameters and their priors). The posterior predictions were diagnosed using statistics (Gelman and Rubin 1992) and considered convergence for values less than 1.05 and effective sample size (ESS) greater than 1000 for all parameters.
+The joint model (DAG \ref{fig:DAG}) was implemented using the Stan language as implemented in R (package: Rstan) running four independent MCMC chains using 5000 warm-up and 5000 sampling iterations (Table \ref{tab:priortable} for parameters and their priors). The posterior predictions were diagnosed using statistics (Gelman and Rubin 1992) and considered convergence for values less than 1.05 and effective sample size (ESS) greater than 1000 for all parameters.
 
 \begin{figure}[tbhp] 
 \centering
 \includegraphics[width=16.5cm]{Plots/DAG.pdf}  
-\caption{Correlation plot describing species co-abundance and co-occurance. Spearman’s $\rho$ correlation coefficient are expressed in numbers and colors ranging from -1 (red) negatively correlated to 1 (blue) positively correlated. Species are ordered in known ecological groups (surface, midwater, and deepwater) to visually indicate the gradual change of species co-occurance.}
+\caption{DAG of joint Bayesian model for estimating the eDNA concentration of Air}
 \label{fig:DAG}
 \end{figure}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{lll}
+         & \textbf{Description} & \textbf{Prior} \\
+&Data & \\
+\hline
+$N$ & number of fish counted & - \\
+$E$ & elapsed days between counting & - \\
+$Z$ & qPCR amplification (yes=1; no=0) & - \\
+$Y$ & qPCR cycle threshold (Ct) & - \\
+$K$ & known DNA concentration (qPCR standards) & - \\
+
+&&\\
+&State processes&\\
+\hline
+$X$ & unknown fish density in (fish $\cdot$ day$^{-1}$) & $\Gamma(10,1)$ \\
+$W$ & unknown DNA concentration in water in (copies/$\mu$L) & - \\
+$A$ & unknown DNA concentration in air in (copies/$\mu$L) & - \\
+&&\\
+
+&Transformed parameters&\\
+\hline
+$\lambda$& expected fish accumulated over E days & - \\
+$\psi$& probability of positive qPCR amplification & - \\
+$\mu$& mean Ct values of qPCR & - \\
+$\sigma$& standard deviation of qPCR Ct values & - \\
+&&\\
+
+&Parameters&\\
+\hline
+$\omega$& conversion parameter between fish density
+and DNA concentration & $\mathcal{N}(0,1)$\\
+$\eta$& dilution factor of DNA concentration
+from water to air & $\mathcal{N}(0,5)$\\
+$\varepsilon$& time ($i$) specific error term (residual) & $\mathcal{N}(0,\tau)$\\
+$\tau$& standard deviation of residuals & $\mathcal{TN}(0,1;0, +\infty)$\\
+$\delta$& biological replicate error term (residual) & $\mathcal{N}(0,\rho)$\\
+$\rho$& standard deviation of biological replicate error & $\mathcal{TN}(0,1;0, +\infty)$\\
+$\phi$& intercept of the qPCR probability of detection ($\psi$) relationship &$\mathcal{N}(-1,1)$\\
+& and eDNA concentration ($K$, $W$, and $A$) \\
+$\beta0$& intercept of the linear relation between the mean Ct values ($\mu$)&$\mathcal{N}(40,1)$\\
+&and eDNA concentration ($K$, $W$, and $A$) & \\
+$\beta1$& slope of the linear relation between the mean Ct values ($\mu$) and &$\mathcal{N}(-3,1)$\\
+&eDNA concentration ($K$, $W$, and $A$)) & \\
+$\gamma0$& intercept of the linear relation between the standard deviation&$\mathcal{N}(1,0.1)$\\
+&of Ct values ($\sigma$) and eDNA concentration ($K$, $W$, and $A$) & \\
+$\gamma1$& intercept of the linear relation between the standard deviation &$\mathcal{N}(0,0.1)$\\
+&of Ct values ($\sigma$) and eDNA concentration ($K$, $W$, and $A$) & \\
+&&\\
+&Index&\\
+\hline
+$i$& time (days) & -\\
+$j$& filter type & -\\
+$b$& biological sample replicate & -\\
+$p$& qPCR plate & -\\
+$k$& qPCR standard sample & -\\
+
+
+    \end{tabular}
+    \caption{Data, state processes, parameters, transformed parameters, and subscripts employed in the joint Bayesian model and their prior distributions}
+    \label{tab:priortable}
+\end{table}
 
 \section{Results}
 
 \begin{figure}[tbhp] 
 \centering
-\includegraphics[width=18cm]{Plots/Figure_1.jpg}  
-\caption{Correlation plot describing species co-abundance and co-occurance. Spearman’s $\rho$ correlation coefficient are expressed in numbers and colors ranging from -1 (red) negatively correlated to 1 (blue) positively correlated. Species are ordered in known ecological groups (surface, midwater, and deepwater) to visually indicate the gradual change of species co-occurance.}
+\includegraphics[width=16.5cm]{Plots/Figure_1.jpg}  
+\caption{Time series of estimating fish density (X) jointly using visual (A), eDNA from water (B) and eDNA from air observations (C).}
 \label{fig:fig1}
 \end{figure}
 
