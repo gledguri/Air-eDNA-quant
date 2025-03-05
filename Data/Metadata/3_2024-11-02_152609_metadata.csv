@@ -1,0 +1,33 @@
+Well,Sample,Location,Date,FilterType,Plate_idx,Target
+F4,Air049,Issaquah park bridge,20241028,Gelatin,3,cohoDUDA
+G4,Air050,Issaquah park bridge,20241028,Gelatin,3,cohoDUDA
+H4,Air051,Issaquah park bridge,20241028,PTFE,3,cohoDUDA
+I4,Air052,Issaquah park bridge,20241028,PTFE,3,cohoDUDA
+J4,Air053,Issaquah park bridge,20241028,MCE Air,3,cohoDUDA
+K4,Air054,Issaquah park bridge,20241028,MCE DI water,3,cohoDUDA
+L4,Air055,Issaquah waterfall,20241031,Gelatin,3,cohoDUDA
+M4,Air056,Issaquah waterfall,20241031,Gelatin,3,cohoDUDA
+N4,Air057,Issaquah waterfall,20241031,PTFE,3,cohoDUDA
+O4,Air058,Issaquah waterfall,20241031,PTFE,3,cohoDUDA
+P4,Air059,Issaquah waterfall,20241031,MCE Air,3,cohoDUDA
+A5,Air060,Issaquah waterfall,20241031,MCE DI water,3,cohoDUDA
+B5,SAL112,"Issaquah Bridge, field negative",20241028,Water filter MCE,3,cohoDUDA
+C5,SAL113,"Issaquah Bridge, Confluence Park, by hand",20241028,Water filter MCE,3,cohoDUDA
+D5,SAL116,"Issaquah Dam, field negative",20241031,Water filter MCE,3,cohoDUDA
+E5,SAL117,"Issaquah Dam, by hand",20241031,Water filter MCE,3,cohoDUDA
+F10,Air049,Issaquah park bridge,20241028,Gelatin,3,chinookDUDA
+G10,Air050,Issaquah park bridge,20241028,Gelatin,3,chinookDUDA
+H10,Air051,Issaquah park bridge,20241028,PTFE,3,chinookDUDA
+I10,Air052,Issaquah park bridge,20241028,PTFE,3,chinookDUDA
+J10,Air053,Issaquah park bridge,20241028,MCE Air,3,chinookDUDA
+K10,Air054,Issaquah park bridge,20241028,MCE DI water,3,chinookDUDA
+L10,Air055,Issaquah waterfall,20241031,Gelatin,3,chinookDUDA
+M10,Air056,Issaquah waterfall,20241031,Gelatin,3,chinookDUDA
+N10,Air057,Issaquah waterfall,20241031,PTFE,3,chinookDUDA
+O10,Air058,Issaquah waterfall,20241031,PTFE,3,chinookDUDA
+P10,Air059,Issaquah waterfall,20241031,MCE Air,3,chinookDUDA
+A11,Air060,Issaquah waterfall,20241031,MCE DI water,3,chinookDUDA
+B11,SAL112,"Issaquah Bridge, field negative",20241028,Water filter MCE,3,chinookDUDA
+C11,SAL113,"Issaquah Bridge, Confluence Park, by hand",20241028,Water filter MCE,3,chinookDUDA
+D11,SAL116,"Issaquah Dam, field negative",20241031,Water filter MCE,3,chinookDUDA
+E11,SAL117,"Issaquah Dam, by hand",20241031,Water filter MCE,3,chinookDUDA

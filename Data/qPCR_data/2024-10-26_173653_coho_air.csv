@@ -1,0 +1,97 @@
+Well,Omit,Sample,Target,Dye,Task,Cq,Quantity
+A7,false,sockeye,SE-CO3,SYBR,Standard,19.554852438341626,10000
+A8,false,sockeye,SE-CO3,SYBR,Unknown,Undetermined,
+B7,false,sockeye,SE-CO3,SYBR,Standard,22.906996984527588,1000
+B8,false,sockeye,SE-CO3,SYBR,Unknown,Undetermined,
+C7,false,sockeye,SE-CO3,SYBR,Standard,26.211688905906136,100
+C8,false,sockeye,SE-CO3,SYBR,Unknown,Undetermined,
+D7,false,sockeye,SE-CO3,SYBR,Standard,29.409021442034636,10
+D8,false,sockeye,SE-CO3,SYBR,Unknown,Undetermined,
+E7,false,sockeye,SE-CO3,SYBR,Standard,32.72450643053163,1
+E8,false,sockeye,SE-CO3,SYBR,Unknown,Undetermined,
+F7,false,sockeye,SE-CO3,SYBR,Unknown,Undetermined,
+F8,false,sockeye,SE-CO3,SYBR,Unknown,Undetermined,
+G7,false,sockeye,SE-CO3,SYBR,Unknown,Undetermined,
+G8,false,sockeye,SE-CO3,SYBR,Unknown,Undetermined,
+H7,false,sockeye,SE-CO3,SYBR,Unknown,Undetermined,
+H8,false,sockeye,SE-CO3,SYBR,Unknown,Undetermined,
+I7,false,sockeye,SE-CO3,SYBR,Unknown,Undetermined,
+I8,false,sockeye,SE-CO3,SYBR,Unknown,28.73328264072436,16.477783905916493
+J7,false,sockeye,SE-CO3,SYBR,Unknown,Undetermined,
+J8,false,sockeye,SE-CO3,SYBR,Unknown,Undetermined,
+K7,false,sockeye,SE-CO3,SYBR,Unknown,Undetermined,
+K8,false,sockeye,SE-CO3,SYBR,Unknown,31.816070779065626,1.8975697436423402
+L7,false,sockeye,SE-CO3,SYBR,Unknown,Undetermined,
+L8,false,sockeye,SE-CO3,SYBR,Unknown,Undetermined,
+M7,false,sockeye,SE-CO3,SYBR,Unknown,Undetermined,
+M8,false,sockeye,SE-CO3,SYBR,Unknown,35.04315518126998,0.1974962482012631
+N7,false,sockeye,SE-CO3,SYBR,Unknown,Undetermined,
+N8,false,sockeye,SE-CO3,SYBR,Negative Control,Undetermined,
+O7,false,sockeye,SE-CO3,SYBR,Unknown,Undetermined,
+O8,false,sockeye,SE-CO3,SYBR,Negative Control,Undetermined,
+P7,false,sockeye,SE-CO3,SYBR,Unknown,Undetermined,
+P8,false,sockeye,SE-CO3,SYBR,Negative Control,Undetermined,
+A1,false,chinook,chi1269-COIII,SYBR,Standard,21.957828299500335,10000
+A2,false,chinook,chi1269-COIII,SYBR,Unknown,36.8557938301672,0.20142107048838598
+B1,false,chinook,chi1269-COIII,SYBR,Standard,25.26610628077973,1000
+B2,false,chinook,chi1269-COIII,SYBR,Unknown,36.83202673848919,0.2049799310619986
+C1,false,chinook,chi1269-COIII,SYBR,Standard,28.884937763082917,100
+C2,false,chinook,chi1269-COIII,SYBR,Unknown,Undetermined,
+D1,false,chinook,chi1269-COIII,SYBR,Standard,31.676902555563927,10
+D2,false,chinook,chi1269-COIII,SYBR,Unknown,34.33746089628151,1.2884708651203558
+E1,false,chinook,chi1269-COIII,SYBR,Standard,34.37532205464149,1
+E2,false,chinook,chi1269-COIII,SYBR,Unknown,35.3414365399493,0.6148388033846466
+F1,false,chinook,chi1269-COIII,SYBR,Unknown,Undetermined,
+F2,false,chinook,chi1269-COIII,SYBR,Unknown,34.89550137080205,0.8540411381203532
+G1,false,chinook,chi1269-COIII,SYBR,Unknown,Undetermined,
+G2,false,chinook,chi1269-COIII,SYBR,Unknown,31.555440392424238,10.010024262235467
+H1,false,chinook,chi1269-COIII,SYBR,Unknown,34.31143791271633,1.3134181803960987
+H2,false,chinook,chi1269-COIII,SYBR,Unknown,Undetermined,
+I1,false,chinook,chi1269-COIII,SYBR,Unknown,33.50127171310679,2.386104149854816
+I2,false,chinook,chi1269-COIII,SYBR,Unknown,21.894217639154746,12371.495044514471
+J1,false,chinook,chi1269-COIII,SYBR,Unknown,34.12992531250099,1.5013933615650819
+J2,false,chinook,chi1269-COIII,SYBR,Unknown,Undetermined,
+K1,false,chinook,chi1269-COIII,SYBR,Unknown,32.99816889383321,3.457028086332795
+K2,false,chinook,chi1269-COIII,SYBR,Unknown,21.68428676152923,14441.37901479899
+L1,false,chinook,chi1269-COIII,SYBR,Unknown,Undetermined,
+L2,false,chinook,chi1269-COIII,SYBR,Unknown,Undetermined,
+M1,false,chinook,chi1269-COIII,SYBR,Unknown,Undetermined,
+M2,false,chinook,chi1269-COIII,SYBR,Unknown,23.150809422169836,4900.736343307095
+N1,false,chinook,chi1269-COIII,SYBR,Unknown,Undetermined,
+N2,false,chinook,chi1269-COIII,SYBR,Negative Control,Undetermined,
+O1,false,chinook,chi1269-COIII,SYBR,Unknown,Undetermined,
+O2,false,chinook,chi1269-COIII,SYBR,Negative Control,Undetermined,
+P1,false,chinook,chi1269-COIII,SYBR,Unknown,Undetermined,
+P2,false,chinook,chi1269-COIII,SYBR,Negative Control,Undetermined,
+A4,false,coho,CO-cytb,SYBR,Standard,20.67882684539616,10000
+A5,false,coho,CO-cytb,SYBR,Unknown,Undetermined,
+B4,false,coho,CO-cytb,SYBR,Standard,24.103178356161514,1000
+B5,false,coho,CO-cytb,SYBR,Unknown,36.615037771787385,0.601499724631357
+C4,false,coho,CO-cytb,SYBR,Standard,27.380937179100613,100
+C5,false,coho,CO-cytb,SYBR,Unknown,Undetermined,
+D4,false,coho,CO-cytb,SYBR,Standard,31.009222984843063,10
+D5,false,coho,CO-cytb,SYBR,Unknown,Undetermined,
+E4,false,coho,CO-cytb,SYBR,Standard,36.68612683127867,1
+E5,false,coho,CO-cytb,SYBR,Unknown,36.819480409267214,0.5329762314554426
+F4,false,coho,CO-cytb,SYBR,Unknown,Undetermined,
+F5,false,coho,CO-cytb,SYBR,Unknown,34.999201330455534,1.5645643497507298
+G4,false,coho,CO-cytb,SYBR,Unknown,36.92677091514183,0.5001976146331212
+G5,false,coho,CO-cytb,SYBR,Unknown,33.99901004914108,2.8273090413200754
+H4,false,coho,CO-cytb,SYBR,Unknown,Undetermined,
+H5,false,coho,CO-cytb,SYBR,Unknown,Undetermined,
+I4,false,coho,CO-cytb,SYBR,Unknown,36.93004012382134,0.4992311275685371
+I5,false,coho,CO-cytb,SYBR,Unknown,22.60830808197374,2387.780371747703
+J4,false,coho,CO-cytb,SYBR,Unknown,37.34069499367362,0.3915541313830326
+J5,false,coho,CO-cytb,SYBR,Unknown,Undetermined,
+K4,false,coho,CO-cytb,SYBR,Unknown,34.97255073919568,1.5894277289306928
+K5,false,coho,CO-cytb,SYBR,Unknown,23.452793896950155,1448.8387115327464
+L4,false,coho,CO-cytb,SYBR,Unknown,Undetermined,
+L5,false,coho,CO-cytb,SYBR,Unknown,Undetermined,
+M4,false,coho,CO-cytb,SYBR,Unknown,Undetermined,
+M5,false,coho,CO-cytb,SYBR,Unknown,23.73881361951539,1223.299483003236
+N4,false,coho,CO-cytb,SYBR,Unknown,Undetermined,
+N5,false,coho,CO-cytb,SYBR,Negative Control,Undetermined,
+O4,false,coho,CO-cytb,SYBR,Unknown,Undetermined,
+O5,false,coho,CO-cytb,SYBR,Negative Control,Undetermined,
+P4,false,coho,CO-cytb,SYBR,Unknown,Undetermined,
+P5,false,coho,CO-cytb,SYBR,Negative Control,Undetermined,

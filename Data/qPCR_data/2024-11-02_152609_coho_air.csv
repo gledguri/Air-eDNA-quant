@@ -1,0 +1,126 @@
+Well,Omit,Sample,Target,Dye,Task,Cq,Quantity
+A7,false,sockeyeDUDA,seco3,SYBR,Standard,18.10525072986553,10000
+A8,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+B7,false,sockeyeDUDA,seco3,SYBR,Standard,21.42151763403711,1000
+B8,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+C7,false,sockeyeDUDA,seco3,SYBR,Standard,25.118327535439676,100
+C8,false,sockeyeDUDA,seco3,SYBR,Unknown,28.965157827953902,10.092629576978128
+D7,false,sockeyeDUDA,seco3,SYBR,Standard,28.248418487200688,10
+D8,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+E7,false,sockeyeDUDA,seco3,SYBR,Standard,33.34937569666613,1
+E8,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+F7,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+F8,false,sockeyeDUDA,seco3,SYBR,Negative Control,Undetermined,
+G7,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+G8,false,sockeyeDUDA,seco3,SYBR,Negative Control,Undetermined,
+H7,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+H8,false,sockeyeDUDA,seco3,SYBR,Negative Control,Undetermined,
+I7,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+J7,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+K7,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+L7,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+M7,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+N7,false,sockeyeDUDA,seco3,SYBR,Unknown,38.25215151861245,0.03274873695118802
+O7,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+P7,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+A1,false,chinookSHEL,chi1269,SYBR,Standard,21.616116400526074,10000
+A2,false,chinookSHEL,chi1269,SYBR,Unknown,30.459358363906375,14.36593806654454
+B1,false,chinookSHEL,chi1269,SYBR,Standard,24.868271666670637,1000
+B2,false,chinookSHEL,chi1269,SYBR,Unknown,Undetermined,
+C1,false,chinookSHEL,chi1269,SYBR,Standard,28.257070896771864,100
+C2,false,chinookSHEL,chi1269,SYBR,Unknown,23.42575802138716,1930.619678100475
+D1,false,chinookSHEL,chi1269,SYBR,Standard,31.63797124144009,10
+D2,false,chinookSHEL,chi1269,SYBR,Unknown,Undetermined,
+E1,false,chinookSHEL,chi1269,SYBR,Standard,Undetermined,1
+E2,false,chinookSHEL,chi1269,SYBR,Unknown,21.844635278670914,5809.562232654579
+F1,false,chinookSHEL,chi1269,SYBR,Unknown,Undetermined,
+F2,false,chinookSHEL,chi1269,SYBR,Negative Control,Undetermined,
+G1,false,chinookSHEL,chi1269,SYBR,Unknown,Undetermined,
+G2,false,chinookSHEL,chi1269,SYBR,Negative Control,Undetermined,
+H1,false,chinookSHEL,chi1269,SYBR,Unknown,Undetermined,
+H2,false,chinookSHEL,chi1269,SYBR,Negative Control,Undetermined,
+I1,false,chinookSHEL,chi1269,SYBR,Unknown,Undetermined,
+J1,false,chinookSHEL,chi1269,SYBR,Unknown,Undetermined,
+K1,false,chinookSHEL,chi1269,SYBR,Unknown,28.130358650913514,72.7926849198679
+L1,false,chinookSHEL,chi1269,SYBR,Unknown,35.77875611037591,0.35292937344985537
+L2,false,cohoSHEL,chi1269,SYBR,Standard,20.259247092867724,10000
+M1,false,chinookSHEL,chi1269,SYBR,Unknown,34.30313237400149,0.9867577737385295
+M2,false,cohoSHEL,chi1269,SYBR,Standard,23.752648487593177,1000
+N1,false,chinookSHEL,chi1269,SYBR,Unknown,Undetermined,
+N2,false,cohoSHEL,chi1269,SYBR,Standard,27.432058713867747,100
+O1,false,chinookSHEL,chi1269,SYBR,Unknown,35.5766632600793,0.406294521088679
+O2,false,cohoSHEL,chi1269,SYBR,Standard,31.019804368691318,10
+P1,false,chinookSHEL,chi1269,SYBR,Unknown,Undetermined,
+P2,false,cohoSHEL,chi1269,SYBR,Standard,33.61947442270268,1
+A10,false,chinookDUDA,ckco3,SYBR,Standard,20.79785591788587,10000
+A11,false,chinookDUDA,ckco3,SYBR,Unknown,30.974700488071072,9.747428423375894
+A13,false,chinookDUDA,ckco3,SYBR,Unknown,33.79717138772834,1.4359422545087042
+A14,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+B10,false,chinookDUDA,ckco3,SYBR,Standard,24.07687753403207,1000
+B11,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+B13,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+B14,false,chinookDUDA,ckco3,SYBR,Unknown,31.099931131731935,8.95335645192751
+C10,false,chinookDUDA,ckco3,SYBR,Standard,27.565864898948057,100
+C11,false,chinookDUDA,ckco3,SYBR,Unknown,23.960312323370196,1137.5171180185291
+C13,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+C14,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+D10,false,chinookDUDA,ckco3,SYBR,Standard,30.94634920641679,10
+D11,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+D13,false,chinookDUDA,ckco3,SYBR,Unknown,34.30573439421477,1.0168776446258334
+D14,false,chinookDUDA,ckco3,SYBR,Unknown,22.725521550481467,2629.2873571994987
+E10,false,chinookDUDA,ckco3,SYBR,Standard,Undetermined,1
+E11,false,chinookDUDA,ckco3,SYBR,Unknown,24.230923201953907,946.6985337885266
+E13,false,chinookDUDA,ckco3,SYBR,Unknown,32.649358107353194,3.1288570172053536
+E14,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+F10,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+F11,false,chinookDUDA,ckco3,SYBR,Negative Control,Undetermined,
+F13,false,chinookDUDA,ckco3,SYBR,Unknown,32.8629225324337,2.7067645662083075
+F14,false,chinookDUDA,ckco3,SYBR,Unknown,20.95613486863263,8734.902646951372
+G10,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+G11,false,chinookDUDA,ckco3,SYBR,Negative Control,Undetermined,
+G13,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+G14,false,chinookDUDA,ckco3,SYBR,Unknown,24.785369529487475,649.8634130900357
+H10,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+H11,false,chinookDUDA,ckco3,SYBR,Negative Control,Undetermined,
+H13,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+H14,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+I10,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+I13,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+J10,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+J13,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+K10,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+K13,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+L10,false,chinookDUDA,ckco3,SYBR,Unknown,35.335925202827354,0.5054545239273669
+L13,false,chinookDUDA,ckco3,SYBR,Unknown,34.398742260977656,0.9546853103704761
+M10,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+M13,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+N10,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+N13,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+O10,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+O13,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+P10,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+P13,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+A4,false,cohoDUDA,cocytb,SYBR,Standard,20.229454348567153,10000
+A5,false,cohoDUDA,cocytb,SYBR,Unknown,31.663575239753598,9.714206643170423
+B4,false,cohoDUDA,cocytb,SYBR,Standard,23.636918503738748,1000
+B5,false,cohoDUDA,cocytb,SYBR,Unknown,Undetermined,
+C4,false,cohoDUDA,cocytb,SYBR,Standard,27.149351181810793,100
+C5,false,cohoDUDA,cocytb,SYBR,Unknown,24.40962123274737,653.4981463486786
+D4,false,cohoDUDA,cocytb,SYBR,Standard,30.63789104936364,10
+D5,false,cohoDUDA,cocytb,SYBR,Unknown,Undetermined,
+E4,false,cohoDUDA,cocytb,SYBR,Standard,36.57176614486528,1
+E5,false,cohoDUDA,cocytb,SYBR,Unknown,21.554066384249033,3425.9532963031197
+F4,false,cohoDUDA,cocytb,SYBR,Unknown,Undetermined,
+F5,false,cohoDUDA,cocytb,SYBR,Negative Control,Undetermined,
+G4,false,cohoDUDA,cocytb,SYBR,Unknown,35.631974891186914,0.9715335911582116
+G5,false,cohoDUDA,cocytb,SYBR,Negative Control,Undetermined,
+H4,false,cohoDUDA,cocytb,SYBR,Unknown,Undetermined,
+H5,false,cohoDUDA,cocytb,SYBR,Negative Control,Undetermined,
+I4,false,cohoDUDA,cocytb,SYBR,Unknown,Undetermined,
+J4,false,cohoDUDA,cocytb,SYBR,Unknown,Undetermined,
+K4,false,cohoDUDA,cocytb,SYBR,Unknown,27.795143549877515,91.65731363674946
+L4,false,cohoDUDA,cocytb,SYBR,Unknown,Undetermined,
+M4,false,cohoDUDA,cocytb,SYBR,Unknown,Undetermined,
+N4,false,cohoDUDA,cocytb,SYBR,Unknown,34.51154422224097,1.861151518678594
+O4,false,cohoDUDA,cocytb,SYBR,Unknown,36.23352661167263,0.6852988533036376
+P4,false,cohoDUDA,cocytb,SYBR,Unknown,Undetermined,

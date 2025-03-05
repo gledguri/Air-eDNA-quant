@@ -1,0 +1,343 @@
+Well,Sample,Location,Date,FilterType,Plate_idx,Target
+H1,Air001,Wallace 156A,20240816,Gelatin,9,cohoDUDA
+H2,Air002,Wallace 156A,20240816,Gelatin,9,cohoDUDA
+H3,Air003,Wallace 156A,20240816,PTFE,9,cohoDUDA
+H4,Air004,Wallace 156A,20240816,PTFE,9,cohoDUDA
+H5,Air005,Wallace 156A,20240816,MCE Air,9,cohoDUDA
+H6,Air006,Wallace 156A,20240816,MCE DI water,9,cohoDUDA
+I1,Air007,Fisheries pond,20240819,Gelatin,9,cohoDUDA
+I2,Air008,Fisheries pond,20240819,Gelatin,9,cohoDUDA
+I3,Air009,Fisheries pond,20240819,PTFE,9,cohoDUDA
+J1,Air010,Fisheries pond,20240819,PTFE,9,cohoDUDA
+J2,Air011,Fisheries pond,20240819,MCE Air,9,cohoDUDA
+J3,Air012,Fisheries pond,20240819,MCE DI water,9,cohoDUDA
+K1,Air013,Issaquah waterfall,20240826,Gelatin,9,cohoDUDA
+L1,Air014,Issaquah waterfall,20240826,Gelatin,9,cohoDUDA
+M1,Air015,Issaquah waterfall,20240826,PTFE,9,cohoDUDA
+N1,Air016,Issaquah waterfall,20240826,PTFE,9,cohoDUDA
+O1,Air017,Issaquah waterfall,20240826,MCE Air,9,cohoDUDA
+P1,Air018,Issaquah waterfall,20240826,MCE DI water,9,cohoDUDA
+I4,Air019,Issaquah waterfall,20240828,Gelatin,9,cohoDUDA
+J4,Air020,Issaquah waterfall,20240828,Gelatin,9,cohoDUDA
+K4,Air021,Issaquah waterfall,20240828,PTFE,9,cohoDUDA
+L4,Air022,Issaquah waterfall,20240828,PTFE,9,cohoDUDA
+M4,Air023,Issaquah waterfall,20240828,MCE Air,9,cohoDUDA
+N4,Air024,Issaquah waterfall,20240828,MCE DI water,9,cohoDUDA
+O4,Air025,Issaquah waterfall,20240830,MCE DI water,9,cohoDUDA
+P4,Air026,Issaquah waterfall,20240830,Gelatin,9,cohoDUDA
+A7,Air027,Issaquah waterfall,20240830,Gelatin,9,cohoDUDA
+B7,Air028,Issaquah waterfall,20240830,PTFE,9,cohoDUDA
+C7,Air029,Issaquah waterfall,20240830,PTFE,9,cohoDUDA
+D7,Air030,Issaquah waterfall,20240830,MCE Air,9,cohoDUDA
+E7,SAL041,"Issaquah Dam, field negative",20240828,Water filter MCE,9,cohoDUDA
+F7,SAL042,"Issaquah Dam, by hand",20240828,Water filter MCE,9,cohoDUDA
+G7,SAL048,"Issaquah Dam, field negative",20240830,Water filter MCE,9,cohoDUDA
+H7,SAL049,"Issaquah Dam, by hand",20240830,Water filter MCE,9,cohoDUDA
+I7,Air031,Issaquah waterfall,20241017,Gelatin,9,cohoDUDA
+J7,Air032,Issaquah waterfall,20241017,Gelatin,9,cohoDUDA
+K7,Air033,Issaquah waterfall,20241017,PTFE,9,cohoDUDA
+L7,Air034,Issaquah waterfall,20241017,PTFE,9,cohoDUDA
+M7,Air035,Issaquah waterfall,20241017,MCE Air,9,cohoDUDA
+N7,Air036,Issaquah waterfall,20241017,MCE DI water,9,cohoDUDA
+O7,Air037,Issaquah park bridge,20241022,Gelatin,9,cohoDUDA
+P7,Air038,Issaquah park bridge,20241022,Gelatin,9,cohoDUDA
+A10,Air039,Issaquah park bridge,20241022,PTFE,9,cohoDUDA
+B10,Air040,Issaquah park bridge,20241022,PTFE,9,cohoDUDA
+C10,Air041,Issaquah park bridge,20241022,MCE Air,9,cohoDUDA
+D10,Air042,Issaquah park bridge,20241022,MCE DI water,9,cohoDUDA
+E10,Air043,Issaquah waterfall,20241024,Gelatin,9,cohoDUDA
+F10,Air044,Issaquah waterfall,20241024,Gelatin,9,cohoDUDA
+G10,Air045,Issaquah waterfall,20241024,PTFE,9,cohoDUDA
+H10,Air046,Issaquah waterfall,20241024,PTFE,9,cohoDUDA
+I10,Air047,Issaquah waterfall,20241024,MCE Air,9,cohoDUDA
+J10,Air048,Issaquah waterfall,20241024,MCE DI water,9,cohoDUDA
+K10,SAL092,"Issaquah Dam, field negative",20241017,Water filter MCE,9,cohoDUDA
+L10,SAL093,"Issaquah Dam, by hand",20241017,Water filter MCE,9,cohoDUDA
+M10,SAL100,"Issaquah Bridge, field negative",20241023,Water filter MCE,9,cohoDUDA
+N10,SAL101,"Issaquah Bridge, Confluence Park, by hand",20241023,Water filter MCE,9,cohoDUDA
+O10,SAL104,"Issaquah Dam, field negative",20241025,Water filter MCE,9,cohoDUDA
+P10,SAL105,"Issaquah Dam, by hand",20241025,Water filter MCE,9,cohoDUDA
+A13,Air049,Issaquah park bridge,20241028,Gelatin,9,cohoDUDA
+B13,Air050,Issaquah park bridge,20241028,Gelatin,9,cohoDUDA
+C13,Air051,Issaquah park bridge,20241028,PTFE,9,cohoDUDA
+D13,Air052,Issaquah park bridge,20241028,PTFE,9,cohoDUDA
+E13,Air053,Issaquah park bridge,20241028,MCE Air,9,cohoDUDA
+F13,Air054,Issaquah park bridge,20241028,MCE DI water,9,cohoDUDA
+G13,Air055,Issaquah waterfall,20241031,Gelatin,9,cohoDUDA
+H13,Air056,Issaquah waterfall,20241031,Gelatin,9,cohoDUDA
+I13,Air057,Issaquah waterfall,20241031,PTFE,9,cohoDUDA
+J13,Air058,Issaquah waterfall,20241031,PTFE,9,cohoDUDA
+K13,Air059,Issaquah waterfall,20241031,MCE Air,9,cohoDUDA
+L13,Air060,Issaquah waterfall,20241031,MCE DI water,9,cohoDUDA
+M13,SAL112,"Issaquah Bridge, field negative",20241028,Water filter MCE,9,cohoDUDA
+N13,SAL113,"Issaquah Bridge, Confluence Park, by hand",20241028,Water filter MCE,9,cohoDUDA
+O13,SAL116,"Issaquah Dam, field negative",20241031,Water filter MCE,9,cohoDUDA
+P13,SAL117,"Issaquah Dam, by hand",20241031,Water filter MCE,9,cohoDUDA
+A16,Air061,Issaquah park bridge,20241105,Gelatin,9,cohoDUDA
+B16,Air062,Issaquah park bridge,20241105,Gelatin,9,cohoDUDA
+C16,Air063,Issaquah park bridge,20241105,PTFE,9,cohoDUDA
+D16,Air064,Issaquah park bridge,20241105,PTFE,9,cohoDUDA
+E16,Air065,Issaquah park bridge,20241105,MCE Air,9,cohoDUDA
+F16,Air066,Issaquah park bridge,20241105,MCE DI water,9,cohoDUDA
+G16,Air067,Issaquah waterfall,20241107,Gelatin,9,cohoDUDA
+H16,Air068,Issaquah waterfall,20241107,Gelatin,9,cohoDUDA
+I16,Air069,Issaquah waterfall,20241107,PTFE,9,cohoDUDA
+J16,Air070,Issaquah waterfall,20241107,PTFE,9,cohoDUDA
+K16,Air071,Issaquah waterfall,20241107,MCE Air,9,cohoDUDA
+L16,Air072,Issaquah waterfall,20241107,MCE DI water,9,cohoDUDA
+M16,SAL124,"Issaquah Bridge, field negative",20241105,Water filter MCE,9,cohoDUDA
+N16,SAL125,"Issaquah Bridge, Confluence Park, by hand",20241105,Water filter MCE,9,cohoDUDA
+O16,SAL128,"Issaquah Dam, field negative",20241107,Water filter MCE,9,cohoDUDA
+P16,SAL129,"Issaquah Dam, by hand",20241107,Water filter MCE,9,cohoDUDA
+A19,Air073,Issaquah park bridge,20241112,Gelatin,9,cohoDUDA
+B19,Air074,Issaquah park bridge,20241112,Gelatin,9,cohoDUDA
+C19,Air075,Issaquah park bridge,20241112,PTFE,9,cohoDUDA
+D19,Air076,Issaquah park bridge,20241112,PTFE,9,cohoDUDA
+E19,Air077,Issaquah park bridge,20241112,MCE Air,9,cohoDUDA
+F19,Air078,Issaquah park bridge,20241112,MCE DI water,9,cohoDUDA
+G19,Air079,Issaquah waterfall,20241114,Gelatin,9,cohoDUDA
+H19,Air080,Issaquah waterfall,20241114,Gelatin,9,cohoDUDA
+I19,Air081,Issaquah waterfall,20241114,PTFE,9,cohoDUDA
+J19,Air082,Issaquah waterfall,20241114,PTFE,9,cohoDUDA
+K19,Air083,Issaquah waterfall,20241114,MCE Air,9,cohoDUDA
+L19,Air084,Issaquah waterfall,20241114,MCE DI water,9,cohoDUDA
+M19,SAL136,"Issaquah Bridge, field negative",20241112,Water filter MCE,9,cohoDUDA
+N19,SAL137,"Issaquah Bridge, Confluence Park, by hand",20241112,Water filter MCE,9,cohoDUDA
+O19,SAL140,"Issaquah Dam, field negative",20241114,Water filter MCE,9,cohoDUDA
+P19,SAL141,"Issaquah Dam, by hand",20241114,Water filter MCE,9,cohoDUDA
+A22,Air085,Issaquah park bridge,20241119,Gelatin,9,cohoDUDA
+B22,Air086,Issaquah park bridge,20241119,Gelatin,9,cohoDUDA
+C22,Air087,Issaquah park bridge,20241119,PTFE,9,cohoDUDA
+D22,Air088,Issaquah park bridge,20241119,PTFE,9,cohoDUDA
+E22,Air089,Issaquah park bridge,20241119,MCE Air,9,cohoDUDA
+F22,Air090,Issaquah park bridge,20241119,MCE DI water,9,cohoDUDA
+G22,Air091,Issaquah waterfall,20241121,Gelatin,9,cohoDUDA
+H22,Air092,Issaquah waterfall,20241121,Gelatin,9,cohoDUDA
+I22,Air093,Issaquah waterfall,20241121,PTFE,9,cohoDUDA
+J22,Air094,Issaquah waterfall,20241121,PTFE,9,cohoDUDA
+K22,Air095,Issaquah waterfall,20241121,MCE Air,9,cohoDUDA
+L22,Air096,Issaquah waterfall,20241121,MCE DI water,9,cohoDUDA
+M22,SAL148,"Issaquah Bridge, field negative",20241019,Water filter MCE,9,cohoDUDA
+N22,SAL149,"Issaquah Bridge, Confluence Park, by hand",20241019,Water filter MCE,9,cohoDUDA
+O22,SAL152,"Issaquah Dam, field negative",20241121,Water filter MCE,9,cohoDUDA
+P22,SAL153,"Issaquah Dam, by hand",20241121,Water filter MCE,9,cohoDUDA
+K2,Air013,Issaquah waterfall,20240826,Gelatin,9,cohoDUDA
+L2,Air014,Issaquah waterfall,20240826,Gelatin,9,cohoDUDA
+M2,Air015,Issaquah waterfall,20240826,PTFE,9,cohoDUDA
+N2,Air016,Issaquah waterfall,20240826,PTFE,9,cohoDUDA
+O2,Air017,Issaquah waterfall,20240826,MCE Air,9,cohoDUDA
+P2,Air018,Issaquah waterfall,20240826,MCE DI water,9,cohoDUDA
+I5,Air019,Issaquah waterfall,20240828,Gelatin,9,cohoDUDA
+J5,Air020,Issaquah waterfall,20240828,Gelatin,9,cohoDUDA
+K5,Air021,Issaquah waterfall,20240828,PTFE,9,cohoDUDA
+L5,Air022,Issaquah waterfall,20240828,PTFE,9,cohoDUDA
+M5,Air023,Issaquah waterfall,20240828,MCE Air,9,cohoDUDA
+N5,Air024,Issaquah waterfall,20240828,MCE DI water,9,cohoDUDA
+O5,Air025,Issaquah waterfall,20240830,MCE DI water,9,cohoDUDA
+P5,Air026,Issaquah waterfall,20240830,Gelatin,9,cohoDUDA
+A8,Air027,Issaquah waterfall,20240830,Gelatin,9,cohoDUDA
+B8,Air028,Issaquah waterfall,20240830,PTFE,9,cohoDUDA
+C8,Air029,Issaquah waterfall,20240830,PTFE,9,cohoDUDA
+D8,Air030,Issaquah waterfall,20240830,MCE Air,9,cohoDUDA
+E8,SAL041,"Issaquah Dam, field negative",20240828,Water filter MCE,9,cohoDUDA
+F8,SAL042,"Issaquah Dam, by hand",20240828,Water filter MCE,9,cohoDUDA
+G8,SAL048,"Issaquah Dam, field negative",20240830,Water filter MCE,9,cohoDUDA
+H8,SAL049,"Issaquah Dam, by hand",20240830,Water filter MCE,9,cohoDUDA
+I8,Air031,Issaquah waterfall,20241017,Gelatin,9,cohoDUDA
+J8,Air032,Issaquah waterfall,20241017,Gelatin,9,cohoDUDA
+K8,Air033,Issaquah waterfall,20241017,PTFE,9,cohoDUDA
+L8,Air034,Issaquah waterfall,20241017,PTFE,9,cohoDUDA
+M8,Air035,Issaquah waterfall,20241017,MCE Air,9,cohoDUDA
+N8,Air036,Issaquah waterfall,20241017,MCE DI water,9,cohoDUDA
+O8,Air037,Issaquah park bridge,20241022,Gelatin,9,cohoDUDA
+P8,Air038,Issaquah park bridge,20241022,Gelatin,9,cohoDUDA
+A11,Air039,Issaquah park bridge,20241022,PTFE,9,cohoDUDA
+B11,Air040,Issaquah park bridge,20241022,PTFE,9,cohoDUDA
+C11,Air041,Issaquah park bridge,20241022,MCE Air,9,cohoDUDA
+D11,Air042,Issaquah park bridge,20241022,MCE DI water,9,cohoDUDA
+E11,Air043,Issaquah waterfall,20241024,Gelatin,9,cohoDUDA
+F11,Air044,Issaquah waterfall,20241024,Gelatin,9,cohoDUDA
+G11,Air045,Issaquah waterfall,20241024,PTFE,9,cohoDUDA
+H11,Air046,Issaquah waterfall,20241024,PTFE,9,cohoDUDA
+I11,Air047,Issaquah waterfall,20241024,MCE Air,9,cohoDUDA
+J11,Air048,Issaquah waterfall,20241024,MCE DI water,9,cohoDUDA
+K11,SAL092,"Issaquah Dam, field negative",20241017,Water filter MCE,9,cohoDUDA
+L11,SAL093,"Issaquah Dam, by hand",20241017,Water filter MCE,9,cohoDUDA
+M11,SAL100,"Issaquah Bridge, field negative",20241023,Water filter MCE,9,cohoDUDA
+N11,SAL101,"Issaquah Bridge, Confluence Park, by hand",20241023,Water filter MCE,9,cohoDUDA
+O11,SAL104,"Issaquah Dam, field negative",20241025,Water filter MCE,9,cohoDUDA
+P11,SAL105,"Issaquah Dam, by hand",20241025,Water filter MCE,9,cohoDUDA
+A14,Air049,Issaquah park bridge,20241028,Gelatin,9,cohoDUDA
+B14,Air050,Issaquah park bridge,20241028,Gelatin,9,cohoDUDA
+C14,Air051,Issaquah park bridge,20241028,PTFE,9,cohoDUDA
+D14,Air052,Issaquah park bridge,20241028,PTFE,9,cohoDUDA
+E14,Air053,Issaquah park bridge,20241028,MCE Air,9,cohoDUDA
+F14,Air054,Issaquah park bridge,20241028,MCE DI water,9,cohoDUDA
+G14,Air055,Issaquah waterfall,20241031,Gelatin,9,cohoDUDA
+H14,Air056,Issaquah waterfall,20241031,Gelatin,9,cohoDUDA
+I14,Air057,Issaquah waterfall,20241031,PTFE,9,cohoDUDA
+J14,Air058,Issaquah waterfall,20241031,PTFE,9,cohoDUDA
+K14,Air059,Issaquah waterfall,20241031,MCE Air,9,cohoDUDA
+L14,Air060,Issaquah waterfall,20241031,MCE DI water,9,cohoDUDA
+M14,SAL112,"Issaquah Bridge, field negative",20241028,Water filter MCE,9,cohoDUDA
+N14,SAL113,"Issaquah Bridge, Confluence Park, by hand",20241028,Water filter MCE,9,cohoDUDA
+O14,SAL116,"Issaquah Dam, field negative",20241031,Water filter MCE,9,cohoDUDA
+P14,SAL117,"Issaquah Dam, by hand",20241031,Water filter MCE,9,cohoDUDA
+A17,Air061,Issaquah park bridge,20241105,Gelatin,9,cohoDUDA
+B17,Air062,Issaquah park bridge,20241105,Gelatin,9,cohoDUDA
+C17,Air063,Issaquah park bridge,20241105,PTFE,9,cohoDUDA
+D17,Air064,Issaquah park bridge,20241105,PTFE,9,cohoDUDA
+E17,Air065,Issaquah park bridge,20241105,MCE Air,9,cohoDUDA
+F17,Air066,Issaquah park bridge,20241105,MCE DI water,9,cohoDUDA
+G17,Air067,Issaquah waterfall,20241107,Gelatin,9,cohoDUDA
+H17,Air068,Issaquah waterfall,20241107,Gelatin,9,cohoDUDA
+I17,Air069,Issaquah waterfall,20241107,PTFE,9,cohoDUDA
+J17,Air070,Issaquah waterfall,20241107,PTFE,9,cohoDUDA
+K17,Air071,Issaquah waterfall,20241107,MCE Air,9,cohoDUDA
+L17,Air072,Issaquah waterfall,20241107,MCE DI water,9,cohoDUDA
+M17,SAL124,"Issaquah Bridge, field negative",20241105,Water filter MCE,9,cohoDUDA
+N17,SAL125,"Issaquah Bridge, Confluence Park, by hand",20241105,Water filter MCE,9,cohoDUDA
+O17,SAL128,"Issaquah Dam, field negative",20241107,Water filter MCE,9,cohoDUDA
+P17,SAL129,"Issaquah Dam, by hand",20241107,Water filter MCE,9,cohoDUDA
+A20,Air073,Issaquah park bridge,20241112,Gelatin,9,cohoDUDA
+B20,Air074,Issaquah park bridge,20241112,Gelatin,9,cohoDUDA
+C20,Air075,Issaquah park bridge,20241112,PTFE,9,cohoDUDA
+D20,Air076,Issaquah park bridge,20241112,PTFE,9,cohoDUDA
+E20,Air077,Issaquah park bridge,20241112,MCE Air,9,cohoDUDA
+F20,Air078,Issaquah park bridge,20241112,MCE DI water,9,cohoDUDA
+G20,Air079,Issaquah waterfall,20241114,Gelatin,9,cohoDUDA
+H20,Air080,Issaquah waterfall,20241114,Gelatin,9,cohoDUDA
+I20,Air081,Issaquah waterfall,20241114,PTFE,9,cohoDUDA
+J20,Air082,Issaquah waterfall,20241114,PTFE,9,cohoDUDA
+K20,Air083,Issaquah waterfall,20241114,MCE Air,9,cohoDUDA
+L20,Air084,Issaquah waterfall,20241114,MCE DI water,9,cohoDUDA
+M20,SAL136,"Issaquah Bridge, field negative",20241112,Water filter MCE,9,cohoDUDA
+N20,SAL137,"Issaquah Bridge, Confluence Park, by hand",20241112,Water filter MCE,9,cohoDUDA
+O20,SAL140,"Issaquah Dam, field negative",20241114,Water filter MCE,9,cohoDUDA
+P20,SAL141,"Issaquah Dam, by hand",20241114,Water filter MCE,9,cohoDUDA
+A23,Air085,Issaquah park bridge,20241119,Gelatin,9,cohoDUDA
+B23,Air086,Issaquah park bridge,20241119,Gelatin,9,cohoDUDA
+C23,Air087,Issaquah park bridge,20241119,PTFE,9,cohoDUDA
+D23,Air088,Issaquah park bridge,20241119,PTFE,9,cohoDUDA
+E23,Air089,Issaquah park bridge,20241119,MCE Air,9,cohoDUDA
+F23,Air090,Issaquah park bridge,20241119,MCE DI water,9,cohoDUDA
+G23,Air091,Issaquah waterfall,20241121,Gelatin,9,cohoDUDA
+H23,Air092,Issaquah waterfall,20241121,Gelatin,9,cohoDUDA
+I23,Air093,Issaquah waterfall,20241121,PTFE,9,cohoDUDA
+J23,Air094,Issaquah waterfall,20241121,PTFE,9,cohoDUDA
+K23,Air095,Issaquah waterfall,20241121,MCE Air,9,cohoDUDA
+L23,Air096,Issaquah waterfall,20241121,MCE DI water,9,cohoDUDA
+M23,SAL148,"Issaquah Bridge, field negative",20241019,Water filter MCE,9,cohoDUDA
+N23,SAL149,"Issaquah Bridge, Confluence Park, by hand",20241019,Water filter MCE,9,cohoDUDA
+O23,SAL152,"Issaquah Dam, field negative",20241121,Water filter MCE,9,cohoDUDA
+P23,SAL153,"Issaquah Dam, by hand",20241121,Water filter MCE,9,cohoDUDA
+K3,Air013,Issaquah waterfall,20240826,Gelatin,9,cohoDUDA
+L3,Air014,Issaquah waterfall,20240826,Gelatin,9,cohoDUDA
+M3,Air015,Issaquah waterfall,20240826,PTFE,9,cohoDUDA
+N3,Air016,Issaquah waterfall,20240826,PTFE,9,cohoDUDA
+O3,Air017,Issaquah waterfall,20240826,MCE Air,9,cohoDUDA
+P3,Air018,Issaquah waterfall,20240826,MCE DI water,9,cohoDUDA
+I6,Air019,Issaquah waterfall,20240828,Gelatin,9,cohoDUDA
+J6,Air020,Issaquah waterfall,20240828,Gelatin,9,cohoDUDA
+K6,Air021,Issaquah waterfall,20240828,PTFE,9,cohoDUDA
+L6,Air022,Issaquah waterfall,20240828,PTFE,9,cohoDUDA
+M6,Air023,Issaquah waterfall,20240828,MCE Air,9,cohoDUDA
+N6,Air024,Issaquah waterfall,20240828,MCE DI water,9,cohoDUDA
+O6,Air025,Issaquah waterfall,20240830,MCE DI water,9,cohoDUDA
+P6,Air026,Issaquah waterfall,20240830,Gelatin,9,cohoDUDA
+A9,Air027,Issaquah waterfall,20240830,Gelatin,9,cohoDUDA
+B9,Air028,Issaquah waterfall,20240830,PTFE,9,cohoDUDA
+C9,Air029,Issaquah waterfall,20240830,PTFE,9,cohoDUDA
+D9,Air030,Issaquah waterfall,20240830,MCE Air,9,cohoDUDA
+E9,SAL041,"Issaquah Dam, field negative",20240828,Water filter MCE,9,cohoDUDA
+F9,SAL042,"Issaquah Dam, by hand",20240828,Water filter MCE,9,cohoDUDA
+G9,SAL048,"Issaquah Dam, field negative",20240830,Water filter MCE,9,cohoDUDA
+H9,SAL049,"Issaquah Dam, by hand",20240830,Water filter MCE,9,cohoDUDA
+I9,Air031,Issaquah waterfall,20241017,Gelatin,9,cohoDUDA
+J9,Air032,Issaquah waterfall,20241017,Gelatin,9,cohoDUDA
+K9,Air033,Issaquah waterfall,20241017,PTFE,9,cohoDUDA
+L9,Air034,Issaquah waterfall,20241017,PTFE,9,cohoDUDA
+M9,Air035,Issaquah waterfall,20241017,MCE Air,9,cohoDUDA
+N9,Air036,Issaquah waterfall,20241017,MCE DI water,9,cohoDUDA
+O9,Air037,Issaquah park bridge,20241022,Gelatin,9,cohoDUDA
+P9,Air038,Issaquah park bridge,20241022,Gelatin,9,cohoDUDA
+A12,Air039,Issaquah park bridge,20241022,PTFE,9,cohoDUDA
+B12,Air040,Issaquah park bridge,20241022,PTFE,9,cohoDUDA
+C12,Air041,Issaquah park bridge,20241022,MCE Air,9,cohoDUDA
+D12,Air042,Issaquah park bridge,20241022,MCE DI water,9,cohoDUDA
+E12,Air043,Issaquah waterfall,20241024,Gelatin,9,cohoDUDA
+F12,Air044,Issaquah waterfall,20241024,Gelatin,9,cohoDUDA
+G12,Air045,Issaquah waterfall,20241024,PTFE,9,cohoDUDA
+H12,Air046,Issaquah waterfall,20241024,PTFE,9,cohoDUDA
+I12,Air047,Issaquah waterfall,20241024,MCE Air,9,cohoDUDA
+J12,Air048,Issaquah waterfall,20241024,MCE DI water,9,cohoDUDA
+K12,SAL092,"Issaquah Dam, field negative",20241017,Water filter MCE,9,cohoDUDA
+L12,SAL093,"Issaquah Dam, by hand",20241017,Water filter MCE,9,cohoDUDA
+M12,SAL100,"Issaquah Bridge, field negative",20241023,Water filter MCE,9,cohoDUDA
+N12,SAL101,"Issaquah Bridge, Confluence Park, by hand",20241023,Water filter MCE,9,cohoDUDA
+O12,SAL104,"Issaquah Dam, field negative",20241025,Water filter MCE,9,cohoDUDA
+P12,SAL105,"Issaquah Dam, by hand",20241025,Water filter MCE,9,cohoDUDA
+A15,Air049,Issaquah park bridge,20241028,Gelatin,9,cohoDUDA
+B15,Air050,Issaquah park bridge,20241028,Gelatin,9,cohoDUDA
+C15,Air051,Issaquah park bridge,20241028,PTFE,9,cohoDUDA
+D15,Air052,Issaquah park bridge,20241028,PTFE,9,cohoDUDA
+E15,Air053,Issaquah park bridge,20241028,MCE Air,9,cohoDUDA
+F15,Air054,Issaquah park bridge,20241028,MCE DI water,9,cohoDUDA
+G15,Air055,Issaquah waterfall,20241031,Gelatin,9,cohoDUDA
+H15,Air056,Issaquah waterfall,20241031,Gelatin,9,cohoDUDA
+I15,Air057,Issaquah waterfall,20241031,PTFE,9,cohoDUDA
+J15,Air058,Issaquah waterfall,20241031,PTFE,9,cohoDUDA
+K15,Air059,Issaquah waterfall,20241031,MCE Air,9,cohoDUDA
+L15,Air060,Issaquah waterfall,20241031,MCE DI water,9,cohoDUDA
+M15,SAL112,"Issaquah Bridge, field negative",20241028,Water filter MCE,9,cohoDUDA
+N15,SAL113,"Issaquah Bridge, Confluence Park, by hand",20241028,Water filter MCE,9,cohoDUDA
+O15,SAL116,"Issaquah Dam, field negative",20241031,Water filter MCE,9,cohoDUDA
+P15,SAL117,"Issaquah Dam, by hand",20241031,Water filter MCE,9,cohoDUDA
+A18,Air061,Issaquah park bridge,20241105,Gelatin,9,cohoDUDA
+B18,Air062,Issaquah park bridge,20241105,Gelatin,9,cohoDUDA
+C18,Air063,Issaquah park bridge,20241105,PTFE,9,cohoDUDA
+D18,Air064,Issaquah park bridge,20241105,PTFE,9,cohoDUDA
+E18,Air065,Issaquah park bridge,20241105,MCE Air,9,cohoDUDA
+F18,Air066,Issaquah park bridge,20241105,MCE DI water,9,cohoDUDA
+G18,Air067,Issaquah waterfall,20241107,Gelatin,9,cohoDUDA
+H18,Air068,Issaquah waterfall,20241107,Gelatin,9,cohoDUDA
+I18,Air069,Issaquah waterfall,20241107,PTFE,9,cohoDUDA
+J18,Air070,Issaquah waterfall,20241107,PTFE,9,cohoDUDA
+K18,Air071,Issaquah waterfall,20241107,MCE Air,9,cohoDUDA
+L18,Air072,Issaquah waterfall,20241107,MCE DI water,9,cohoDUDA
+M18,SAL124,"Issaquah Bridge, field negative",20241105,Water filter MCE,9,cohoDUDA
+N18,SAL125,"Issaquah Bridge, Confluence Park, by hand",20241105,Water filter MCE,9,cohoDUDA
+O18,SAL128,"Issaquah Dam, field negative",20241107,Water filter MCE,9,cohoDUDA
+P18,SAL129,"Issaquah Dam, by hand",20241107,Water filter MCE,9,cohoDUDA
+A21,Air073,Issaquah park bridge,20241112,Gelatin,9,cohoDUDA
+B21,Air074,Issaquah park bridge,20241112,Gelatin,9,cohoDUDA
+C21,Air075,Issaquah park bridge,20241112,PTFE,9,cohoDUDA
+D21,Air076,Issaquah park bridge,20241112,PTFE,9,cohoDUDA
+E21,Air077,Issaquah park bridge,20241112,MCE Air,9,cohoDUDA
+F21,Air078,Issaquah park bridge,20241112,MCE DI water,9,cohoDUDA
+G21,Air079,Issaquah waterfall,20241114,Gelatin,9,cohoDUDA
+H21,Air080,Issaquah waterfall,20241114,Gelatin,9,cohoDUDA
+I21,Air081,Issaquah waterfall,20241114,PTFE,9,cohoDUDA
+J21,Air082,Issaquah waterfall,20241114,PTFE,9,cohoDUDA
+K21,Air083,Issaquah waterfall,20241114,MCE Air,9,cohoDUDA
+L21,Air084,Issaquah waterfall,20241114,MCE DI water,9,cohoDUDA
+M21,SAL136,"Issaquah Bridge, field negative",20241112,Water filter MCE,9,cohoDUDA
+N21,SAL137,"Issaquah Bridge, Confluence Park, by hand",20241112,Water filter MCE,9,cohoDUDA
+O21,SAL140,"Issaquah Dam, field negative",20241114,Water filter MCE,9,cohoDUDA
+P21,SAL141,"Issaquah Dam, by hand",20241114,Water filter MCE,9,cohoDUDA
+A24,Air085,Issaquah park bridge,20241119,Gelatin,9,cohoDUDA
+B24,Air086,Issaquah park bridge,20241119,Gelatin,9,cohoDUDA
+C24,Air087,Issaquah park bridge,20241119,PTFE,9,cohoDUDA
+D24,Air088,Issaquah park bridge,20241119,PTFE,9,cohoDUDA
+E24,Air089,Issaquah park bridge,20241119,MCE Air,9,cohoDUDA
+F24,Air090,Issaquah park bridge,20241119,MCE DI water,9,cohoDUDA
+G24,Air091,Issaquah waterfall,20241121,Gelatin,9,cohoDUDA
+H24,Air092,Issaquah waterfall,20241121,Gelatin,9,cohoDUDA
+I24,Air093,Issaquah waterfall,20241121,PTFE,9,cohoDUDA
+J24,Air094,Issaquah waterfall,20241121,PTFE,9,cohoDUDA
+K24,Air095,Issaquah waterfall,20241121,MCE Air,9,cohoDUDA
+L24,Air096,Issaquah waterfall,20241121,MCE DI water,9,cohoDUDA
+M24,SAL148,"Issaquah Bridge, field negative",20241019,Water filter MCE,9,cohoDUDA
+N24,SAL149,"Issaquah Bridge, Confluence Park, by hand",20241019,Water filter MCE,9,cohoDUDA
+O24,SAL152,"Issaquah Dam, field negative",20241121,Water filter MCE,9,cohoDUDA
+P24,SAL153,"Issaquah Dam, by hand",20241121,Water filter MCE,9,cohoDUDA

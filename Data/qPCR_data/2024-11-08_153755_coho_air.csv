@@ -1,0 +1,102 @@
+Well,Omit,Sample,Target,Dye,Task,Cq,Quantity
+A1,false,chinook_shel,chi1269,SYBR,Standard,21.829266,10000
+A2,false,chinook_shel,chi1269,SYBR,Unknown,28.555832,68.98206
+A4,false,cohoDUDA,cocytb,SYBR,Standard,21.057266,10000
+A5,false,cohoDUDA,cocytb,SYBR,Unknown,30.313953,23.589403
+A7,false,sockeyeDUDA,seco3,SYBR,Standard,19.892511,10000
+A8,false,sockeyeDUDA,seco3,SYBR,Unknown,32.03568,3.3685732
+A10,false,chinookDUDA,ckco3,SYBR,Standard,22.098125,10000
+A11,false,chinookDUDA,ckco3,SYBR,Unknown,33.53323,4.658394
+B1,false,chinook_shel,chi1269,SYBR,Standard,25.02564,1000
+B2,false,chinook_shel,chi1269,SYBR,Unknown,Undetermined,
+B4,false,cohoDUDA,cocytb,SYBR,Standard,24.39733,1000
+B5,false,cohoDUDA,cocytb,SYBR,Unknown,Undetermined,
+B7,false,sockeyeDUDA,seco3,SYBR,Standard,23.234982,1000
+B8,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+B10,false,chinookDUDA,ckco3,SYBR,Standard,25.374228,1000
+B11,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+C1,false,chinook_shel,chi1269,SYBR,Standard,28.222826,100
+C2,false,chinook_shel,chi1269,SYBR,Unknown,22.139845,5176.58
+C4,false,cohoDUDA,cocytb,SYBR,Standard,27.85039,100
+C5,false,cohoDUDA,cocytb,SYBR,Unknown,23.090712,2415.295
+C7,false,sockeyeDUDA,seco3,SYBR,Standard,26.71109,100
+C8,false,sockeyeDUDA,seco3,SYBR,Unknown,27.995941,47.636772
+C10,false,chinookDUDA,ckco3,SYBR,Standard,28.697287,100
+C11,false,chinookDUDA,ckco3,SYBR,Unknown,25.063894,1297.7604
+D1,false,chinook_shel,chi1269,SYBR,Standard,31.652752,10
+D2,false,chinook_shel,chi1269,SYBR,Unknown,Undetermined,
+D4,false,cohoDUDA,cocytb,SYBR,Standard,31.545034,10
+D5,false,cohoDUDA,cocytb,SYBR,Unknown,Undetermined,
+D7,false,sockeyeDUDA,seco3,SYBR,Standard,30.839756,10
+D8,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+D10,false,chinookDUDA,ckco3,SYBR,Standard,32.64951,10
+D11,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+E1,false,chinook_shel,chi1269,SYBR,Standard,Undetermined,1
+E2,false,chinook_shel,chi1269,SYBR,Unknown,22.899296,3105.0288
+E4,false,cohoDUDA,cocytb,SYBR,Standard,35.449688,1
+E5,false,cohoDUDA,cocytb,SYBR,Unknown,23.35115,2044.0387
+E7,false,sockeyeDUDA,seco3,SYBR,Standard,33.646862,1
+E8,false,sockeyeDUDA,seco3,SYBR,Unknown,33.632095,1.182483
+E10,false,chinookDUDA,ckco3,SYBR,Standard,35.780754,1
+E11,false,chinookDUDA,ckco3,SYBR,Unknown,27.684397,227.3518
+F1,false,chinook_shel,chi1269,SYBR,Unknown,Undetermined,
+F2,false,chinook_shel,chi1269,SYBR,Negative Control,Undetermined,
+F4,false,cohoDUDA,cocytb,SYBR,Unknown,Undetermined,
+F5,false,cohoDUDA,cocytb,SYBR,Negative Control,Undetermined,
+F7,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+F8,false,sockeyeDUDA,seco3,SYBR,Negative Control,Undetermined,
+F10,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+F11,false,chinookDUDA,ckco3,SYBR,Negative Control,Undetermined,
+G1,false,chinook_shel,chi1269,SYBR,Unknown,Undetermined,
+G2,false,chinook_shel,chi1269,SYBR,Negative Control,Undetermined,
+G4,false,cohoDUDA,cocytb,SYBR,Unknown,Undetermined,
+G5,false,cohoDUDA,cocytb,SYBR,Negative Control,Undetermined,
+G7,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+G8,false,sockeyeDUDA,seco3,SYBR,Negative Control,Undetermined,
+G10,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+G11,false,chinookDUDA,ckco3,SYBR,Negative Control,Undetermined,
+H1,false,chinook_shel,chi1269,SYBR,Unknown,Undetermined,
+H2,false,chinook_shel,chi1269,SYBR,Negative Control,Undetermined,
+H4,false,cohoDUDA,cocytb,SYBR,Unknown,Undetermined,
+H5,false,cohoDUDA,cocytb,SYBR,Negative Control,Undetermined,
+H7,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+H8,false,sockeyeDUDA,seco3,SYBR,Negative Control,Undetermined,
+H10,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+H11,false,chinookDUDA,ckco3,SYBR,Negative Control,Undetermined,
+I1,false,chinook_shel,chi1269,SYBR,Unknown,Undetermined,
+I4,false,cohoDUDA,cocytb,SYBR,Unknown,Undetermined,
+I7,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+I10,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+J1,false,chinook_shel,chi1269,SYBR,Unknown,Undetermined,
+J4,false,cohoDUDA,cocytb,SYBR,Unknown,Undetermined,
+J7,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+J10,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+K1,false,chinook_shel,chi1269,SYBR,Unknown,31.986992,6.852582
+K4,false,cohoDUDA,cocytb,SYBR,Unknown,33.143547,3.8479662
+K7,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+K10,false,chinookDUDA,ckco3,SYBR,Unknown,35.31744,1.4228659
+L1,false,chinook_shel,chi1269,SYBR,Unknown,Undetermined,
+L2,false,coho_shel,chi1269,SYBR,Standard,20.52255,10000
+L4,false,cohoDUDA,cocytb,SYBR,Unknown,35.615967,0.7891295
+L7,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+L10,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+M1,false,chinook_shel,chi1269,SYBR,Unknown,Undetermined,
+M2,false,coho_shel,chi1269,SYBR,Standard,23.945984,1000
+M4,false,cohoDUDA,cocytb,SYBR,Unknown,Undetermined,
+M7,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+M10,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+N1,false,chinook_shel,chi1269,SYBR,Unknown,Undetermined,
+N2,false,coho_shel,chi1269,SYBR,Standard,27.761267,100
+N4,false,cohoDUDA,cocytb,SYBR,Unknown,Undetermined,
+N7,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+N10,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+O1,false,chinook_shel,chi1269,SYBR,Unknown,37.281937,0.19418383
+O2,false,coho_shel,chi1269,SYBR,Standard,31.71376,10
+O4,false,cohoDUDA,cocytb,SYBR,Unknown,Undetermined,
+O7,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+O10,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,
+P1,false,chinook_shel,chi1269,SYBR,Unknown,Undetermined,
+P2,false,coho_shel,chi1269,SYBR,Standard,34.520695,1
+P4,false,cohoDUDA,cocytb,SYBR,Unknown,Undetermined,
+P7,false,sockeyeDUDA,seco3,SYBR,Unknown,Undetermined,
+P10,false,chinookDUDA,ckco3,SYBR,Unknown,Undetermined,

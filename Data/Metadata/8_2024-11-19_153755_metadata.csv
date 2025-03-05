@@ -1,0 +1,343 @@
+Well,Sample,Location,Date,FilterType,Plate_idx,Target
+H1,Air001,Wallace 156A,20240816,Gelatin,8,chinookDUDA
+H2,Air002,Wallace 156A,20240816,Gelatin,8,chinookDUDA
+H3,Air003,Wallace 156A,20240816,PTFE,8,chinookDUDA
+H4,Air004,Wallace 156A,20240816,PTFE,8,chinookDUDA
+H5,Air005,Wallace 156A,20240816,MCE Air,8,chinookDUDA
+H6,Air006,Wallace 156A,20240816,MCE DI water,8,chinookDUDA
+I1,Air007,Fisheries pond,20240819,Gelatin,8,chinookDUDA
+I2,Air008,Fisheries pond,20240819,Gelatin,8,chinookDUDA
+I3,Air009,Fisheries pond,20240819,PTFE,8,chinookDUDA
+J1,Air010,Fisheries pond,20240819,PTFE,8,chinookDUDA
+J2,Air011,Fisheries pond,20240819,MCE Air,8,chinookDUDA
+J3,Air012,Fisheries pond,20240819,MCE DI water,8,chinookDUDA
+K1,Air013,Issaquah waterfall,20240826,Gelatin,8,chinookDUDA
+L1,Air014,Issaquah waterfall,20240826,Gelatin,8,chinookDUDA
+M1,Air015,Issaquah waterfall,20240826,PTFE,8,chinookDUDA
+N1,Air016,Issaquah waterfall,20240826,PTFE,8,chinookDUDA
+O1,Air017,Issaquah waterfall,20240826,MCE Air,8,chinookDUDA
+P1,Air018,Issaquah waterfall,20240826,MCE DI water,8,chinookDUDA
+I4,Air019,Issaquah waterfall,20240828,Gelatin,8,chinookDUDA
+J4,Air020,Issaquah waterfall,20240828,Gelatin,8,chinookDUDA
+K4,Air021,Issaquah waterfall,20240828,PTFE,8,chinookDUDA
+L4,Air022,Issaquah waterfall,20240828,PTFE,8,chinookDUDA
+M4,Air023,Issaquah waterfall,20240828,MCE Air,8,chinookDUDA
+N4,Air024,Issaquah waterfall,20240828,MCE DI water,8,chinookDUDA
+O4,Air025,Issaquah waterfall,20240830,MCE DI water,8,chinookDUDA
+P4,Air026,Issaquah waterfall,20240830,Gelatin,8,chinookDUDA
+A7,Air027,Issaquah waterfall,20240830,Gelatin,8,chinookDUDA
+B7,Air028,Issaquah waterfall,20240830,PTFE,8,chinookDUDA
+C7,Air029,Issaquah waterfall,20240830,PTFE,8,chinookDUDA
+D7,Air030,Issaquah waterfall,20240830,MCE Air,8,chinookDUDA
+E7,SAL041,"Issaquah Dam, field negative",20240828,Water filter MCE,8,chinookDUDA
+F7,SAL042,"Issaquah Dam, by hand",20240828,Water filter MCE,8,chinookDUDA
+G7,SAL048,"Issaquah Dam, field negative",20240830,Water filter MCE,8,chinookDUDA
+H7,SAL049,"Issaquah Dam, by hand",20240830,Water filter MCE,8,chinookDUDA
+I7,Air031,Issaquah waterfall,20241017,Gelatin,8,chinookDUDA
+J7,Air032,Issaquah waterfall,20241017,Gelatin,8,chinookDUDA
+K7,Air033,Issaquah waterfall,20241017,PTFE,8,chinookDUDA
+L7,Air034,Issaquah waterfall,20241017,PTFE,8,chinookDUDA
+M7,Air035,Issaquah waterfall,20241017,MCE Air,8,chinookDUDA
+N7,Air036,Issaquah waterfall,20241017,MCE DI water,8,chinookDUDA
+O7,Air037,Issaquah park bridge,20241022,Gelatin,8,chinookDUDA
+P7,Air038,Issaquah park bridge,20241022,Gelatin,8,chinookDUDA
+A10,Air039,Issaquah park bridge,20241022,PTFE,8,chinookDUDA
+B10,Air040,Issaquah park bridge,20241022,PTFE,8,chinookDUDA
+C10,Air041,Issaquah park bridge,20241022,MCE Air,8,chinookDUDA
+D10,Air042,Issaquah park bridge,20241022,MCE DI water,8,chinookDUDA
+E10,Air043,Issaquah waterfall,20241024,Gelatin,8,chinookDUDA
+F10,Air044,Issaquah waterfall,20241024,Gelatin,8,chinookDUDA
+G10,Air045,Issaquah waterfall,20241024,PTFE,8,chinookDUDA
+H10,Air046,Issaquah waterfall,20241024,PTFE,8,chinookDUDA
+I10,Air047,Issaquah waterfall,20241024,MCE Air,8,chinookDUDA
+J10,Air048,Issaquah waterfall,20241024,MCE DI water,8,chinookDUDA
+K10,SAL092,"Issaquah Dam, field negative",20241017,Water filter MCE,8,chinookDUDA
+L10,SAL093,"Issaquah Dam, by hand",20241017,Water filter MCE,8,chinookDUDA
+M10,SAL100,"Issaquah Bridge, field negative",20241023,Water filter MCE,8,chinookDUDA
+N10,SAL101,"Issaquah Bridge, Confluence Park, by hand",20241023,Water filter MCE,8,chinookDUDA
+O10,SAL104,"Issaquah Dam, field negative",20241025,Water filter MCE,8,chinookDUDA
+P10,SAL105,"Issaquah Dam, by hand",20241025,Water filter MCE,8,chinookDUDA
+A13,Air049,Issaquah park bridge,20241028,Gelatin,8,chinookDUDA
+B13,Air050,Issaquah park bridge,20241028,Gelatin,8,chinookDUDA
+C13,Air051,Issaquah park bridge,20241028,PTFE,8,chinookDUDA
+D13,Air052,Issaquah park bridge,20241028,PTFE,8,chinookDUDA
+E13,Air053,Issaquah park bridge,20241028,MCE Air,8,chinookDUDA
+F13,Air054,Issaquah park bridge,20241028,MCE DI water,8,chinookDUDA
+G13,Air055,Issaquah waterfall,20241031,Gelatin,8,chinookDUDA
+H13,Air056,Issaquah waterfall,20241031,Gelatin,8,chinookDUDA
+I13,Air057,Issaquah waterfall,20241031,PTFE,8,chinookDUDA
+J13,Air058,Issaquah waterfall,20241031,PTFE,8,chinookDUDA
+K13,Air059,Issaquah waterfall,20241031,MCE Air,8,chinookDUDA
+L13,Air060,Issaquah waterfall,20241031,MCE DI water,8,chinookDUDA
+M13,SAL112,"Issaquah Bridge, field negative",20241028,Water filter MCE,8,chinookDUDA
+N13,SAL113,"Issaquah Bridge, Confluence Park, by hand",20241028,Water filter MCE,8,chinookDUDA
+O13,SAL116,"Issaquah Dam, field negative",20241031,Water filter MCE,8,chinookDUDA
+P13,SAL117,"Issaquah Dam, by hand",20241031,Water filter MCE,8,chinookDUDA
+A16,Air061,Issaquah park bridge,20241105,Gelatin,8,chinookDUDA
+B16,Air062,Issaquah park bridge,20241105,Gelatin,8,chinookDUDA
+C16,Air063,Issaquah park bridge,20241105,PTFE,8,chinookDUDA
+D16,Air064,Issaquah park bridge,20241105,PTFE,8,chinookDUDA
+E16,Air065,Issaquah park bridge,20241105,MCE Air,8,chinookDUDA
+F16,Air066,Issaquah park bridge,20241105,MCE DI water,8,chinookDUDA
+G16,Air067,Issaquah waterfall,20241107,Gelatin,8,chinookDUDA
+H16,Air068,Issaquah waterfall,20241107,Gelatin,8,chinookDUDA
+I16,Air069,Issaquah waterfall,20241107,PTFE,8,chinookDUDA
+J16,Air070,Issaquah waterfall,20241107,PTFE,8,chinookDUDA
+K16,Air071,Issaquah waterfall,20241107,MCE Air,8,chinookDUDA
+L16,Air072,Issaquah waterfall,20241107,MCE DI water,8,chinookDUDA
+M16,SAL124,"Issaquah Bridge, field negative",20241105,Water filter MCE,8,chinookDUDA
+N16,SAL125,"Issaquah Bridge, Confluence Park, by hand",20241105,Water filter MCE,8,chinookDUDA
+O16,SAL128,"Issaquah Dam, field negative",20241107,Water filter MCE,8,chinookDUDA
+P16,SAL129,"Issaquah Dam, by hand",20241107,Water filter MCE,8,chinookDUDA
+A19,Air073,Issaquah park bridge,20241112,Gelatin,8,chinookDUDA
+B19,Air074,Issaquah park bridge,20241112,Gelatin,8,chinookDUDA
+C19,Air075,Issaquah park bridge,20241112,PTFE,8,chinookDUDA
+D19,Air076,Issaquah park bridge,20241112,PTFE,8,chinookDUDA
+E19,Air077,Issaquah park bridge,20241112,MCE Air,8,chinookDUDA
+F19,Air078,Issaquah park bridge,20241112,MCE DI water,8,chinookDUDA
+G19,Air079,Issaquah waterfall,20241114,Gelatin,8,chinookDUDA
+H19,Air080,Issaquah waterfall,20241114,Gelatin,8,chinookDUDA
+I19,Air081,Issaquah waterfall,20241114,PTFE,8,chinookDUDA
+J19,Air082,Issaquah waterfall,20241114,PTFE,8,chinookDUDA
+K19,Air083,Issaquah waterfall,20241114,MCE Air,8,chinookDUDA
+L19,Air084,Issaquah waterfall,20241114,MCE DI water,8,chinookDUDA
+M19,SAL136,"Issaquah Bridge, field negative",20241112,Water filter MCE,8,chinookDUDA
+N19,SAL137,"Issaquah Bridge, Confluence Park, by hand",20241112,Water filter MCE,8,chinookDUDA
+O19,SAL140,"Issaquah Dam, field negative",20241114,Water filter MCE,8,chinookDUDA
+P19,SAL141,"Issaquah Dam, by hand",20241114,Water filter MCE,8,chinookDUDA
+A22,Air085,Issaquah park bridge,20241119,Gelatin,8,chinookDUDA
+B22,Air086,Issaquah park bridge,20241119,Gelatin,8,chinookDUDA
+C22,Air087,Issaquah park bridge,20241119,PTFE,8,chinookDUDA
+D22,Air088,Issaquah park bridge,20241119,PTFE,8,chinookDUDA
+E22,Air089,Issaquah park bridge,20241119,MCE Air,8,chinookDUDA
+F22,Air090,Issaquah park bridge,20241119,MCE DI water,8,chinookDUDA
+G22,Air091,Issaquah waterfall,20241121,Gelatin,8,chinookDUDA
+H22,Air092,Issaquah waterfall,20241121,Gelatin,8,chinookDUDA
+I22,Air093,Issaquah waterfall,20241121,PTFE,8,chinookDUDA
+J22,Air094,Issaquah waterfall,20241121,PTFE,8,chinookDUDA
+K22,Air095,Issaquah waterfall,20241121,MCE Air,8,chinookDUDA
+L22,Air096,Issaquah waterfall,20241121,MCE DI water,8,chinookDUDA
+M22,SAL148,"Issaquah Bridge, field negative",20241019,Water filter MCE,8,chinookDUDA
+N22,SAL149,"Issaquah Bridge, Confluence Park, by hand",20241019,Water filter MCE,8,chinookDUDA
+O22,SAL152,"Issaquah Dam, field negative",20241121,Water filter MCE,8,chinookDUDA
+P22,SAL153,"Issaquah Dam, by hand",20241121,Water filter MCE,8,chinookDUDA
+K2,Air013,Issaquah waterfall,20240826,Gelatin,8,chinookDUDA
+L2,Air014,Issaquah waterfall,20240826,Gelatin,8,chinookDUDA
+M2,Air015,Issaquah waterfall,20240826,PTFE,8,chinookDUDA
+N2,Air016,Issaquah waterfall,20240826,PTFE,8,chinookDUDA
+O2,Air017,Issaquah waterfall,20240826,MCE Air,8,chinookDUDA
+P2,Air018,Issaquah waterfall,20240826,MCE DI water,8,chinookDUDA
+I5,Air019,Issaquah waterfall,20240828,Gelatin,8,chinookDUDA
+J5,Air020,Issaquah waterfall,20240828,Gelatin,8,chinookDUDA
+K5,Air021,Issaquah waterfall,20240828,PTFE,8,chinookDUDA
+L5,Air022,Issaquah waterfall,20240828,PTFE,8,chinookDUDA
+M5,Air023,Issaquah waterfall,20240828,MCE Air,8,chinookDUDA
+N5,Air024,Issaquah waterfall,20240828,MCE DI water,8,chinookDUDA
+O5,Air025,Issaquah waterfall,20240830,MCE DI water,8,chinookDUDA
+P5,Air026,Issaquah waterfall,20240830,Gelatin,8,chinookDUDA
+A8,Air027,Issaquah waterfall,20240830,Gelatin,8,chinookDUDA
+B8,Air028,Issaquah waterfall,20240830,PTFE,8,chinookDUDA
+C8,Air029,Issaquah waterfall,20240830,PTFE,8,chinookDUDA
+D8,Air030,Issaquah waterfall,20240830,MCE Air,8,chinookDUDA
+E8,SAL041,"Issaquah Dam, field negative",20240828,Water filter MCE,8,chinookDUDA
+F8,SAL042,"Issaquah Dam, by hand",20240828,Water filter MCE,8,chinookDUDA
+G8,SAL048,"Issaquah Dam, field negative",20240830,Water filter MCE,8,chinookDUDA
+H8,SAL049,"Issaquah Dam, by hand",20240830,Water filter MCE,8,chinookDUDA
+I8,Air031,Issaquah waterfall,20241017,Gelatin,8,chinookDUDA
+J8,Air032,Issaquah waterfall,20241017,Gelatin,8,chinookDUDA
+K8,Air033,Issaquah waterfall,20241017,PTFE,8,chinookDUDA
+L8,Air034,Issaquah waterfall,20241017,PTFE,8,chinookDUDA
+M8,Air035,Issaquah waterfall,20241017,MCE Air,8,chinookDUDA
+N8,Air036,Issaquah waterfall,20241017,MCE DI water,8,chinookDUDA
+O8,Air037,Issaquah park bridge,20241022,Gelatin,8,chinookDUDA
+P8,Air038,Issaquah park bridge,20241022,Gelatin,8,chinookDUDA
+A11,Air039,Issaquah park bridge,20241022,PTFE,8,chinookDUDA
+B11,Air040,Issaquah park bridge,20241022,PTFE,8,chinookDUDA
+C11,Air041,Issaquah park bridge,20241022,MCE Air,8,chinookDUDA
+D11,Air042,Issaquah park bridge,20241022,MCE DI water,8,chinookDUDA
+E11,Air043,Issaquah waterfall,20241024,Gelatin,8,chinookDUDA
+F11,Air044,Issaquah waterfall,20241024,Gelatin,8,chinookDUDA
+G11,Air045,Issaquah waterfall,20241024,PTFE,8,chinookDUDA
+H11,Air046,Issaquah waterfall,20241024,PTFE,8,chinookDUDA
+I11,Air047,Issaquah waterfall,20241024,MCE Air,8,chinookDUDA
+J11,Air048,Issaquah waterfall,20241024,MCE DI water,8,chinookDUDA
+K11,SAL092,"Issaquah Dam, field negative",20241017,Water filter MCE,8,chinookDUDA
+L11,SAL093,"Issaquah Dam, by hand",20241017,Water filter MCE,8,chinookDUDA
+M11,SAL100,"Issaquah Bridge, field negative",20241023,Water filter MCE,8,chinookDUDA
+N11,SAL101,"Issaquah Bridge, Confluence Park, by hand",20241023,Water filter MCE,8,chinookDUDA
+O11,SAL104,"Issaquah Dam, field negative",20241025,Water filter MCE,8,chinookDUDA
+P11,SAL105,"Issaquah Dam, by hand",20241025,Water filter MCE,8,chinookDUDA
+A14,Air049,Issaquah park bridge,20241028,Gelatin,8,chinookDUDA
+B14,Air050,Issaquah park bridge,20241028,Gelatin,8,chinookDUDA
+C14,Air051,Issaquah park bridge,20241028,PTFE,8,chinookDUDA
+D14,Air052,Issaquah park bridge,20241028,PTFE,8,chinookDUDA
+E14,Air053,Issaquah park bridge,20241028,MCE Air,8,chinookDUDA
+F14,Air054,Issaquah park bridge,20241028,MCE DI water,8,chinookDUDA
+G14,Air055,Issaquah waterfall,20241031,Gelatin,8,chinookDUDA
+H14,Air056,Issaquah waterfall,20241031,Gelatin,8,chinookDUDA
+I14,Air057,Issaquah waterfall,20241031,PTFE,8,chinookDUDA
+J14,Air058,Issaquah waterfall,20241031,PTFE,8,chinookDUDA
+K14,Air059,Issaquah waterfall,20241031,MCE Air,8,chinookDUDA
+L14,Air060,Issaquah waterfall,20241031,MCE DI water,8,chinookDUDA
+M14,SAL112,"Issaquah Bridge, field negative",20241028,Water filter MCE,8,chinookDUDA
+N14,SAL113,"Issaquah Bridge, Confluence Park, by hand",20241028,Water filter MCE,8,chinookDUDA
+O14,SAL116,"Issaquah Dam, field negative",20241031,Water filter MCE,8,chinookDUDA
+P14,SAL117,"Issaquah Dam, by hand",20241031,Water filter MCE,8,chinookDUDA
+A17,Air061,Issaquah park bridge,20241105,Gelatin,8,chinookDUDA
+B17,Air062,Issaquah park bridge,20241105,Gelatin,8,chinookDUDA
+C17,Air063,Issaquah park bridge,20241105,PTFE,8,chinookDUDA
+D17,Air064,Issaquah park bridge,20241105,PTFE,8,chinookDUDA
+E17,Air065,Issaquah park bridge,20241105,MCE Air,8,chinookDUDA
+F17,Air066,Issaquah park bridge,20241105,MCE DI water,8,chinookDUDA
+G17,Air067,Issaquah waterfall,20241107,Gelatin,8,chinookDUDA
+H17,Air068,Issaquah waterfall,20241107,Gelatin,8,chinookDUDA
+I17,Air069,Issaquah waterfall,20241107,PTFE,8,chinookDUDA
+J17,Air070,Issaquah waterfall,20241107,PTFE,8,chinookDUDA
+K17,Air071,Issaquah waterfall,20241107,MCE Air,8,chinookDUDA
+L17,Air072,Issaquah waterfall,20241107,MCE DI water,8,chinookDUDA
+M17,SAL124,"Issaquah Bridge, field negative",20241105,Water filter MCE,8,chinookDUDA
+N17,SAL125,"Issaquah Bridge, Confluence Park, by hand",20241105,Water filter MCE,8,chinookDUDA
+O17,SAL128,"Issaquah Dam, field negative",20241107,Water filter MCE,8,chinookDUDA
+P17,SAL129,"Issaquah Dam, by hand",20241107,Water filter MCE,8,chinookDUDA
+A20,Air073,Issaquah park bridge,20241112,Gelatin,8,chinookDUDA
+B20,Air074,Issaquah park bridge,20241112,Gelatin,8,chinookDUDA
+C20,Air075,Issaquah park bridge,20241112,PTFE,8,chinookDUDA
+D20,Air076,Issaquah park bridge,20241112,PTFE,8,chinookDUDA
+E20,Air077,Issaquah park bridge,20241112,MCE Air,8,chinookDUDA
+F20,Air078,Issaquah park bridge,20241112,MCE DI water,8,chinookDUDA
+G20,Air079,Issaquah waterfall,20241114,Gelatin,8,chinookDUDA
+H20,Air080,Issaquah waterfall,20241114,Gelatin,8,chinookDUDA
+I20,Air081,Issaquah waterfall,20241114,PTFE,8,chinookDUDA
+J20,Air082,Issaquah waterfall,20241114,PTFE,8,chinookDUDA
+K20,Air083,Issaquah waterfall,20241114,MCE Air,8,chinookDUDA
+L20,Air084,Issaquah waterfall,20241114,MCE DI water,8,chinookDUDA
+M20,SAL136,"Issaquah Bridge, field negative",20241112,Water filter MCE,8,chinookDUDA
+N20,SAL137,"Issaquah Bridge, Confluence Park, by hand",20241112,Water filter MCE,8,chinookDUDA
+O20,SAL140,"Issaquah Dam, field negative",20241114,Water filter MCE,8,chinookDUDA
+P20,SAL141,"Issaquah Dam, by hand",20241114,Water filter MCE,8,chinookDUDA
+A23,Air085,Issaquah park bridge,20241119,Gelatin,8,chinookDUDA
+B23,Air086,Issaquah park bridge,20241119,Gelatin,8,chinookDUDA
+C23,Air087,Issaquah park bridge,20241119,PTFE,8,chinookDUDA
+D23,Air088,Issaquah park bridge,20241119,PTFE,8,chinookDUDA
+E23,Air089,Issaquah park bridge,20241119,MCE Air,8,chinookDUDA
+F23,Air090,Issaquah park bridge,20241119,MCE DI water,8,chinookDUDA
+G23,Air091,Issaquah waterfall,20241121,Gelatin,8,chinookDUDA
+H23,Air092,Issaquah waterfall,20241121,Gelatin,8,chinookDUDA
+I23,Air093,Issaquah waterfall,20241121,PTFE,8,chinookDUDA
+J23,Air094,Issaquah waterfall,20241121,PTFE,8,chinookDUDA
+K23,Air095,Issaquah waterfall,20241121,MCE Air,8,chinookDUDA
+L23,Air096,Issaquah waterfall,20241121,MCE DI water,8,chinookDUDA
+M23,SAL148,"Issaquah Bridge, field negative",20241019,Water filter MCE,8,chinookDUDA
+N23,SAL149,"Issaquah Bridge, Confluence Park, by hand",20241019,Water filter MCE,8,chinookDUDA
+O23,SAL152,"Issaquah Dam, field negative",20241121,Water filter MCE,8,chinookDUDA
+P23,SAL153,"Issaquah Dam, by hand",20241121,Water filter MCE,8,chinookDUDA
+K3,Air013,Issaquah waterfall,20240826,Gelatin,8,chinookDUDA
+L3,Air014,Issaquah waterfall,20240826,Gelatin,8,chinookDUDA
+M3,Air015,Issaquah waterfall,20240826,PTFE,8,chinookDUDA
+N3,Air016,Issaquah waterfall,20240826,PTFE,8,chinookDUDA
+O3,Air017,Issaquah waterfall,20240826,MCE Air,8,chinookDUDA
+P3,Air018,Issaquah waterfall,20240826,MCE DI water,8,chinookDUDA
+I6,Air019,Issaquah waterfall,20240828,Gelatin,8,chinookDUDA
+J6,Air020,Issaquah waterfall,20240828,Gelatin,8,chinookDUDA
+K6,Air021,Issaquah waterfall,20240828,PTFE,8,chinookDUDA
+L6,Air022,Issaquah waterfall,20240828,PTFE,8,chinookDUDA
+M6,Air023,Issaquah waterfall,20240828,MCE Air,8,chinookDUDA
+N6,Air024,Issaquah waterfall,20240828,MCE DI water,8,chinookDUDA
+O6,Air025,Issaquah waterfall,20240830,MCE DI water,8,chinookDUDA
+P6,Air026,Issaquah waterfall,20240830,Gelatin,8,chinookDUDA
+A9,Air027,Issaquah waterfall,20240830,Gelatin,8,chinookDUDA
+B9,Air028,Issaquah waterfall,20240830,PTFE,8,chinookDUDA
+C9,Air029,Issaquah waterfall,20240830,PTFE,8,chinookDUDA
+D9,Air030,Issaquah waterfall,20240830,MCE Air,8,chinookDUDA
+E9,SAL041,"Issaquah Dam, field negative",20240828,Water filter MCE,8,chinookDUDA
+F9,SAL042,"Issaquah Dam, by hand",20240828,Water filter MCE,8,chinookDUDA
+G9,SAL048,"Issaquah Dam, field negative",20240830,Water filter MCE,8,chinookDUDA
+H9,SAL049,"Issaquah Dam, by hand",20240830,Water filter MCE,8,chinookDUDA
+I9,Air031,Issaquah waterfall,20241017,Gelatin,8,chinookDUDA
+J9,Air032,Issaquah waterfall,20241017,Gelatin,8,chinookDUDA
+K9,Air033,Issaquah waterfall,20241017,PTFE,8,chinookDUDA
+L9,Air034,Issaquah waterfall,20241017,PTFE,8,chinookDUDA
+M9,Air035,Issaquah waterfall,20241017,MCE Air,8,chinookDUDA
+N9,Air036,Issaquah waterfall,20241017,MCE DI water,8,chinookDUDA
+O9,Air037,Issaquah park bridge,20241022,Gelatin,8,chinookDUDA
+P9,Air038,Issaquah park bridge,20241022,Gelatin,8,chinookDUDA
+A12,Air039,Issaquah park bridge,20241022,PTFE,8,chinookDUDA
+B12,Air040,Issaquah park bridge,20241022,PTFE,8,chinookDUDA
+C12,Air041,Issaquah park bridge,20241022,MCE Air,8,chinookDUDA
+D12,Air042,Issaquah park bridge,20241022,MCE DI water,8,chinookDUDA
+E12,Air043,Issaquah waterfall,20241024,Gelatin,8,chinookDUDA
+F12,Air044,Issaquah waterfall,20241024,Gelatin,8,chinookDUDA
+G12,Air045,Issaquah waterfall,20241024,PTFE,8,chinookDUDA
+H12,Air046,Issaquah waterfall,20241024,PTFE,8,chinookDUDA
+I12,Air047,Issaquah waterfall,20241024,MCE Air,8,chinookDUDA
+J12,Air048,Issaquah waterfall,20241024,MCE DI water,8,chinookDUDA
+K12,SAL092,"Issaquah Dam, field negative",20241017,Water filter MCE,8,chinookDUDA
+L12,SAL093,"Issaquah Dam, by hand",20241017,Water filter MCE,8,chinookDUDA
+M12,SAL100,"Issaquah Bridge, field negative",20241023,Water filter MCE,8,chinookDUDA
+N12,SAL101,"Issaquah Bridge, Confluence Park, by hand",20241023,Water filter MCE,8,chinookDUDA
+O12,SAL104,"Issaquah Dam, field negative",20241025,Water filter MCE,8,chinookDUDA
+P12,SAL105,"Issaquah Dam, by hand",20241025,Water filter MCE,8,chinookDUDA
+A15,Air049,Issaquah park bridge,20241028,Gelatin,8,chinookDUDA
+B15,Air050,Issaquah park bridge,20241028,Gelatin,8,chinookDUDA
+C15,Air051,Issaquah park bridge,20241028,PTFE,8,chinookDUDA
+D15,Air052,Issaquah park bridge,20241028,PTFE,8,chinookDUDA
+E15,Air053,Issaquah park bridge,20241028,MCE Air,8,chinookDUDA
+F15,Air054,Issaquah park bridge,20241028,MCE DI water,8,chinookDUDA
+G15,Air055,Issaquah waterfall,20241031,Gelatin,8,chinookDUDA
+H15,Air056,Issaquah waterfall,20241031,Gelatin,8,chinookDUDA
+I15,Air057,Issaquah waterfall,20241031,PTFE,8,chinookDUDA
+J15,Air058,Issaquah waterfall,20241031,PTFE,8,chinookDUDA
+K15,Air059,Issaquah waterfall,20241031,MCE Air,8,chinookDUDA
+L15,Air060,Issaquah waterfall,20241031,MCE DI water,8,chinookDUDA
+M15,SAL112,"Issaquah Bridge, field negative",20241028,Water filter MCE,8,chinookDUDA
+N15,SAL113,"Issaquah Bridge, Confluence Park, by hand",20241028,Water filter MCE,8,chinookDUDA
+O15,SAL116,"Issaquah Dam, field negative",20241031,Water filter MCE,8,chinookDUDA
+P15,SAL117,"Issaquah Dam, by hand",20241031,Water filter MCE,8,chinookDUDA
+A18,Air061,Issaquah park bridge,20241105,Gelatin,8,chinookDUDA
+B18,Air062,Issaquah park bridge,20241105,Gelatin,8,chinookDUDA
+C18,Air063,Issaquah park bridge,20241105,PTFE,8,chinookDUDA
+D18,Air064,Issaquah park bridge,20241105,PTFE,8,chinookDUDA
+E18,Air065,Issaquah park bridge,20241105,MCE Air,8,chinookDUDA
+F18,Air066,Issaquah park bridge,20241105,MCE DI water,8,chinookDUDA
+G18,Air067,Issaquah waterfall,20241107,Gelatin,8,chinookDUDA
+H18,Air068,Issaquah waterfall,20241107,Gelatin,8,chinookDUDA
+I18,Air069,Issaquah waterfall,20241107,PTFE,8,chinookDUDA
+J18,Air070,Issaquah waterfall,20241107,PTFE,8,chinookDUDA
+K18,Air071,Issaquah waterfall,20241107,MCE Air,8,chinookDUDA
+L18,Air072,Issaquah waterfall,20241107,MCE DI water,8,chinookDUDA
+M18,SAL124,"Issaquah Bridge, field negative",20241105,Water filter MCE,8,chinookDUDA
+N18,SAL125,"Issaquah Bridge, Confluence Park, by hand",20241105,Water filter MCE,8,chinookDUDA
+O18,SAL128,"Issaquah Dam, field negative",20241107,Water filter MCE,8,chinookDUDA
+P18,SAL129,"Issaquah Dam, by hand",20241107,Water filter MCE,8,chinookDUDA
+A21,Air073,Issaquah park bridge,20241112,Gelatin,8,chinookDUDA
+B21,Air074,Issaquah park bridge,20241112,Gelatin,8,chinookDUDA
+C21,Air075,Issaquah park bridge,20241112,PTFE,8,chinookDUDA
+D21,Air076,Issaquah park bridge,20241112,PTFE,8,chinookDUDA
+E21,Air077,Issaquah park bridge,20241112,MCE Air,8,chinookDUDA
+F21,Air078,Issaquah park bridge,20241112,MCE DI water,8,chinookDUDA
+G21,Air079,Issaquah waterfall,20241114,Gelatin,8,chinookDUDA
+H21,Air080,Issaquah waterfall,20241114,Gelatin,8,chinookDUDA
+I21,Air081,Issaquah waterfall,20241114,PTFE,8,chinookDUDA
+J21,Air082,Issaquah waterfall,20241114,PTFE,8,chinookDUDA
+K21,Air083,Issaquah waterfall,20241114,MCE Air,8,chinookDUDA
+L21,Air084,Issaquah waterfall,20241114,MCE DI water,8,chinookDUDA
+M21,SAL136,"Issaquah Bridge, field negative",20241112,Water filter MCE,8,chinookDUDA
+N21,SAL137,"Issaquah Bridge, Confluence Park, by hand",20241112,Water filter MCE,8,chinookDUDA
+O21,SAL140,"Issaquah Dam, field negative",20241114,Water filter MCE,8,chinookDUDA
+P21,SAL141,"Issaquah Dam, by hand",20241114,Water filter MCE,8,chinookDUDA
+A24,Air085,Issaquah park bridge,20241119,Gelatin,8,chinookDUDA
+B24,Air086,Issaquah park bridge,20241119,Gelatin,8,chinookDUDA
+C24,Air087,Issaquah park bridge,20241119,PTFE,8,chinookDUDA
+D24,Air088,Issaquah park bridge,20241119,PTFE,8,chinookDUDA
+E24,Air089,Issaquah park bridge,20241119,MCE Air,8,chinookDUDA
+F24,Air090,Issaquah park bridge,20241119,MCE DI water,8,chinookDUDA
+G24,Air091,Issaquah waterfall,20241121,Gelatin,8,chinookDUDA
+H24,Air092,Issaquah waterfall,20241121,Gelatin,8,chinookDUDA
+I24,Air093,Issaquah waterfall,20241121,PTFE,8,chinookDUDA
+J24,Air094,Issaquah waterfall,20241121,PTFE,8,chinookDUDA
+K24,Air095,Issaquah waterfall,20241121,MCE Air,8,chinookDUDA
+L24,Air096,Issaquah waterfall,20241121,MCE DI water,8,chinookDUDA
+M24,SAL148,"Issaquah Bridge, field negative",20241019,Water filter MCE,8,chinookDUDA
+N24,SAL149,"Issaquah Bridge, Confluence Park, by hand",20241019,Water filter MCE,8,chinookDUDA
+O24,SAL152,"Issaquah Dam, field negative",20241121,Water filter MCE,8,chinookDUDA
+P24,SAL153,"Issaquah Dam, by hand",20241121,Water filter MCE,8,chinookDUDA
