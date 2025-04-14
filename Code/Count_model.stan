@@ -70,7 +70,7 @@ data {
 	array[N_j_air] int a_ij;
 	array[N_j_air] int a_ijb;
 	array[N_j_air] int bio_rep;
-	// matrix[N_j_wat,N_j_air] Mm;
+	array[N_j_wat] int W_i_idx;
 	// 
 	real tau_p1;
 	real tau_p2;
@@ -98,44 +98,47 @@ parameters {
 	////////////////////////////////////////////////////////////////////// X parameter
 	vector<lower=0>[N_j_wat] X_STATE;
 	vector<lower=0>[N_filt] tau;
-	vector[N_bio_rep_param] bio_rep_param; 
-	vector<lower=0>[N_filt] tau_bio_rep; 
-  // real<lower=0> tau_bio_rep; 
+	vector[N_bio_rep_param] delta_raw; 
+	vector<lower=0>[N_filt] tau_raw;
+	// vector[N_j_wat] log_W;
+	// vector[N_j_wat] kappa_raw;
+	// real<lower=0> kappa_sd;
+  // real<lower=0> tau_raw; 
+  // vector[N_j_wat] kappa;
 }
 // 
 transformed parameters{
-  vector[N_bio_rep_RE] bio_rep_RE;
+  vector[N_bio_rep_RE] delta;
     {
       int count_tot;
       int count_par;
-      real bio_rep_sum;
+      real delta_sum;
     count_tot = 0;
     count_par = 0;
     for(j in 1:N_bio_rep_idx){
-      bio_rep_sum = 0 ;   
+      delta_sum = 0 ;   
       for(k in 1:bio_rep_idx[j]){
         count_tot = count_tot + 1;
         if(k < bio_rep_idx[j]){
           count_par = count_par + 1;
-          bio_rep_RE[count_tot] = bio_rep_param[count_par] * tau_bio_rep[tau_bio_rep_idx[j]];
-          bio_rep_sum = bio_rep_sum + bio_rep_RE[count_tot];
+          delta[count_tot] = delta_raw[count_par] * tau_raw[tau_bio_rep_idx[j]];
+          delta_sum = delta_sum + delta[count_tot];
         }else if(bio_rep_idx[j]==1){
-          bio_rep_RE[count_tot] = 0 ;
+          delta[count_tot] = 0 ;
         }else{
-          bio_rep_RE[count_tot] = -bio_rep_sum;
+          delta[count_tot] = -delta_sum;
         }
           } // end k loop
         } // end j loop
-      } // end local variables.	
-	vector[N_j_wat] log_W;
-	vector[N_j_air] log_A;
-	vector[time] lambda;
+      } // end local variables
+	
 	////////////////////////////////////////////////////////////////////// Count to Water
-	log_W = log(X_STATE)-omega;
-	lambda = X_STATE[l_i].*E;
+	// vector[N_j_wat] kappa = kappa_raw*kappa_sd;
+	vector[N_j_wat] log_W = log(X_STATE)-omega;	
 	//////////////////////////////////////////////////////////////////////// Air to Water
 	vector[N_ft_air] epsilon = epsilon_raw .* tau[tau_bio_rep_idx];
-	log_A[a_ijb] = eta[a_j] + (log_W[a_i]) + epsilon[a_ij] + bio_rep_RE[a_ijb];
+	vector[N_j_air] log_A;
+	log_A[a_ijb] = eta[a_j] + (log_W[a_i]) + epsilon[a_ij] + delta[a_ijb];
 	//////////////////////////////////////////////////////////////////////// Standards
 	vector[N_st_q] p_tmp_st = exp(S_q) * -inv_logit(logit_phi);
   vector[N_st_q] psi_st = log1m_exp(p_tmp_st) - p_tmp_st;
@@ -151,6 +154,7 @@ transformed parameters{
   vector[N_en_air_q] psi_un_air = log1m_exp(p_tmp_un_air) - p_tmp_un_air;
 	vector[N_en_air_qp] mu_en_air = beta_0[plate_en_air_idx] + (beta_1 * log_A[j_qen_air_p_idx]);
 	vector[N_en_air_qp] sigma_en_air = exp(gamma_0+(gamma_1 * log_A[j_qen_air_p_idx]));
+	vector[time] lambda = X_STATE[l_i].*E;
 }
 // 
 model {
@@ -175,15 +179,17 @@ model {
 	gamma_0 ~ normal(1, 0.1);
 	gamma_1 ~ normal(0, 0.1);
   //////////////////////////////////////////////////////////////////////// Count model
-	X_STATE ~ gamma(10,1);
+	X_STATE ~ normal(1,100);
 	//////////////////////////////////////////////////////////////////////// Count to Water
-	omega ~ normal(1, 1);
+	omega ~ normal(-6, 1);
 	// log_W ~ normal(0,3);
 	//////////////////////////////////////////////////////////////////////// Water to Air
-	// log_A ~ normal(0,3);
+	log_A ~ normal(0,3);
 	eta ~ normal(-2,4);
 	epsilon_raw ~ std_normal();
 	tau ~ std_normal();
-	bio_rep_param ~ std_normal(); 
-  tau_bio_rep ~ std_normal();
+	delta_raw ~ std_normal(); 
+  tau_raw ~ std_normal();
+  // kappa ~ normal(0,1);
+  // kappa_sd ~ gamma(1,100);
 }

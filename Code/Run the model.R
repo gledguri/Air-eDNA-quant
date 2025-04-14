@@ -275,6 +275,7 @@ stan_data <- list(N_st_q = nrow(qpcr_coho_st),
 									# 
 									# t_lambda_idx = c(1,1,2,3,4,4),
 									l_i = count_fish_effort_selected$t_idx,
+									W_i_idx = unique(qpcr_coho_wat_en$idx),
 									a_j = samp_tab_ijb %>% pull(f_idx),
 									a_i = samp_tab_ijb %>% pull(t_idx),
 									a_ij = samp_tab_ijb %>% pull(ft_idx),
@@ -303,9 +304,13 @@ stan_data <- list(N_st_q = nrow(qpcr_coho_st),
 stanMod_count <- stan(
 	file = here('Code','Count_model.stan'),
 	data = stan_data,
-	iter = 10000,
-	warmup = 5000,
+	iter = 1000,
+	warmup = 500,
 	chains = 4)
+
+extract_param(stanMod_count,'kappa')
+extract_param(stanMod_count,'X_STATE')
+extract_param(stanMod_count,'omega')
 
 # saveRDS(stanMod_count,here('Output','stanMod_output.rds'))
 # saveRDS(stan_data,here('Output','stan_data_input.rds'))
@@ -323,7 +328,7 @@ post_table_raw <-
 	left_join(.,
 						cbind(extract_param(stanMod_count,'lambda'),
 									as.data.frame(stan_data$E) %>% setNames('E'),
-									as.data.frame(count_fish_effort_selected$t_idx) %>% setNames('g_idx')) %>% 
+									as.data.frame(count_fish_effort_selected$t_idx) %>% setNames('g_idx')) %>%
 							select(mean,E,g_idx) %>%
 							rename(lambda='mean'),
 						by=c('a_i'='g_idx')) %>%
@@ -333,7 +338,7 @@ post_table_raw <-
 							rename(log_A='mean'),
 						by=c('a_ijb'='g_idx')) %>% 
 	left_join(.,
-						join_ext_param(stanMod_count,'bio_rep_RE') %>% 
+						join_ext_param(stanMod_count,'delta') %>% 
 							select(mean,g_idx) %>% 
 							rename(bio_rep_RE='mean'),
 						by=c('a_ijb'='g_idx')) %>% 
@@ -353,8 +358,8 @@ post_table_raw <-
 							rename(epsilon='mean'),
 						by=c('a_ij'='g_idx')) %>% 
 	mutate(omega=
-				 	extract_param(stanMod_count,'omega') %>% 
-				 	pull(mean)) %>% 
+				 	extract_param(stanMod_count,'omega') %>%
+				 	pull(mean)) %>%
 	left_join(.,
 						bind_cols(
 							join_ext_param(stanMod_count,'mu_en_air') %>% select(mean) %>% 
@@ -423,7 +428,7 @@ p2 <-
 	ggplot()+
 	geom_smooth(aes(x=as.Date(time),y=(X_STATE/exp(omega))),color='black',span=0.5)+
 	geom_point(aes(x=as.Date(time),y=exp(log_W)),col='deepskyblue2',size=5)+
-	labs(y=bquote('eDNA concentration (water)'))+
+	labs(y=bquote('eDNA concentration (water)\n(copies/μL)'))+
 	scale_y_log10(labels=scientific_10,breaks=c(50000,100000,200000,400000))+
 	theme_bw()+
 	scale_x_date(
@@ -440,12 +445,12 @@ p2 <-
 
 p3 <-
 	post_table %>% 
-	mutate(log_A=if_else(psi_un_air < -1.3,(-1/0),log_A)) %>% 
+	mutate(log_A=if_else(psi_un_air < -2,(-1/0),log_A)) %>% 
 	ggplot()+
 	geom_smooth(aes(x=as.Date(time),y=exp(log(X_STATE)-omega+eta)),color='black',span=0.5)+
 	geom_point(aes(x=as.Date(time),y=exp(log_A),col=FilterType),pch=19, size=5)+
 	scale_y_log10(labels=scientific_10,breaks=c(5,10,20,40,80,200,500,1000,2000))+
-	labs(y=bquote('eDNA concentration (air)'))+
+	labs(y=bquote('eDNA concentration (air)\n(copies/μL)'))+
 	scale_x_date(
 		breaks = seq(as.Date("2024-10-17"), as.Date("2024-11-21"), by = "1 week"), 
 		labels = date_format("%b %d")) +	
@@ -515,7 +520,7 @@ leg_2 <- data.frame(x = 1:4,y1 = rep(10,4),y2 = rep(10,4),
 legend_1 <- cowplot::get_legend(leg_1+theme(legend.justification = c(0.5, 0.2)))
 legend_2 <- cowplot::get_legend(leg_2+theme(legend.justification = c(-0.3, 0.2)))
 legend <- cowplot::plot_grid(legend_1,legend_2)
-legend
+# legend
 
 fig_1 <-
 	cowplot::plot_grid(
@@ -524,6 +529,8 @@ fig_1 <-
 			p3,rel_widths = c(1.1,2),labels=c('','C')),
 		legend,ncol = 1,rel_heights = c(5,1.2))
 
+fig_1
+
 ggsave(here('Plots','Figure_1.jpg'),fig_1,height = 10,width = 17,dpi =300)
 
-source(here('Code','Dianostic_plots.R'))
+# source(here('Code','Dianostic_plots.R'))
