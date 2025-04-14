@@ -322,15 +322,15 @@ post_table_raw <-
 						stan_data$a_ijb %>% as.data.frame() %>% setNames('a_ijb')) %>% 
 	left_join(.,
 						join_ext_param(stanMod_count,'log_W') %>% 
-							select(mean,g_idx) %>% 
-							rename(log_W='mean'),
+							select(mean,`2.5%`,`97.5%`,g_idx) %>%
+							rename(log_W='mean',log_W_lo='2.5%',log_W_up='97.5%'),
 						by=c('a_i'='g_idx')) %>% 
 	left_join(.,
 						cbind(extract_param(stanMod_count,'lambda'),
 									as.data.frame(stan_data$E) %>% setNames('E'),
 									as.data.frame(count_fish_effort_selected$t_idx) %>% setNames('g_idx')) %>%
-							select(mean,E,g_idx) %>%
-							rename(lambda='mean'),
+							select(mean,`2.5%`,`97.5%`,E,g_idx) %>%
+							rename(lambda='mean',lambda_lo='2.5%',lambda_up='97.5%'),
 						by=c('a_i'='g_idx')) %>%
 	left_join(.,
 						join_ext_param(stanMod_count,'log_A') %>% 
@@ -344,8 +344,8 @@ post_table_raw <-
 						by=c('a_ijb'='g_idx')) %>% 
 	left_join(.,
 						join_ext_param(stanMod_count,'X_STATE') %>%
-							select(mean,g_idx) %>%
-							rename(X_STATE='mean'),
+							select(mean,`2.5%`,`97.5%`,g_idx) %>%
+							rename(X_STATE='mean',X_STATE_lo='2.5%',X_STATE_up='97.5%'),
 						by=c('a_i'='g_idx')) %>%
 	left_join(.,
 						join_ext_param(stanMod_count,'eta') %>% 
@@ -360,6 +360,12 @@ post_table_raw <-
 	mutate(omega=
 				 	extract_param(stanMod_count,'omega') %>%
 				 	pull(mean)) %>%
+	mutate(omega_lo=
+				 	extract_param(stanMod_count,'omega') %>%
+				 	pull(`2.5%`)) %>%
+	mutate(omega_up=
+				 	extract_param(stanMod_count,'omega') %>%
+				 	pull(`97.5%`)) %>%
 	left_join(.,
 						bind_cols(
 							join_ext_param(stanMod_count,'mu_en_air') %>% select(mean) %>% 
@@ -404,7 +410,10 @@ p1 <-
 	post_table %>% filter(!duplicated(a_i)) %>% 
 	ggplot()+
 	geom_smooth(aes(x=as.Date(time),y=(X_STATE)),color='black',span=0.5)+
+	geom_smooth(aes(x=as.Date(time),y=(X_STATE_lo)),color='grey50',span=0.5,lty=3)+
+	geom_smooth(aes(x=as.Date(time),y=(X_STATE_up)),color='grey50',span=0.5,lty=3)+
 	geom_point(aes(x=as.Date(time),y=(lambda/E)),col='#AB5971',size=5)+
+	geom_errorbar(aes(x=as.Date(time),ymin=(lambda_lo/E),ymax=(lambda_up/E)),col='#AB5971',size=0.7,width = 0.7)+
 	labs(
 		y = "<span style='color:black;'>X - Fish density (count &times; day<sup>-1</sup>)</span><br><br><span style='color:#AB5971;'> (λ &times; E<sup>-1</sup>)</span>"
 	) +
@@ -427,7 +436,10 @@ p2 <-
 	post_table %>% filter(!duplicated(a_i)) %>%
 	ggplot()+
 	geom_smooth(aes(x=as.Date(time),y=(X_STATE/exp(omega))),color='black',span=0.5)+
+	geom_smooth(aes(x=as.Date(time),y=(X_STATE_lo/exp(omega))),color='grey50',span=0.5,lty=3)+
+	geom_smooth(aes(x=as.Date(time),y=(X_STATE_up/exp(omega))),color='grey50',span=0.5,lty=3)+
 	geom_point(aes(x=as.Date(time),y=exp(log_W)),col='deepskyblue2',size=5)+
+	geom_errorbar(aes(x=as.Date(time),ymin = exp(log_W_lo),ymax=exp(log_W_up)),col='deepskyblue2',size=0.7,width = 0.7)+
 	labs(y=bquote('eDNA concentration (water)\n(copies/μL)'))+
 	scale_y_log10(labels=scientific_10,breaks=c(50000,100000,200000,400000))+
 	theme_bw()+
@@ -445,10 +457,15 @@ p2 <-
 
 p3 <-
 	post_table %>% 
-	mutate(log_A=if_else(psi_un_air < -2,(-1/0),log_A)) %>% 
+	# mutate(log_A=if_else(psi_un_air < -2,(-1/0),log_A)) %>%
+	mutate(log_A=if_else(psi_un_air < -2 & FilterType=='Gelatin',(1),log_A)) %>%
+	mutate(log_A=if_else(psi_un_air < -2 & FilterType=='MCE Air',(0.4),log_A)) %>%
 	ggplot()+
 	geom_smooth(aes(x=as.Date(time),y=exp(log(X_STATE)-omega+eta)),color='black',span=0.5)+
+	geom_smooth(aes(x=as.Date(time),y=exp(log(X_STATE_lo)-omega+eta)),color='grey50',span=0.5,lty=3)+
+	geom_smooth(aes(x=as.Date(time),y=exp(log(X_STATE_up)-omega+eta)),color='grey50',span=0.5,lty=3)+
 	geom_point(aes(x=as.Date(time),y=exp(log_A),col=FilterType),pch=19, size=5)+
+	geom_smooth(aes(x=as.Date(time),y=exp(log_A),col=FilterType),span=0.5,se=F)+
 	scale_y_log10(labels=scientific_10,breaks=c(5,10,20,40,80,200,500,1000,2000))+
 	labs(y=bquote('eDNA concentration (air)\n(copies/μL)'))+
 	scale_x_date(
@@ -531,6 +548,6 @@ fig_1 <-
 
 fig_1
 
-ggsave(here('Plots','Figure_1.jpg'),fig_1,height = 10,width = 17,dpi =300)
+# ggsave(here('Plots','Figure_1.jpg'),fig_1,height = 10,width = 17,dpi =300)
 
 # source(here('Code','Dianostic_plots.R'))

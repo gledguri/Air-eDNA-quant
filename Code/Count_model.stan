@@ -179,7 +179,7 @@ model {
 	gamma_0 ~ normal(1, 0.1);
 	gamma_1 ~ normal(0, 0.1);
   //////////////////////////////////////////////////////////////////////// Count model
-	X_STATE ~ normal(1,100);
+	X_STATE ~ normal(100,100);
 	//////////////////////////////////////////////////////////////////////// Count to Water
 	omega ~ normal(-6, 1);
 	// log_W ~ normal(0,3);
@@ -190,6 +190,4 @@ model {
 	tau ~ std_normal();
 	delta_raw ~ std_normal(); 
   tau_raw ~ std_normal();
-  // kappa ~ normal(0,1);
-  // kappa_sd ~ gamma(1,100);
 }
