@@ -548,6 +548,6 @@ fig_1 <-
 
 fig_1
 
-# ggsave(here('Plots','Figure_1.jpg'),fig_1,height = 10,width = 17,dpi =300)
+ggsave(here('Plots','Figure_1.jpg'),fig_1,height = 10,width = 17,dpi =300)
 
 # source(here('Code','Dianostic_plots.R'))
