@@ -28,7 +28,7 @@
 \node (water) [node, below=of Fish_TRUE, fill=myBlue]  at (0,0) {
     $\begin{array}{c}
         %\lambda_{i} = W_{i} \cdot \omega
-        X_i =  W_{i} \cdot \omega
+        W_{i} = X_i \cdot \omega
         %W_{i} = \lambda_{i} \cdot \omega
     \end{array}$
 };
@@ -39,7 +39,7 @@
 %%%%%%%%%%% Air %%%%%%%%%%%
 \node (air) [node, below=of Fish_TRUE, fill=myBlue]  at (8,0.20) {
     $\begin{array}{c}
-        \ln(W_{i}) = \eta_{j} + \ln(A_{ijb}) + \varepsilon_{ij} + \delta_{ijb} \\
+        \ln(A_{ijb}) = \eta_{j} + \ln(W_{i}) + \varepsilon_{ij} + \delta_{ijb} \\
         \varepsilon_{ij} \sim \mathcal{N}(0,\tau_j) \\
         \delta_{ijb} \sim \mathcal{N}(0,\rho_j)
         %\ln(A_{ij}) = \ln(A_{ijb}) + \delta_{b} \\
@@ -55,7 +55,8 @@
 %%%%%%%%%%% Visual %%%%%%%%%%%
 \node (visual) [node, below=of Fish_TRUE, fill=myBlue]  at (-7,0) {
     $\begin{array}{c}
-        X_i = \lambda_{i} \cdot E_{i}^{-1} \\
+        %X_i = \lambda_{i} \cdot E_{i}^{-1} \\
+        \lambda_{i} = X_i \cdot E_{i} \\
         N_{i} \sim Poisson(\lambda_{i})
     \end{array}$
 };
@@ -114,7 +115,7 @@
  % Arrows
         \draw [->, thick] (Fish_TRUE) -- node[midway, left] {E} (visual);
         \draw [->, thick] (Fish_TRUE) -- node[midway, left] {$\omega$} (water);
-        \draw [<->, thick] (water) -- node[midway, above] {$\eta_j,\varepsilon_{ij},\delta_{ijb}$} (air);
+        \draw [->, thick] (water) -- node[midway, above] {$\eta_j,\varepsilon_{ij},\delta_{ijb}$} (air);
         \draw [<-, thick] (qPCR_en_air) -- node[midway, left] {$A_{ijb}$} (air);
         \draw [<-, thick] (qPCR_en_wat) -- node[midway, left] {$W_i$} (water);
 
