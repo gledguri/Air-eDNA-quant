@@ -302,7 +302,7 @@ stan_data <- list(N_st_q = nrow(qpcr_coho_st),
 
 
 stanMod_count <- stan(
-	file = here('Code','Count_model.stan'),
+	file = here('Code','Count_model_2.stan'),
 	data = stan_data,
 	iter = 1000,
 	warmup = 500,
@@ -458,8 +458,8 @@ p2 <-
 p3 <-
 	post_table %>% 
 	# mutate(log_A=if_else(psi_un_air < -2,(-1/0),log_A)) %>%
-	mutate(log_A=if_else(psi_un_air < -2 & FilterType=='Gelatin',(1),log_A)) %>%
-	mutate(log_A=if_else(psi_un_air < -2 & FilterType=='MCE Air',(0.4),log_A)) %>%
+	# mutate(log_A=if_else(psi_un_air < -2.5 & FilterType=='Gelatin',(1),log_A)) %>%
+	# mutate(log_A=if_else(psi_un_air < -2.5 & FilterType=='MCE Air',(0.4),log_A)) %>%
 	ggplot()+
 	geom_smooth(aes(x=as.Date(time),y=exp(log(X_STATE)-omega+eta)),color='black',span=0.5)+
 	geom_smooth(aes(x=as.Date(time),y=exp(log(X_STATE_lo)-omega+eta)),color='grey50',span=0.5,lty=3)+
@@ -547,7 +547,7 @@ fig_1 <-
 		legend,ncol = 1,rel_heights = c(5,1.2))
 
 fig_1
-
-ggsave(here('Plots','Figure_1.jpg'),fig_1,height = 10,width = 17,dpi =300)
+extract_param(stanMod_count,'theta')
+# ggsave(here('Plots','Figure_1.jpg'),fig_1,height = 10,width = 17,dpi =300)
 
 # source(here('Code','Dianostic_plots.R'))
