@@ -227,14 +227,17 @@ count_fish_effort_selected <-
 samp_tab_ijb <- qpcr_coho_air_en %>% distinct(FilterType,time,f_idx,t_idx,ft_idx,idx)
 samp_tab_ij <- samp_tab_ijb %>% distinct(FilterType,time,f_idx,t_idx,ft_idx)
 
+surf_effort <- c(rep(16,18),rep(750,6),rep(16,12))
+samp_tab_ijb <- samp_tab_ijb %>% cbind(.,surf_effort)
+
 bio_rep_idx =
 	samp_tab_ijb %>% mutate(pres=1) %>% 
 	group_by(FilterType,time,f_idx,t_idx,ft_idx) %>% 
-	summarise(bio_rep_idx=sum(pres)) %>% ungroup() %>% 
+	summarise(bio_rep_idx=sum(pres)) %>% ungroup() %>% as.data.frame()
 	pull(bio_rep_idx)
-N_bio_rep_param = sum(bio_rep_idx-1)
-N_bio_rep_idx <- length(bio_rep_idx)
-N_bio_rep_RE <- sum(bio_rep_idx)
+N_samp_w_bio_rep = sum(bio_rep_idx-1)
+N_samp <- length(bio_rep_idx)
+N_samp_bio_rep <- sum(bio_rep_idx)
 
 # This is supposed to be TRUE!
 identical(qpcr_coho_air_en %>% distinct(time,t_idx), qpcr_coho_wat_en %>% distinct(time,t_idx))
@@ -281,9 +284,9 @@ stan_data <- list(N_st_q = nrow(qpcr_coho_st),
 									a_ij = samp_tab_ijb %>% pull(ft_idx),
 									a_ijb = samp_tab_ijb %>% pull(idx),
 									bio_rep = samp_tab_ijb %>% mutate(bio_rep=if_else(FilterType=='Gelatin',1,0)) %>% pull(bio_rep),
-									N_bio_rep_param = N_bio_rep_param,
-									N_bio_rep_RE = N_bio_rep_RE,
-									N_bio_rep_idx = N_bio_rep_idx,
+									N_samp_w_bio_rep = N_samp_w_bio_rep,
+									N_samp_bio_rep = N_samp_bio_rep,
+									N_samp = N_samp, 
 									bio_rep_idx = bio_rep_idx,
 									tau_bio_rep_idx = samp_tab_ij$f_idx,
 									# Mm = model.matrix(~ factor(t_idx) - 1, data = samp_tab_ijb) %>% t(),
@@ -292,6 +295,7 @@ stan_data <- list(N_st_q = nrow(qpcr_coho_st),
 									tau_p1 = -1,tau_p2=1,
 									N = count_fish_effort_selected$Total,
 									E = count_fish_effort_selected$time_days,
+									S = samp_tab_ijb$surf_effort,
 									logit_phi_mu = -3,
 									logit_phi_sd = 1,
 									label_time = qpcr_coho_air_en %>% distinct(time,t_idx),
@@ -302,18 +306,27 @@ stan_data <- list(N_st_q = nrow(qpcr_coho_st),
 
 
 stanMod_count <- stan(
-	file = here('Code','Count_model_2.stan'),
+	file = here('Code','Count_model_3.stan'),
 	data = stan_data,
 	iter = 1000,
 	warmup = 500,
 	chains = 4)
 
-extract_param(stanMod_count,'kappa')
 extract_param(stanMod_count,'X_STATE')
 extract_param(stanMod_count,'omega')
+extract_param(stanMod_count,'alpha')
+extract_param(stanMod_count,'eta')
+extract_param(stanMod_count,'delta')
+extract_param(stanMod_count,'delta_raw')
 
-# saveRDS(stanMod_count,here('Output','stanMod_output.rds'))
-# saveRDS(stan_data,here('Output','stan_data_input.rds'))
+# saveRDS(stanMod_count,here('Output','stanMod_output_3.rds'))
+# saveRDS(stan_data,here('Output','stan_data_input_3.rds'))
+
+discharge <- samp_tab_ijb %>% 
+	left_join(.,data.frame(t_idx=c(1:6),
+						 d=c(4.1,4.13,4.5,4.46,4.95,4.91)),
+						by='t_idx') %>% 
+	pull(d)
 
 post_table_raw <- 
 	bind_cols(stan_data$a_ij %>% as.data.frame() %>% setNames('a_ij') %>% mutate(a_ij=as.numeric(a_ij)),
@@ -340,7 +353,7 @@ post_table_raw <-
 	left_join(.,
 						join_ext_param(stanMod_count,'delta') %>% 
 							select(mean,g_idx) %>% 
-							rename(bio_rep_RE='mean'),
+							rename(delta='mean'),
 						by=c('a_ijb'='g_idx')) %>% 
 	left_join(.,
 						join_ext_param(stanMod_count,'X_STATE') %>%
@@ -390,17 +403,22 @@ post_table <- post_table_raw %>%
 	left_join(stan_data$label_time,
 						by=c('a_i'='t_idx')) %>% 
 	left_join(stan_data$label_filter,
-						by=c('a_j'='f_idx'))
+						by=c('a_j'='f_idx')) %>% 
+	cbind(.,surf_effort) %>% 
+	cbind(.,discharge)
+
 
 table_1 <-
 	post_table %>% 
 	group_by(FilterType) %>% 
 	summarise(dilution=first(eta),
 						SEE=mean(abs(epsilon)),
-						bio_rep_delta=mean(abs(bio_rep_RE)))
+						bio_rep_delta=mean(abs(delta)))
 
 
 omega <- post_table$omega %>% unique()
+# alpha <- extract_param(stanMod_count,'alpha') %>% pull(mean)
+
 
 library(ggtext)
 library(scales)
@@ -435,12 +453,13 @@ p1 <-
 p2 <-
 	post_table %>% filter(!duplicated(a_i)) %>%
 	ggplot()+
-	geom_smooth(aes(x=as.Date(time),y=(X_STATE/exp(omega))),color='black',span=0.5)+
-	geom_smooth(aes(x=as.Date(time),y=(X_STATE_lo/exp(omega))),color='grey50',span=0.5,lty=3)+
-	geom_smooth(aes(x=as.Date(time),y=(X_STATE_up/exp(omega))),color='grey50',span=0.5,lty=3)+
+	geom_smooth(aes(x=as.Date(time),y=(X_STATE*exp(omega)/10)),color='black',span=0.5)+
+	geom_smooth(aes(x=as.Date(time),y=(X_STATE_lo*exp(omega)/10)),color='grey50',span=0.5,lty=3)+
+	geom_smooth(aes(x=as.Date(time),y=(X_STATE_up*exp(omega)/10)),color='grey50',span=0.5,lty=3)+
+	# geom_smooth(aes(x=as.Date(time),y=(exp(discharge)^2*20)),color='orange',span=0.5,lty=3)+
 	geom_point(aes(x=as.Date(time),y=exp(log_W)),col='deepskyblue2',size=5)+
 	geom_errorbar(aes(x=as.Date(time),ymin = exp(log_W_lo),ymax=exp(log_W_up)),col='deepskyblue2',size=0.7,width = 0.7)+
-	labs(y=bquote('eDNA concentration (water)\n(copies/μL)'))+
+	labs(y=bquote('eDNA concentration (water)\n(copies/L)'))+
 	scale_y_log10(labels=scientific_10,breaks=c(50000,100000,200000,400000))+
 	theme_bw()+
 	scale_x_date(
@@ -457,23 +476,32 @@ p2 <-
 
 p3 <-
 	post_table %>% 
-	# mutate(log_A=if_else(psi_un_air < -2,(-1/0),log_A)) %>%
+		mutate(log_A_corr=log_A-log(surf_effort)+log(10)) %>% 
+		# mutate(log_A_corr1=log_A-log(surf_effort)+log(10)-delta) %>% 
+		# mutate(log_W_corr=log_A-eta-log(surf_effort)+log(10)) %>% 
+	mutate(log_A_corr=if_else(psi_un_air < -2,(-1/0),log_A_corr)) %>%
+	# mutate(log_A_corr=if_else(log_A_corr < 10.5,(-1/0),log_A_corr)) %>%
 	# mutate(log_A=if_else(psi_un_air < -2.5 & FilterType=='Gelatin',(1),log_A)) %>%
 	# mutate(log_A=if_else(psi_un_air < -2.5 & FilterType=='MCE Air',(0.4),log_A)) %>%
 	ggplot()+
-	geom_smooth(aes(x=as.Date(time),y=exp(log(X_STATE)-omega+eta)),color='black',span=0.5)+
-	geom_smooth(aes(x=as.Date(time),y=exp(log(X_STATE_lo)-omega+eta)),color='grey50',span=0.5,lty=3)+
-	geom_smooth(aes(x=as.Date(time),y=exp(log(X_STATE_up)-omega+eta)),color='grey50',span=0.5,lty=3)+
-	geom_point(aes(x=as.Date(time),y=exp(log_A),col=FilterType),pch=19, size=5)+
-	geom_smooth(aes(x=as.Date(time),y=exp(log_A),col=FilterType),span=0.5,se=F)+
-	scale_y_log10(labels=scientific_10,breaks=c(5,10,20,40,80,200,500,1000,2000))+
-	labs(y=bquote('eDNA concentration (air)\n(copies/μL)'))+
-	scale_x_date(
+	# geom_smooth(aes(x=as.Date(time),y=exp(log(X_STATE)+omega+alpha+eta+epsilon-log(10)+log(surf_effort))),color='black',span=0.5)+
+	geom_smooth(aes(x=as.Date(time),y=exp(log_W_lo+eta)),color='grey50',span=0.5,lty=3)+
+	geom_smooth(aes(x=as.Date(time),y=exp(log_W+eta)),color='black',span=0.5)+
+	geom_smooth(aes(x=as.Date(time),y=exp(log_W_up+eta)),color='grey50',span=0.5,lty=3)+
+	# geom_smooth(aes(x=as.Date(time),y=exp(log(X_STATE_lo)+omega+alpha+eta+log(surf_effort)-log(10))),color='grey50',span=0.5,lty=3)+
+	# geom_smooth(aes(x=as.Date(time),y=exp(log(X_STATE_up)+omega+alpha+eta+log(surf_effort)-log(10))),color='grey50',span=0.5,lty=3)+
+	geom_point(aes(x=as.Date(time),y=exp(log_A_corr),col=FilterType),pch=19, size=5)+
+	# geom_point(aes(x=as.Date(time),y=exp(log_A_corr2),col=FilterType),pch=19, size=5)+
+	# geom_smooth(aes(x=as.Date(time),y=exp(log_A_corr),col=FilterType),span=0.5,se=F)+
+	# scale_y_log10(labels=scientific_10,breaks=c(5,10,20,40,80,200,500,1000,2000))+
+	scale_y_log10(labels=scientific_10,breaks=c(1,4,10,20,40))+
+		labs(y = bquote('eDNA air concentration (copies/L/cm'^2*')'))+
+		scale_x_date(
 		breaks = seq(as.Date("2024-10-17"), as.Date("2024-11-21"), by = "1 week"), 
 		labels = date_format("%b %d")) +	
 	scale_color_manual(values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'))+	
 	geom_abline(intercept = -1.5,slope=0,lty=2)+
-	facet_wrap(~FilterType,scales='free_y')+
+	facet_wrap(~FilterType, scales = "free_y")+
 	theme_bw()+
 	theme(axis.title.x = element_blank(),
 				strip.text = element_blank(),
@@ -547,7 +575,36 @@ fig_1 <-
 		legend,ncol = 1,rel_heights = c(5,1.2))
 
 fig_1
-extract_param(stanMod_count,'theta')
-# ggsave(here('Plots','Figure_1.jpg'),fig_1,height = 10,width = 17,dpi =300)
+ggsave(here('Plots','Figure_1_new.jpg'),fig_1,height = 10,width = 17,dpi =300)
 
 # source(here('Code','Dianostic_plots.R'))
+
+post_table %>% filter(!duplicated(a_i)) %>%
+	ggplot()+
+	geom_point(aes(x=as.Date(time),y=discharge),color='orange',size=3)+
+	geom_smooth(aes(x=as.Date(time),y=discharge),color='orange',span=0.5)+
+	theme_bw()
+
+fig_2 <- rstan::extract(stanMod_count,'eta') %>% as.data.frame() %>% 
+	pivot_longer(cols = everything(), names_to = "filter", values_to = "dilution") %>% 
+	mutate(filter=gsub('eta.1','Gelatin',filter)) %>% 
+	mutate(filter=gsub('eta.2','MCE Air',filter)) %>% 
+	mutate(filter=gsub('eta.3','MCE DI water',filter)) %>% 
+	mutate(filter=gsub('eta.4','PTFE',filter)) %>% 
+	group_by(filter) %>% 
+	mutate(mean_filter=mean(dilution)) %>% ungroup() %>% 
+	mutate(mean=mean(mean_filter)) %>% 
+	mutate(alpha=dilution-mean) %>% 
+	rename('Filter type'=filter) %>% 
+	ggplot(aes(x = dilution, y = `Filter type`, fill = `Filter type`)) +
+	geom_density_ridges(scale = 1.2, alpha = 1) +
+	theme_ridges()+
+	labs(x = "Dilution factor log(Air eDNA / Water eDNA)")+
+	scale_fill_manual(
+		name = 'Filter type',
+		values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
+		labels = c('Gelatin', 'MCE (air eDNA)', 'MCE (Mili-q water)', 'PTFE')) +
+	theme(axis.title.y = element_blank(),
+				axis.title.x = element_text(hjust = 0.5))
+
+ggsave(here('Plots','Figure_2.jpg'),fig_2,height = 10,width = 8,dpi =300)

@@ -15,6 +15,54 @@ functions {
     }
     return output;
   }
+  /**
+  * Compute zero-sum constrained parameter
+  *
+  * @param delta_raw A declared parameter in Stan
+  * @param tau_raw A declared parameter in Stan
+  
+  * @param N_samp Number of samples
+  * @param N_samp_bio_rep Number of samples and bio_replicate
+  * @param N_samp_w_bio_rep Number of samples with bio_replicate
+  
+  * @param bio_rep_idx Vector of the total number of bio_replicate per sample
+  * @param tau_bio_rep_idx Index vector for having idiosyncratic tau parameter
+  
+  * @return Vector[N_samp_bio_rep] with delta (sum-zero constrained) parameters
+  */
+  vector sum_zero_constrain(vector delta_raw, 
+                       vector tau_raw, 
+                       int N_samp,
+                       int N_samp_bio_rep,
+                       array[] int bio_rep_idx, 
+                       array[] int tau_bio_rep_idx) {
+    
+    vector[N_samp_bio_rep] delta;
+    int count_tot = 0;
+    int count_par = 0;
+    real delta_sum;
+    
+    for (j in 1:N_samp) {
+      delta_sum = 0;
+      
+      for (k in 1:bio_rep_idx[j]) {
+        count_tot = count_tot + 1;
+        
+        if (k < bio_rep_idx[j]) {
+          count_par = count_par + 1;
+          delta[count_tot] = delta_raw[count_par] * tau_raw[tau_bio_rep_idx[j]];
+          delta_sum = delta_sum + delta[count_tot];
+        } else if (bio_rep_idx[j] == 1) {
+          delta[count_tot] = 0;
+        } else {
+          delta[count_tot] = -delta_sum;
+        }
+      }
+    }
+    
+    return delta;
+  }
+
 }
 // 
 data {
@@ -76,11 +124,11 @@ data {
 	real tau_p2;
 	real logit_phi_mu;
 	real logit_phi_sd;
-	int N_bio_rep_RE;
-  int N_bio_rep_param; 
-  int N_bio_rep_idx; 
-  array[N_bio_rep_idx] int bio_rep_idx; 
-  array[N_bio_rep_idx] int tau_bio_rep_idx; 
+	int N_samp_bio_rep;
+  int N_samp_w_bio_rep; 
+  int N_samp; 
+  array[N_samp] int bio_rep_idx; 
+  array[N_samp] int tau_bio_rep_idx; 
 }
 parameters {
 	////////////////////////////////////////////////////////////////////// Bernuli parameters
@@ -98,7 +146,7 @@ parameters {
 	////////////////////////////////////////////////////////////////////// X parameter
 	vector<lower=0>[N_j_wat] X_STATE;
 	vector<lower=0>[N_filt] tau;
-	vector[N_bio_rep_param] delta_raw; 
+	vector[N_samp_w_bio_rep] delta_raw; 
 	vector<lower=0>[N_filt] tau_raw;
 	// real theta;
 	// vector[N_j_wat] log_W;
@@ -109,29 +157,7 @@ parameters {
 }
 // 
 transformed parameters{
-  vector[N_bio_rep_RE] delta;
-    {
-      int count_tot;
-      int count_par;
-      real delta_sum;
-    count_tot = 0;
-    count_par = 0;
-    for(j in 1:N_bio_rep_idx){
-      delta_sum = 0 ;   
-      for(k in 1:bio_rep_idx[j]){
-        count_tot = count_tot + 1;
-        if(k < bio_rep_idx[j]){
-          count_par = count_par + 1;
-          delta[count_tot] = delta_raw[count_par] * tau_raw[tau_bio_rep_idx[j]];
-          delta_sum = delta_sum + delta[count_tot];
-        }else if(bio_rep_idx[j]==1){
-          delta[count_tot] = 0 ;
-        }else{
-          delta[count_tot] = -delta_sum;
-        }
-          } // end k loop
-        } // end j loop
-      } // end local variables
+  vector[N_samp_bio_rep] delta = sum_zero_constrain(delta_raw,tau_raw,N_samp,N_samp_bio_rep,bio_rep_idx,tau_bio_rep_idx);
 	
 	////////////////////////////////////////////////////////////////////// Count to Water
 	// vector[N_j_wat] kappa = kappa_raw*kappa_sd;
@@ -170,7 +196,7 @@ model {
 	R_qen_air ~ normal(mu_en_air,sigma_en_air); //////////////////////////// Air samples
 	//
 	////////////////////////////////////////////////////////////////////// Poisson model
-	N ~ neg_binomial_2(lambda,1);
+	N ~ neg_binomial_2(lambda,20);
 	// N ~ poisson(lambda);
 	////////////////////////////////////////////////////////////////////// Priors
 	//////////////////////////////////////////////////////////////////////// Bernoulli model
