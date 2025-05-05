@@ -7,6 +7,7 @@ library(ggplot2)
 library(QM);#devtools::install_github("gledguri/QM")
 library(rstan);options(mc.cores = parallel::detectCores())
 library(tibble)
+library(tidyr)
 library(stringr)
 library(purrr)
 library(ggu.base.fun)
@@ -233,7 +234,7 @@ samp_tab_ijb <- samp_tab_ijb %>% cbind(.,surf_effort)
 bio_rep_idx =
 	samp_tab_ijb %>% mutate(pres=1) %>% 
 	group_by(FilterType,time,f_idx,t_idx,ft_idx) %>% 
-	summarise(bio_rep_idx=sum(pres)) %>% ungroup() %>% as.data.frame()
+	summarise(bio_rep_idx=sum(pres)) %>% ungroup() %>% 
 	pull(bio_rep_idx)
 N_samp_w_bio_rep = sum(bio_rep_idx-1)
 N_samp <- length(bio_rep_idx)
@@ -308,8 +309,8 @@ stan_data <- list(N_st_q = nrow(qpcr_coho_st),
 stanMod_count <- stan(
 	file = here('Code','Count_model_3.stan'),
 	data = stan_data,
-	iter = 1000,
-	warmup = 500,
+	iter = 10000,
+	warmup = 5000,
 	chains = 4)
 
 extract_param(stanMod_count,'X_STATE')
@@ -319,8 +320,8 @@ extract_param(stanMod_count,'eta')
 extract_param(stanMod_count,'delta')
 extract_param(stanMod_count,'delta_raw')
 
-# saveRDS(stanMod_count,here('Output','stanMod_output_3.rds'))
-# saveRDS(stan_data,here('Output','stan_data_input_3.rds'))
+saveRDS(stanMod_count,here('Output','stanMod_output_3.rds'))
+saveRDS(stan_data,here('Output','stan_data_input_3.rds'))
 
 discharge <- samp_tab_ijb %>% 
 	left_join(.,data.frame(t_idx=c(1:6),
@@ -585,6 +586,8 @@ post_table %>% filter(!duplicated(a_i)) %>%
 	geom_smooth(aes(x=as.Date(time),y=discharge),color='orange',span=0.5)+
 	theme_bw()
 
+
+
 fig_2 <- rstan::extract(stanMod_count,'eta') %>% as.data.frame() %>% 
 	pivot_longer(cols = everything(), names_to = "filter", values_to = "dilution") %>% 
 	mutate(filter=gsub('eta.1','Gelatin',filter)) %>% 
@@ -607,4 +610,4 @@ fig_2 <- rstan::extract(stanMod_count,'eta') %>% as.data.frame() %>%
 	theme(axis.title.y = element_blank(),
 				axis.title.x = element_text(hjust = 0.5))
 
-ggsave(here('Plots','Figure_2.jpg'),fig_2,height = 10,width = 8,dpi =300)
+ggsave(here('Plots','Figure_2.jpg'),fig_2,height = 10,width = 10,dpi =300)

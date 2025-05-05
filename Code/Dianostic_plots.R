@@ -1,10 +1,16 @@
+# Libraries -----------------------------------------------------------------------------------
+
 library(ggridges)
 library(rstan)
 library(dplyr)
 library(ggplot2)
 library(stringr)
 library(tibble)
+library(here)
+library(MASS)
+select <- dplyr::select
 
+# Functions -----------------------------------------------------------------------------------
 scientific <- function(x) {
   ifelse(
     x == 0, 
@@ -43,6 +49,22 @@ join_ext_param <- function(stanmod,par){
     mutate(g_idx = as.numeric(g_idx))
 }
 
+join_ext_param_num <- function(stanmod,par){
+  extract_param(stanmod,par) %>%  
+    rownames_to_column('x') %>% 
+    mutate(param=str_split_fixed(x,'\\[', 3)[,1]) %>% 
+    mutate(g_idx=str_split_fixed(x,'\\[', 3)[,2]) %>% 
+    mutate(g_idx = str_extract(g_idx, "\\d+")) %>%
+    mutate(g_idx = as.numeric(g_idx)) %>%
+    select(-x)
+}
+
+# Load data -----------------------------------------------------------------------------------
+stan_post <- readRDS(here('Output','stanMod_output_3.rds'))
+stan_data <- readRDS(here('Output','stan_data_input_3.rds'))
+
+
+# ESS -----------------------------------------------------------------------------------------
 stan_post_df <- extract_param(stan_post)
 
 # Determine the range of ESS
@@ -82,6 +104,8 @@ stan_post_df %>%
     axis.title.y = element_text(size=14)
   )
 
+
+# Rhat ----------------------------------------------------------------------------------------
 
 # Determine the range of Rhat
 rhat_range <-
@@ -344,52 +368,53 @@ tau <-
   select(-x) %>% mutate(param='tau')
 
 delta <-
-  extract_param(stan_post,'bio_rep_RE') %>%
+  extract_param(stan_post,'delta') %>%
   rownames_to_column('x') %>%
   mutate(param=str_split_fixed(x,'\\[', 3)[,1]) %>%
-  select(-x) %>% mutate(param='delta') %>% 
+  dplyr::select(-x) %>% mutate(param='delta') %>% 
   slice(c(1:12,25:36))
 
 rho <-
-  extract_param(stan_post,'tau_bio_rep') %>%
+  extract_param(stan_post,'tau_raw') %>%
   rownames_to_column('x') %>%
   mutate(param=str_split_fixed(x,'\\[', 3)[,1]) %>%
-  select(-x) %>% mutate(param='rho') %>% 
+  dplyr::select(-x) %>% mutate(param='rho') %>% 
   slice(c(1,4))
 
 phi <-
   extract_param(stan_post,'logit_phi') %>%
   rownames_to_column('x') %>%
   mutate(param=str_split_fixed(x,'\\[', 3)[,1]) %>%
-  select(-x) %>% mutate(param='phi')
+  dplyr::select(-x) %>% mutate(param='phi')
 
 gamma_0 <-
   extract_param(stan_post,'gamma_0') %>%
   rownames_to_column('x') %>%
   mutate(param=str_split_fixed(x,'\\[', 3)[,1]) %>%
-  select(-x) %>% mutate(param='gamma_0')
+  dplyr::select(-x) %>% mutate(param='gamma_0')
 
 gamma_1 <-
   extract_param(stan_post,'gamma_1') %>%
   rownames_to_column('x') %>%
   mutate(param=str_split_fixed(x,'\\[', 3)[,1]) %>%
-  select(-x) %>% mutate(param='gamma_1')
+  dplyr::select(-x) %>% mutate(param='gamma_1')
 
 beta_0 <-
   extract_param(stan_post,'beta_0') %>%
   rownames_to_column('x') %>%
   mutate(param=str_split_fixed(x,'\\[', 3)[,1]) %>%
-  select(-x) %>% mutate(param='beta_0')
+  dplyr::select(-x) %>% mutate(param='beta_0')
 
 beta_1 <-
   extract_param(stan_post,'beta_1') %>%
   rownames_to_column('x') %>%
   mutate(param=str_split_fixed(x,'\\[', 3)[,1]) %>%
-  select(-x) %>% mutate(param='beta_1')
+  dplyr::select(-x) %>% mutate(param='beta_1')
 
 
 
-X_STATE_prior <- data.frame(mean=rgamma(1e4,10,1)) %>%
+X_STATE_prior <- data.frame(mean=rnorm(2e4,100,100)) %>%
+	filter(mean>0) %>% 
   mutate(lower=quantile(mean,probs = 0.025)) %>%
   mutate(upper=quantile(mean,probs = 0.975)) %>%
   summarise(mean=mean(mean),lower=mean(lower),upper=mean(upper)) %>%
@@ -401,7 +426,7 @@ eta_prior <- data.frame(mean=rnorm(1e4,-2,4)) %>%
   summarise(mean=mean(mean),lower=mean(lower),upper=mean(upper)) %>%
   mutate(param='eta')
 
-omega_prior <- data.frame(mean=rnorm(1e4,0,1)) %>%
+omega_prior <- data.frame(mean=rnorm(1e4,6,1)) %>%
   mutate(lower=quantile(mean,probs = 0.025)) %>%
   mutate(upper=quantile(mean,probs = 0.975)) %>%
   summarise(mean=mean(mean),lower=mean(lower),upper=mean(upper)) %>%
@@ -644,6 +669,404 @@ p1 <- cowplot::plot_grid(pp1,pp2,pp3,pp4,pp5,pp6,ncol = 1,align='v')
 
 df2 <- cowplot::plot_grid(p1,leg,ncol = 2,rel_widths = c(6,1))
 
+df2
 ggsave(here('Plots','Diagnostic_Fig_2.jpg'),df2,height = 12,width = 9)
 
 
+
+
+
+# Posterior Predictive Checks -----------------------------------------------------------------
+
+st_pred_pd <- data.frame(S_q=seq(-2,13,by=0.1)) %>% 
+  mutate(phi=join_ext_param(stan_post,'logit_phi') %>% pull(mean) %>% inverselogit()) %>%
+  mutate(phi_lo=join_ext_param(stan_post,'logit_phi') %>% pull(`2.5%`) %>% inverselogit()) %>%
+  mutate(phi_up=join_ext_param(stan_post,'logit_phi') %>% pull(`97.5%`) %>% inverselogit()) %>%
+  mutate(psi_pred=1-exp(exp(S_q)*phi*-1)) %>% 
+  mutate(psi_pred_lo=1-exp(exp(S_q)*phi_lo*-1)) %>% 
+  mutate(psi_pred_up=1-exp(exp(S_q)*phi_up*-1))
+  
+st_data_pd <- cbind(stan_data$S_q,stan_data$Z_qst) %>% 
+  as.data.frame() %>% 
+  setNames(c('S_q','Z')) %>% 
+  mutate(phi=join_ext_param(stan_post,'logit_phi') %>% pull(mean) %>% inverselogit()) %>%
+  mutate(phi_lo=join_ext_param(stan_post,'logit_phi') %>% pull(`2.5%`) %>% inverselogit()) %>%
+  mutate(phi_up=join_ext_param(stan_post,'logit_phi') %>% pull(`97.5%`) %>% inverselogit()) %>%
+  group_by(S_q) %>% 
+  mutate(Z_mean=mean(Z)) %>% 
+  ungroup() %>% 
+  as.data.frame() %>% 
+  mutate(psi_pred=1-exp(exp(S_q)*phi*-1)) %>% 
+  mutate(psi_pred_lo=1-exp(exp(S_q)*phi_lo*-1)) %>% 
+  mutate(psi_pred_up=1-exp(exp(S_q)*phi_up*-1))
+
+W_data_pd <-
+cbind(stan_data$Z_qen_wat,stan_data$j_qen_wat_idx) %>% 
+  as.data.frame() %>% 
+  setNames(c('Z','g_idx')) %>% 
+  left_join(.,
+            join_ext_param(stan_post,'log_W') %>% 
+              rename(log_W='mean') %>% 
+              dplyr::select(log_W,g_idx),by='g_idx') %>% 
+  mutate(phi=join_ext_param(stan_post,'logit_phi') %>% pull(mean) %>% inverselogit()) %>%
+  mutate(phi_lo=join_ext_param(stan_post,'logit_phi') %>% pull(`2.5%`) %>% inverselogit()) %>%
+  mutate(phi_up=join_ext_param(stan_post,'logit_phi') %>% pull(`97.5%`) %>% inverselogit()) %>%
+  group_by(g_idx) %>% 
+  mutate(Z_mean=mean(Z)) %>% 
+  ungroup() %>% 
+  as.data.frame() %>% 
+  mutate(psi_pred=1-exp(exp(log_W)*phi*-1)) %>% 
+  mutate(psi_pred_lo=1-exp(exp(log_W)*phi_lo*-1)) %>% 
+  mutate(psi_pred_up=1-exp(exp(log_W)*phi_up*-1))
+
+
+A_data_pd <-
+cbind(stan_data$Z_qen_air,stan_data$j_qen_air_idx) %>% 
+  as.data.frame() %>% 
+  setNames(c('Z','g_idx')) %>% 
+  left_join(.,
+            join_ext_param(stan_post,'log_A') %>% 
+              rename(log_A='mean') %>% 
+              dplyr::select(log_A,g_idx),by='g_idx') %>% 
+  mutate(phi=join_ext_param(stan_post,'logit_phi') %>% pull(mean) %>% inverselogit()) %>%
+  mutate(phi_lo=join_ext_param(stan_post,'logit_phi') %>% pull(`2.5%`) %>% inverselogit()) %>%
+  mutate(phi_up=join_ext_param(stan_post,'logit_phi') %>% pull(`97.5%`) %>% inverselogit()) %>%
+  group_by(g_idx) %>% 
+  mutate(Z_mean=mean(Z)) %>% 
+  ungroup() %>% 
+  as.data.frame() %>% 
+  mutate(psi_pred=1-exp(exp(log_A)*phi*-1)) %>% 
+  mutate(psi_pred_lo=1-exp(exp(log_A)*phi_lo*-1)) %>% 
+  mutate(psi_pred_up=1-exp(exp(log_A)*phi_up*-1))
+
+
+pred_cm <-
+data.frame(S_q=rep(seq(-2,14,by=0.1),5),
+           p=rep(c(1:5),each=length(seq(-2,14,by=0.1)))) %>% 
+  mutate(gamma_0=join_ext_param(stan_post,'gamma_0') %>% pull(mean)) %>% 
+  mutate(gamma_1=join_ext_param(stan_post,'gamma_1') %>% pull(mean)) %>% 
+  mutate(beta_1=join_ext_param(stan_post,'beta_1') %>% pull(mean)) %>% 
+  left_join(.,
+            join_ext_param_num(stan_post,'beta_0') %>% 
+              dplyr::select(mean,g_idx) %>% 
+              rename(beta_0='mean'),
+            by=c('p'='g_idx')) %>% 
+  mutate(pred_mu=beta_0+beta_1*S_q) %>% 
+  mutate(pred_sigma=exp(gamma_0+(gamma_1 * S_q))) %>% 
+  rowwise() %>%
+  mutate(pred_ct = rnorm(1, pred_mu, pred_sigma)) %>%
+  ungroup() %>% as.data.frame()
+
+
+st_data_cm <-
+cbind(stan_data$S_q_p,stan_data$R_qst,stan_data$plate_st_idx) %>% 
+  as.data.frame() %>% 
+  setNames(c('S_q','Y','p')) %>% 
+  mutate(gamma_0=join_ext_param(stan_post,'gamma_0') %>% pull(mean)) %>% 
+  mutate(gamma_1=join_ext_param(stan_post,'gamma_1') %>% pull(mean)) %>% 
+  mutate(beta_1=join_ext_param(stan_post,'beta_1') %>% pull(mean)) %>% 
+  left_join(.,
+            join_ext_param_num(stan_post,'beta_0') %>% 
+              dplyr::select(mean,g_idx) %>% 
+              rename(beta_0='mean'),
+            by=c('p'='g_idx')) %>% 
+  mutate(mu=beta_0+(beta_1*S_q)) %>% 
+  mutate(sigma=exp(gamma_0+(gamma_1*S_q))) %>% 
+  mutate(pred_ct=mu) %>% 
+  mutate(pred_ct_lo=mu+(sigma^2)) %>% 
+  mutate(pred_ct_up=mu-(sigma^2))
+
+W_data_cm <-
+cbind(stan_data$R_qen_wat,stan_data$j_qen_wat_p_idx,stan_data$plate_en_wat_idx)  %>% 
+  as.data.frame() %>% 
+  setNames(c('Y','idx','p')) %>% 
+  left_join(.,
+            join_ext_param(stan_post,'log_W') %>% 
+              rename(log_W='mean') %>% 
+              dplyr::select(log_W,g_idx),by=c('idx'='g_idx')) %>% 
+  mutate(gamma_0=join_ext_param(stan_post,'gamma_0') %>% pull(mean)) %>% 
+  mutate(gamma_1=join_ext_param(stan_post,'gamma_1') %>% pull(mean)) %>% 
+  mutate(beta_1=join_ext_param(stan_post,'beta_1') %>% pull(mean)) %>% 
+  left_join(.,
+            join_ext_param_num(stan_post,'beta_0') %>% 
+              dplyr::select(mean,g_idx) %>% 
+              rename(beta_0='mean'),
+            by=c('p'='g_idx')) %>% 
+  mutate(mu=beta_0+(beta_1*log_W)) %>% 
+  mutate(sigma=exp(gamma_0+(gamma_1*log_W))) %>% 
+  mutate(pred_ct=mu) %>% 
+  mutate(pred_ct_lo=mu+(sigma^2)) %>% 
+  mutate(pred_ct_up=mu-(sigma^2))
+
+
+A_data_cm <-
+cbind(stan_data$R_qen_air,stan_data$j_qen_air_p_idx,stan_data$plate_en_air_idx)  %>% 
+  as.data.frame() %>% 
+  setNames(c('Y','idx','p')) %>% 
+  left_join(.,
+            join_ext_param(stan_post,'log_A') %>% 
+              rename(log_A='mean') %>% 
+              dplyr::select(log_A,g_idx),by=c('idx'='g_idx')) %>% 
+  mutate(gamma_0=join_ext_param(stan_post,'gamma_0') %>% pull(mean)) %>% 
+  mutate(gamma_1=join_ext_param(stan_post,'gamma_1') %>% pull(mean)) %>% 
+  mutate(beta_1=join_ext_param(stan_post,'beta_1') %>% pull(mean)) %>% 
+  left_join(.,
+            join_ext_param_num(stan_post,'beta_0') %>% 
+              dplyr::select(mean,g_idx) %>% 
+              rename(beta_0='mean'),
+            by=c('p'='g_idx')) %>% 
+  mutate(mu=beta_0+(beta_1*log_A)) %>% 
+  mutate(sigma=exp(gamma_0+(gamma_1*log_A))) %>% 
+  mutate(pred_ct=mu) %>% 
+  mutate(pred_ct_lo=mu+(sigma^2)) %>% 
+  mutate(pred_ct_up=mu-(sigma^2))
+
+
+N_data <- bind_cols(stan_data$N %>% as.data.frame() %>% setNames('N'),
+  extract_param(stan_post,'lambda') %>% dplyr::select(mean,`2.5%`,`97.5%`) %>% setNames(c('lambda','lambda_lo','lambda_up'))) %>% 
+  group_by(row_number(.)) %>% 
+  mutate(N_pred=median(rnegbin(1e4,lambda,20)),
+         N_pred_lo=median(rnegbin(1e4,lambda_lo,20)),
+         N_pred_up=median(rnegbin(1e4,lambda_up,20))) 
+  # mutate(N_pred=median(rpois(1e4,lambda)),
+  #        N_pred_lo=median(rpois(1e4,lambda_lo)),
+  #        N_pred_up=median(rpois(1e4,lambda_up))) 
+
+legend <- ggplot(data.frame(x = rep(1, 4),y = rep(1, 4),group = factor(rep(1:4))), 
+       aes(x = x, y = y, group = group, color = group,linetype = group)) +
+  geom_line(size = 1) +
+  geom_point(size = 2) +
+  scale_color_manual(values = c("black", "deepskyblue2", "tomato", "darkorchid"), 
+                     labels = c("Standard samples", "Water samples", "Air samples", "Visual samples")) +
+  scale_linetype_manual(values = c(1,1,1,1), 
+                        labels = c("Standard samples", "Water samples", "Air samples", "Visual samples")) +
+  labs(title = '', 
+       color = "Observation method", 
+       linetype = "Observation method") +
+  theme_minimal() +
+  theme(legend.position = "right",
+        legend.title = element_text(size = 15),
+        legend.text = element_text(size = 14))
+
+leg <- cowplot::get_legend(legend)
+
+p1 <-
+  ggplot()+
+  geom_point(data=st_data_pd %>% distinct(S_q,Z_mean,psi_pred),
+             aes(x=Z_mean,y=psi_pred), alpha=0.6)+
+  geom_errorbar(data=st_data_pd %>% distinct(S_q,Z_mean,psi_pred,psi_pred_lo,psi_pred_up),
+                aes(y=psi_pred,ymin = psi_pred_lo,ymax = psi_pred_up,x=Z_mean),color='black',alpha=0.4,width=0.02)+
+  geom_point(data=A_data_pd %>% distinct(g_idx,Z_mean,psi_pred),aes(x=Z_mean,y=psi_pred), alpha=0.6,color='tomato')+
+  geom_errorbar(data=A_data_pd %>% distinct(g_idx,Z_mean,psi_pred,psi_pred_lo,psi_pred_up),
+                aes(y=psi_pred,ymin = psi_pred_lo,ymax = psi_pred_up,x=Z_mean),color='tomato',alpha=0.24,width=0.02)+
+  geom_point(data=W_data_pd %>% distinct(g_idx,Z_mean,psi_pred),aes(x=Z_mean,y=psi_pred),alpha=0.6,color='deepskyblue2')+
+  geom_errorbar(data=W_data_pd %>% distinct(g_idx,Z_mean,psi_pred,psi_pred_lo,psi_pred_up),
+                aes(y=psi_pred,ymin = psi_pred_lo,ymax = psi_pred_up,x=Z_mean),color='deepskyblue2',alpha=0.4,width=0.02)+
+  geom_abline(intercept = 0,slope=1,lty=2)+
+  labs(x='Observed probability of detection',y='Predicted probability\nof detection')+
+  theme_bw()+
+  theme(axis.title = element_text(size=14),
+        axis.text = element_text(size=13))
+
+p2 <- A_data_cm %>% 
+  ggplot()+
+  geom_point(data=st_data_cm,aes(y=pred_ct,x=Y),color='black',alpha=0.4)+
+  geom_errorbar(data=st_data_cm,aes(y=pred_ct,ymin = pred_ct_lo,ymax = pred_ct_up,x=Y),color='black',alpha=0.4)+
+  geom_point(data=W_data_cm,aes(y=pred_ct,x=Y),color='deepskyblue2',alpha=0.4)+
+  geom_errorbar(data=W_data_cm,aes(y=pred_ct,ymin = pred_ct_lo,ymax = pred_ct_up,x=Y),color='deepskyblue2',alpha=0.4)+
+  geom_point(aes(y=pred_ct,x=Y),color='tomato',alpha=0.4)+
+  geom_errorbar(aes(y=pred_ct,ymin = pred_ct_lo,ymax = pred_ct_up,x=Y),color='tomato',alpha=0.4)+
+  geom_abline(intercept = 0,slope=1,lty=2)+
+  labs(x='Observed Ct values',y='Predicted Ct values')+
+  theme_bw()+
+  theme(axis.title = element_text(size=14),
+        axis.text = element_text(size=13))
+
+p3 <- N_data %>% 
+  ggplot()+
+  geom_point(aes(x=N,y=N_pred),color='darkorchid')+
+  geom_errorbar(aes(y=N_pred,ymin = N_pred_lo,ymax = N_pred_up,x=N),color='darkorchid')+
+  geom_abline(intercept = 0,slope=1,lty=2)+
+  labs(x='Observed N values',y='Predicted N values')+
+  scale_x_log10()+
+  scale_y_log10()+
+  theme_bw()+
+  theme(axis.title = element_text(size=14),
+        axis.text = element_text(size=13))
+
+
+pp1 <- cowplot::plot_grid(p1,p2,p3,ncol = 1,align = 'v',labels=c('A','B','C'))
+df3 <- cowplot::plot_grid(pp1,leg,ncol = 2,rel_widths = c(5,2))
+
+df3
+ggsave(here('Plots','Diagnostic_Fig_3.jpg'),df3,width = 7,height = 12)
+
+
+# qPCR assay efficiency -----------------------------------------------------------------------
+
+legend <- ggplot(data.frame(x = rep(1, 3),y = rep(1, 3),group = factor(rep(1:3))), 
+                 aes(x = x, y = y, group = group, color = group,linetype = group)) +
+  geom_line(size = 1) +
+  geom_point(size = 2) +
+  scale_color_manual(values = c("black", "deepskyblue2", "tomato"), 
+                     labels = c("Standard", "Water", "Air")) +
+  scale_linetype_manual(values = c(1,1,1,1), 
+                        labels = c("Standard", "Water", "Air")) +
+  labs(title = '', 
+       color = "Samples", 
+       linetype = "Samples") +
+  theme_minimal() +
+  theme(legend.position = "right",
+        legend.title = element_text(size = 15),
+        legend.text = element_text(size = 14))
+
+leg <- cowplot::get_legend(legend)
+
+p4 <-
+ggplot()+
+  geom_line(data=st_pred_pd,aes(x=exp(S_q),y=psi_pred),size=1,alpha=0.5)+
+  geom_line(data=st_pred_pd,aes(x=exp(S_q),y=psi_pred_lo),size=1,lty=2,alpha=0.3)+
+  geom_line(data=st_pred_pd,aes(x=exp(S_q),y=psi_pred_up),size=1,lty=2,alpha=0.3)+
+  geom_jitter(data=st_data_pd,aes(x=exp(S_q),y=Z),width = 0.1,height = 0.05,alpha=0.5)+
+  geom_point(data=st_data_pd,aes(x=exp(S_q),y=Z_mean),size=3,color='black',alpha=0.1)+
+  geom_jitter(data=W_data_pd,aes(x=exp(log_W),y=Z),width = 0.1,height = 0.05,color='deepskyblue2',alpha=0.7)+
+  geom_point(data=W_data_pd,aes(x=exp(log_W),y=Z_mean),size=3,color='deepskyblue2')+
+  geom_jitter(data=A_data_pd,aes(x=exp(log_A),y=Z),width = 0.1,height = 0.05,color='tomato',alpha=0.7)+
+  geom_point(data=A_data_pd,aes(x=exp(log_A),y=Z_mean),size=3,color='tomato')+
+  scale_x_log10(labels=scientific)+
+  labs(x='DNA concentration',y='Probability of detection')+
+  theme_bw()+
+  theme(axis.title = element_text(size=14),
+        axis.text = element_text(size=13))
+
+p5 <-
+pred_cm %>% mutate(p=as.factor(p)) %>%
+  ggplot()+
+  geom_line(aes(x=exp(S_q),y=pred_mu,colour = p),alpha=0.4,lty=2)+
+  scale_color_manual(values=rep('black',5))+
+  geom_point(data=st_data_cm,aes(y=pred_ct,x=exp(S_q),alpha=0.4))+
+  geom_point(data=W_data_cm,aes(y=pred_ct,x=exp(log_W)),color='deepskyblue2',alpha=0.9)+
+  geom_errorbar(data=W_data_cm,aes(y=pred_ct,ymin = pred_ct_lo,ymax = pred_ct_up,x=exp(log_W)),color='deepskyblue2',alpha=0.4)+
+  geom_point(data=A_data_cm,aes(y=pred_ct,x=exp(log_A)),color='tomato',alpha=0.9)+
+  geom_errorbar(data=A_data_cm,aes(y=pred_ct,ymin = pred_ct_lo,ymax = pred_ct_up,x=exp(log_A)),color='tomato',alpha=0.4)+
+  theme_bw()+
+  labs(x='DNA concentration',y='Ct')+
+  scale_x_log10(labels=scientific)+
+  theme(legend.position = 'none',
+    axis.title = element_text(size=14),
+        axis.text = element_text(size=13))
+
+pp1 <- cowplot::plot_grid(p4,p5,ncol = 1,align = 'v',labels=c('A','B'))
+df3 <- cowplot::plot_grid(pp1,leg,ncol = 2,rel_widths = c(5,1))
+
+ggsave(here('Plots','Supplementary_Fig_1.jpg'),df3,width = 10,height = 10)
+
+
+# Figure 2 ------------------------------------------------------------------------------------
+
+
+post_table %>% filter(!duplicated(a_i)) %>%
+  ggplot()+
+  geom_point(aes(x=as.Date(time),y=discharge),color='orange',size=3)+
+  geom_smooth(aes(x=as.Date(time),y=discharge),color='orange',span=0.5)+
+  theme_bw()
+
+
+
+fig_2_a <- rstan::extract(stanMod_count,'eta') %>% as.data.frame() %>% 
+  pivot_longer(cols = everything(), names_to = "filter", values_to = "dilution") %>% 
+  mutate(filter=gsub('eta.1','Gelatin',filter)) %>% 
+  mutate(filter=gsub('eta.2','MCE Air',filter)) %>% 
+  mutate(filter=gsub('eta.3','MCE DI water',filter)) %>% 
+  mutate(filter=gsub('eta.4','PTFE',filter)) %>% 
+  group_by(filter) %>% 
+  mutate(mean_filter=mean(dilution)) %>% ungroup() %>% 
+  mutate(mean=mean(mean_filter)) %>% 
+  mutate(alpha=dilution-mean) %>% 
+  rename('Filter type'=filter) %>% 
+  ggplot(aes(x = dilution, y = `Filter type`, fill = `Filter type`)) +
+  geom_density_ridges(scale = 1.2, alpha = 1) +
+  theme_ridges()+
+  labs(x = "Dilution factor (η) log(Air eDNA / Water eDNA)")+
+  scale_fill_manual(
+    name = 'Filter type',
+    values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
+    labels = c('Gelatin', 'MCE (air eDNA)', 'MCE (Mili-q water)', 'PTFE')) +
+  theme(axis.title.y = element_blank(),
+        axis.title.x = element_text(hjust = 0.5),
+        legend.position = 'none')
+
+
+fig_2_b <- 
+rstan::extract(stanMod_count,'tau') %>% as.data.frame() %>% 
+  pivot_longer(cols = everything(), names_to = "filter", values_to = "residuals") %>% 
+  mutate(filter=gsub('tau.1','Gelatin',filter)) %>% 
+  mutate(filter=gsub('tau.2','MCE Air',filter)) %>% 
+  mutate(filter=gsub('tau.3','MCE DI water',filter)) %>% 
+  mutate(filter=gsub('tau.4','PTFE',filter)) %>% 
+  # group_by(filter) %>% 
+  # mutate(mean_filter=mean(residuals)) %>% ungroup() %>% 
+  # mutate(mean=mean(mean_filter)) %>% 
+  # mutate(alpha=dilution-mean) %>% 
+  rename('Filter type'=filter) %>% 
+  ggplot(aes(x = residuals, y = `Filter type`, fill = `Filter type`)) +
+  geom_density_ridges(scale = 1.2, alpha = 1) +
+  theme_ridges()+
+  labs(x = "Air eDNA filter type residual error (ε)")+
+  scale_fill_manual(
+    name = 'Filter type',
+    values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
+    labels = c('Gelatin', 'MCE (air eDNA)', 'MCE (Mili-q water)', 'PTFE')) +
+  theme(axis.title.y = element_blank(),
+        axis.title.x = element_text(hjust = 0.5),
+        legend.position = 'none')
+
+fig_2_c <- 
+  rstan::extract(stanMod_count,'tau_raw') %>% as.data.frame() %>% 
+  pivot_longer(cols = everything(), names_to = "filter", values_to = "biological_residuals") %>% 
+  mutate(filter=gsub('tau_raw.1','Gelatin',filter)) %>% 
+  mutate(filter=gsub('tau_raw.2','MCE Air',filter)) %>% 
+  mutate(filter=gsub('tau_raw.3','MCE DI water',filter)) %>% 
+  mutate(filter=gsub('tau_raw.4','PTFE',filter)) %>% 
+  filter(!(filter%in%c('MCE DI water','MCE Air'))) %>% 
+  rename('Filter type'=filter) %>% 
+  ggplot(aes(x = biological_residuals, y = `Filter type`, fill = `Filter type`)) +
+  geom_density_ridges(scale = 1.2, alpha = 1) +
+  theme_ridges()+
+  labs(x = "Air eDNA filter type biological replicability error (δ)")+
+  scale_fill_manual(
+    name = 'Filter type',
+    values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
+    labels = c('Gelatin', 'MCE (air eDNA)', 'MCE (Mili-q water)', 'PTFE')) +
+  theme(axis.title.y = element_blank(),
+        axis.title.x = element_text(hjust = 0.5),
+        legend.position = 'none')
+
+leg <- 
+  rstan::extract(stanMod_count,'eta') %>% as.data.frame() %>% 
+  pivot_longer(cols = everything(), names_to = "filter", values_to = "dilution") %>% 
+  mutate(filter=gsub('eta.1','Gelatin',filter)) %>% 
+  mutate(filter=gsub('eta.2','MCE Air',filter)) %>% 
+  mutate(filter=gsub('eta.3','MCE DI water',filter)) %>% 
+  mutate(filter=gsub('eta.4','PTFE',filter)) %>% 
+  group_by(filter) %>% 
+  # mutate(mean_filter=mean(dilution)) %>% ungroup() %>% 
+  # mutate(mean=mean(mean_filter)) %>% 
+  # mutate(alpha=dilution-mean) %>% 
+  rename('Filter type'=filter) %>% 
+  ggplot(aes(x = dilution, y = `Filter type`, fill = `Filter type`)) +
+  geom_density_ridges(scale = 1.2, alpha = 1) +
+  theme_ridges()+
+  scale_fill_manual(
+    name = 'Filter type',
+    values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
+    labels = c('Gelatin', 'MCE (air eDNA)', 'MCE (Mili-q water)', 'PTFE')) +
+  theme(axis.title.y = element_blank(),
+        axis.title.x = element_text(hjust = 0.5)) 
+
+legend <- cowplot::get_legend(leg)
+
+fig_2_raw <- cowplot::plot_grid(fig_2_a,fig_2_b,fig_2_c,ncol = 1,align = 'v')
+fig_2 <- cowplot::plot_grid(fig_2_raw,legend,rel_widths = c(4,1.5))
+
+ggsave(here('Plots','Figure_2_new.jpg'),fig_2,height = 10,width = 8,dpi =300)
