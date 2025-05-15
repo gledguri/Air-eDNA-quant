@@ -313,6 +313,11 @@ stanMod_count <- stan(
 	warmup = 5000,
 	chains = 4)
 
+cat('conversion parameter ω of Fish/Day to copies/L::')
+post_table_raw %>% select(omega,omega_lo,omega_up) %>% slice(1) %>% exp()
+cat('so 1 fish/day is ~ 15000 copies/L +- 3000')
+
+
 extract_param(stanMod_count,'X_STATE')
 extract_param(stanMod_count,'omega')
 extract_param(stanMod_count,'alpha')
@@ -588,7 +593,11 @@ post_table %>% filter(!duplicated(a_i)) %>%
 
 
 
-fig_2 <- rstan::extract(stanMod_count,'eta') %>% as.data.frame() %>% 
+# Figure 2 ------------------------------------------------------------------------------------
+
+
+
+fig_2_a <- rstan::extract(stanMod_count,'eta') %>% as.data.frame() %>% 
 	pivot_longer(cols = everything(), names_to = "filter", values_to = "dilution") %>% 
 	mutate(filter=gsub('eta.1','Gelatin',filter)) %>% 
 	mutate(filter=gsub('eta.2','MCE Air',filter)) %>% 
@@ -602,12 +611,88 @@ fig_2 <- rstan::extract(stanMod_count,'eta') %>% as.data.frame() %>%
 	ggplot(aes(x = dilution, y = `Filter type`, fill = `Filter type`)) +
 	geom_density_ridges(scale = 1.2, alpha = 1) +
 	theme_ridges()+
-	labs(x = "Dilution factor log(Air eDNA / Water eDNA)")+
+	labs(x = "Dilution factor (η)")+
+	# labs(x = "Dilution factor (η = log(Air eDNA / Water eDNA))")+
 	scale_fill_manual(
 		name = 'Filter type',
 		values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
 		labels = c('Gelatin', 'MCE (air eDNA)', 'MCE (Mili-q water)', 'PTFE')) +
 	theme(axis.title.y = element_blank(),
-				axis.title.x = element_text(hjust = 0.5))
+				axis.title.x = element_text(hjust = 0.5),
+				legend.position = 'none')
 
-ggsave(here('Plots','Figure_2.jpg'),fig_2,height = 10,width = 10,dpi =300)
+
+fig_2_b <- 
+	rstan::extract(stanMod_count,'tau') %>% as.data.frame() %>% 
+	pivot_longer(cols = everything(), names_to = "filter", values_to = "residuals") %>% 
+	mutate(filter=gsub('tau.1','Gelatin',filter)) %>% 
+	mutate(filter=gsub('tau.2','MCE Air',filter)) %>% 
+	mutate(filter=gsub('tau.3','MCE DI water',filter)) %>% 
+	mutate(filter=gsub('tau.4','PTFE',filter)) %>% 
+	# group_by(filter) %>% 
+	# mutate(mean_filter=mean(residuals)) %>% ungroup() %>% 
+	# mutate(mean=mean(mean_filter)) %>% 
+	# mutate(alpha=dilution-mean) %>% 
+	rename('Filter type'=filter) %>% 
+	ggplot(aes(x = residuals, y = `Filter type`, fill = `Filter type`)) +
+	geom_density_ridges(scale = 1.2, alpha = 1) +
+	theme_ridges()+
+	labs(x = "Residual error (ε)")+
+	scale_fill_manual(
+		name = 'Filter type',
+		values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
+		labels = c('Gelatin', 'MCE (air eDNA)', 'MCE (Mili-q water)', 'PTFE')) +
+	theme(axis.title.y = element_blank(),
+				axis.title.x = element_text(hjust = 0.5),
+				legend.position = 'none')
+
+fig_2_c <- 
+	rstan::extract(stanMod_count,'tau_raw') %>% as.data.frame() %>% 
+	pivot_longer(cols = everything(), names_to = "filter", values_to = "biological_residuals") %>% 
+	mutate(filter=gsub('tau_raw.1','Gelatin',filter)) %>% 
+	mutate(filter=gsub('tau_raw.2','MCE Air',filter)) %>% 
+	mutate(filter=gsub('tau_raw.3','MCE DI water',filter)) %>% 
+	mutate(filter=gsub('tau_raw.4','PTFE',filter)) %>% 
+	filter(!(filter%in%c('MCE DI water','MCE Air'))) %>% 
+	rename('Filter type'=filter) %>% 
+	ggplot(aes(x = biological_residuals, y = `Filter type`, fill = `Filter type`)) +
+	geom_density_ridges(scale = 1.2, alpha = 1) +
+	theme_ridges()+
+	labs(x = "Biological replicability error (δ)")+
+	scale_fill_manual(
+		name = 'Filter type',
+		values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
+		labels = c('Gelatin', 'MCE (air eDNA)', 'MCE (Mili-q water)', 'PTFE')) +
+	theme(axis.title.y = element_blank(),
+				axis.title.x = element_text(hjust = 0.5),
+				legend.position = 'none')
+
+leg <- 
+	rstan::extract(stanMod_count,'eta') %>% as.data.frame() %>% 
+	pivot_longer(cols = everything(), names_to = "filter", values_to = "dilution") %>% 
+	mutate(filter=gsub('eta.1','Gelatin',filter)) %>% 
+	mutate(filter=gsub('eta.2','MCE Air',filter)) %>% 
+	mutate(filter=gsub('eta.3','MCE DI water',filter)) %>% 
+	mutate(filter=gsub('eta.4','PTFE',filter)) %>% 
+	group_by(filter) %>% 
+	# mutate(mean_filter=mean(dilution)) %>% ungroup() %>% 
+	# mutate(mean=mean(mean_filter)) %>% 
+	# mutate(alpha=dilution-mean) %>% 
+	rename('Filter type'=filter) %>% 
+	ggplot(aes(x = dilution, y = `Filter type`, fill = `Filter type`)) +
+	geom_density_ridges(scale = 1.2, alpha = 1) +
+	theme_ridges()+
+	scale_fill_manual(
+		name = 'Filter type',
+		values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
+		labels = c('Gelatin', 'MCE (air eDNA)', 'MCE (Mili-q water)', 'PTFE')) +
+	theme(axis.title.y = element_blank(),
+				axis.title.x = element_text(hjust = 0.5)) 
+
+legend <- cowplot::get_legend(leg)
+
+fig_2_raw <- cowplot::plot_grid(fig_2_a,fig_2_b,fig_2_c,ncol = 1,align = 'v',rel_heights = c(4,4,2.5),labels = c('A','B','C'))
+fig_2 <- cowplot::plot_grid(fig_2_raw,legend,rel_widths = c(4,1.5))
+fig_2
+
+ggsave(here('Plots','Figure_2.jpg'),fig_2,height = 10,width = 8,dpi =300)
