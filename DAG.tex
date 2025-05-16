@@ -1,5 +1,5 @@
 \documentclass[landscape]{article}
-\usepackage[paperwidth=222mm, paperheight=165mm, margin=0cm]{geometry}
+\usepackage[paperwidth=222mm, paperheight=183mm, margin=0cm]{geometry}
 \usepackage{tikz}
 \usepackage{xcolor}
 \definecolor{myBlue}{RGB}{173, 216, 230}
@@ -57,7 +57,7 @@
     $\begin{array}{c}
         %X_i = \lambda_{i} \cdot E_{i}^{-1} \\
         \lambda_{i} = X_i \cdot E_{i} \\
-        N_{i} \sim Poisson(\lambda_{i})
+        N_{i} \sim Negative\ Binomial(\lambda_{i},20)
     \end{array}$
 };
 \node [above=of visual, xshift=-0.7cm, yshift=-1.5cm, font=\large\bfseries] {Visual model};
@@ -68,12 +68,13 @@
 %%%%%%%%%%% qPCR env water %%%%%%%%%%%
 \node (qPCR_en_wat) [node, below=of water, fill=myBlue]  at (0,-3) {
     $\begin{array}{l}
+    U_i = W_i / V_{itp} \\
         Z_{it} \sim \mathrm{Bernoulli} \left(\psi_{i}\right) \\
         %logit(\psi_{i}) = \phi0 + \phi1 \cdot \ln (W_{i}) \\
-        \psi_{i} = 1 - exp(-W_{i} \cdot \phi) \\
+        \psi_{i} = 1 - exp(-U_{i} \cdot \phi) \\
         Y_{itp} \sim \mathrm{Normal} (\mu_{ip}, \sigma_{i}) \quad \textnormal{if } Z_{it} = 1 \\
-        \mu_{ip} = \beta0 + \beta1_{p} \cdot \ln (W_{i}) \\
-        \sigma_{i} = \exp(\gamma0 + \gamma1 \cdot \ln (W_{i}))
+        \mu_{ip} = \beta0 + \beta1_{p} \cdot \ln (U_{i} / G) \\
+        \sigma_{i} = \exp(\gamma0 + \gamma1 \cdot \ln (U_{i}))
     \end{array}$
 };
 \node [above=of qPCR_en_wat, xshift=2.1cm, yshift=-1.5cm, font=\large\bfseries] {qPCR water model};
@@ -84,12 +85,13 @@
 %%%%%%%%%%% qPCR env air %%%%%%%%%%%
 \node (qPCR_en_air) [node, below=of air, fill=myBlue]  at (8,-3) {
     $\begin{array}{l}
+    Q_{ijb} = A_{ijb} \cdot S_{ij} / V_{ijbtp} \\
         Z_{ijbt} \sim \mathrm{Bernoulli} \left(\psi_{ijb}\right) \\
-        %logit(\psi_{ijb}) = \phi0 + \phi1 \cdot \ln (A_{ijb}) \\
-        \psi_{ijb} = 1 - exp(-A_{ijb} \cdot \phi) \\
+        %logit(\psi_{ijb}) = \phi0 + \phi1 \cdot \ln (Q_{ijb}) \\
+        \psi_{ijb} = 1 - exp(-Q_{ijb} \cdot \phi) \\
         Y_{ijbtp} \sim \mathrm{Normal} (\mu_{ijb}, \sigma_{ijb}) \quad \textnormal{if } Z_{ijbt} = 1 \\
-        \mu_{ijb} = \beta0 + \beta1_{p} \cdot \ln (A_{ijb}) \\
-        \sigma_{ijb} = \exp(\gamma0 + \gamma1 \cdot \ln (A_{ijb}))
+        \mu_{ijb} = \beta0 + \beta1_{p} \cdot \ln (Q_{ijb}) \\
+        \sigma_{ijb} = \exp(\gamma0 + \gamma1 \cdot \ln (Q_{ijb}))
     \end{array}$
 };
 \node [above=of qPCR_en_air, xshift=2.0cm, yshift=-1.5cm, font=\large\bfseries] {qPCR air model};
@@ -128,32 +130,34 @@
 
 
 \node (parameters) [rectangle, draw, 
-align=left, right=of qPCR_st, text width=8.1cm, fill=myGrey] at (-11.63,-10.5) {
+align=left, right=of qPCR_st, text width=8.1cm, fill=myGrey] at (-11.63,-11.4) {
 \small{
       \begin{tabular}{cl}
     &\textbf{Parameters} \\
     $\lambda$ & expected fish accumulated over E days\\
     $\psi$&probability of positive qPCR amplification \\
     $\phi$ & detection probability intercept function\\
-    & and DNA concentration (K and W or A) \\
+    & and DNA concentration (K and U or Q) \\
     $\mu$&mean Ct values of qPCR \\
     $\beta0, \beta1$&intercept and slope between $\mu$ and \\
-    &DNA concentration (K and W or A) \\
+    &DNA concentration (K and U or Q) \\
     $\sigma$&standard deviation of qPCR Ct values \\
     $\gamma0, \gamma1$&intercept and slope between $\sigma$ and\\
-    &DNA concentration (K and W or A) \\
+    &DNA concentration (K and U or Q) \\
     $\omega$&conversion parameter between fish density\\
     &and DNA concentration\\
     $\eta$&dilution factor of DNA concentration\\
-    &from water to air \\
+    &from water to air (in log$_e$)\\
     $\varepsilon$&error term (residual) \\
-    $\delta$&biological replicate error (bio-rep residual)
+    $\tau$& standard deviation of $\varepsilon$ \\
+    $\delta$&biological replicate error (bio-rep residual)\\
+    $\rho$& standard deviation of $\delta$ 
     \end{tabular}
     }
 };
 
 % Legend: Subscripts
-\node (subscripts) [rectangle, draw, align=left, below=of qPCR_st, text width=6cm, fill=myGrey] at (-7,-2.4) {
+\node (subscripts) [rectangle, draw, align=left, below=of qPCR_st, text width=6cm, fill=myGrey] at (-7,-2.9) {
 \small{
       \begin{tabular}{cl}
     &\textbf{Subscripts} \\
@@ -168,7 +172,7 @@ align=left, right=of qPCR_st, text width=8.1cm, fill=myGrey] at (-11.63,-10.5) {
     }
 };
 
-\node (data) [rectangle, draw, align=left, above=of air, text width=7cm, fill=myGrey] at (8,-2.0){
+\node (data) [rectangle, draw, align=left, above=of air, text width=7.4cm, fill=myGrey] at (8,-2.0){
 \small{
       \begin{tabular}{cl}
     &\textbf{Data} \\
@@ -176,18 +180,22 @@ align=left, right=of qPCR_st, text width=8.1cm, fill=myGrey] at (-11.63,-10.5) {
     $E$&days between counting (effort)\\
     $Z$&qPCR amplification (yes=1; no=0) \\
     $Y$&qPCR Ct values \\
-    $K$&Known concentration in copies/$\mu$L
+    $K$&Known concentration in copies/$\mu$L \\
+    $V$&Reaction volume in $\mu$L \\
+    $S$&Surface area of air collection method cm/$^2$
      \end{tabular}
     }
 };
 
 % Legend: State variables
-\node (state) [rectangle, draw, align=left, right=of qPCR_st, text width=10.5cm, fill=myGrey] at (-0.5,-13.2){
+\node (state) [rectangle, draw, align=left, right=of qPCR_st, text width=10.5cm, fill=myGrey] at (-0.5,-13.9){
 \small{
       \begin{tabular}{cl}
     &\textbf{State variables} \\
-    $W$&unknown eDNA concentration in water samples (copies/$\mu$L) \\
-    $A$&unknown eDNA concentration in air samples (copies/$\mu$L)\\
+    $W$&unknown eDNA concentration in water samples (copies/L) \\
+    $U$&unknown eDNA concentration in water samples (copies/$\mu$L) \\
+    $A$&unknown eDNA concentration in air samples (copies/day/cm$^2$)\\
+    $Q$&unknown eDNA concentration in air samples (copies/$\mu$L) \\
     $X$&unknown fish density (fish/day) \\
          \end{tabular}
     }
