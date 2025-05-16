@@ -888,8 +888,10 @@ p3 <- N_data %>%
   geom_errorbar(aes(y=N_pred,ymin = N_pred_lo,ymax = N_pred_up,x=N),color='darkorchid')+
   geom_abline(intercept = 0,slope=1,lty=2)+
   labs(x='Observed N values',y='Predicted N values')+
-  scale_x_log10()+
-  scale_y_log10()+
+  xlim(0,3000)+
+  ylim(0,3000)+
+  # scale_x_log10()+
+  # scale_y_log10()+
   theme_bw()+
   theme(axis.title = element_text(size=14),
         axis.text = element_text(size=13))
