@@ -218,7 +218,7 @@ model {
 	// alpha ~ normal(-8,1);
 	// log_W ~ normal(0,3);
 	//////////////////////////////////////////////////////////////////////// Water to Air
-	log_A ~ normal(0,3);
+	// log_A ~ normal(0,3);
 	eta ~ normal(-2,4);
 	// eta ~ normal(0,0.5);
 	epsilon_raw ~ std_normal();

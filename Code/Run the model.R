@@ -421,6 +421,10 @@ table_1 <-
 						SEE=mean(abs(epsilon)),
 						bio_rep_delta=mean(abs(delta)))
 
+table_1 %>% 
+	mutate(mean_diltuion=mean(dilution)) %>% 
+	mutate(capturing_eff=dilution-mean_diltuion)
+
 
 omega <- post_table$omega %>% unique()
 # alpha <- extract_param(stanMod_count,'alpha') %>% pull(mean)
