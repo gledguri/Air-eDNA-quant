@@ -637,7 +637,7 @@ fig_2_b <-
 	ggplot(aes(x = residuals, y = `Filter type`, fill = `Filter type`)) +
 	geom_density_ridges(scale = 1.2, alpha = 1) +
 	theme_ridges()+
-	labs(x = "Residual error (ε)")+
+	labs(x = "SD of residual error (τ)")+
 	scale_fill_manual(
 		name = 'Filter type',
 		values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
@@ -658,7 +658,7 @@ fig_2_c <-
 	ggplot(aes(x = biological_residuals, y = `Filter type`, fill = `Filter type`)) +
 	geom_density_ridges(scale = 1.2, alpha = 1) +
 	theme_ridges()+
-	labs(x = "Biological replicability error (δ)")+
+	labs(x = "SD of biological replicability error (ρ)")+
 	scale_fill_manual(
 		name = 'Filter type',
 		values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
