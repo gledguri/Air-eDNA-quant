@@ -20,7 +20,7 @@
 
 %%%%%%%%%%% TRUE FISH %%%%%%%%%%%
 \node (Fish_TRUE) [node, fill=myBlue] at (-3.5,0.8) {
-    \textbf{$X$}
+    \textbf{$X_t$}
 };
 \node [above=of Fish_TRUE, yshift=-1.5cm, font=\large\bfseries] {Fish density};
 
@@ -28,7 +28,7 @@
 \node (water) [node, below=of Fish_TRUE, fill=myBlue]  at (0,0) {
     $\begin{array}{c}
         %\lambda_{i} = W_{i} \cdot \omega
-        W_{i} = X_i \cdot \omega
+        W_{t} = X_t \cdot \omega
         %W_{i} = \lambda_{i} \cdot \omega
     \end{array}$
 };
@@ -39,9 +39,9 @@
 %%%%%%%%%%% Air %%%%%%%%%%%
 \node (air) [node, below=of Fish_TRUE, fill=myBlue]  at (8,0.20) {
     $\begin{array}{c}
-        \ln(A_{ijb}) = \eta_{j} + \ln(W_{i}) + \varepsilon_{ij} + \delta_{ijb} \\
-        \varepsilon_{ij} \sim \mathcal{N}(0,\tau_j) \\
-        \delta_{ijb} \sim \mathcal{N}(0,\rho_j)
+        \ln(A_{tjb}) = \eta_{j} + \ln(W_{t}) + \varepsilon_{tj} + \delta_{tjb} \\
+        \varepsilon_{tj} \sim \mathcal{N}(0,\tau_j) \\
+        \delta_{tjb} \sim \mathcal{N}(0,\rho_j)
         %\ln(A_{ij}) = \ln(A_{ijb}) + \delta_{b} \\
         %\ln(A_{ij}) = \eta_{j} + \ln(W_{i}) + \varepsilon_{ij} \vspace{3px}\\
         %A_{ij} = \frac{1}{B} \cdot \sum_{b=1}^{B} A_{ijb} \vspace{3px}\\
@@ -56,8 +56,9 @@
 \node (visual) [node, below=of Fish_TRUE, fill=myBlue]  at (-7,0) {
     $\begin{array}{c}
         %X_i = \lambda_{i} \cdot E_{i}^{-1} \\
-        \lambda_{i} = X_i \cdot E_{i} \\
-        N_{i} \sim Negative\ Binomial(\lambda_{i},20)
+        \lambda_{t} = X_t \cdot E_{t} \\
+        N_{t} \sim \mathrm{Negative\ Binomial}(\lambda_{t},\phi)\\
+        \phi = 20
     \end{array}$
 };
 \node [above=of visual, xshift=-0.7cm, yshift=-1.5cm, font=\large\bfseries] {Visual model};
@@ -68,13 +69,13 @@
 %%%%%%%%%%% qPCR env water %%%%%%%%%%%
 \node (qPCR_en_wat) [node, below=of water, fill=myBlue]  at (0,-3) {
     $\begin{array}{l}
-    U_i = W_i / V_{itp} \\
-        Z_{it} \sim \mathrm{Bernoulli} \left(\psi_{i}\right) \\
+    U_t = W_t / V_{trp} \\
+        Z_{tr} \sim \mathrm{Bernoulli} \left(\psi_{t}\right) \\
         %logit(\psi_{i}) = \phi0 + \phi1 \cdot \ln (W_{i}) \\
-        \psi_{i} = 1 - exp(-U_{i} \cdot \phi) \\
-        Y_{itp} \sim \mathrm{Normal} (\mu_{ip}, \sigma_{i}) \quad \textnormal{if } Z_{it} = 1 \\
-        \mu_{ip} = \beta0 + \beta1_{p} \cdot \ln (U_{i} / G) \\
-        \sigma_{i} = \exp(\gamma0 + \gamma1 \cdot \ln (U_{i}))
+        \psi_{t} = 1 - exp(-U_{t} \cdot \theta) \\
+        Y_{trp} \sim \mathrm{Normal} (\mu_{tp}, \sigma_{t}) \quad \textnormal{if } Z_{tr} = 1 \\
+        \mu_{tp} = \beta0 + \beta1_{p} \cdot \ln (U_{t}) \\
+        \sigma_{t} = \exp(\gamma0 + \gamma1 \cdot \ln (U_{t}))
     \end{array}$
 };
 \node [above=of qPCR_en_wat, xshift=2.1cm, yshift=-1.5cm, font=\large\bfseries] {qPCR water model};
@@ -85,13 +86,13 @@
 %%%%%%%%%%% qPCR env air %%%%%%%%%%%
 \node (qPCR_en_air) [node, below=of air, fill=myBlue]  at (8,-3) {
     $\begin{array}{l}
-    Q_{ijb} = A_{ijb} \cdot S_{ij} / V_{ijbtp} \\
-        Z_{ijbt} \sim \mathrm{Bernoulli} \left(\psi_{ijb}\right) \\
+    Q_{tjb} = A_{tjb} \cdot S_{tj} / V_{tjbrp} \\
+        Z_{tjbr} \sim \mathrm{Bernoulli} \left(\psi_{tjb}\right) \\
         %logit(\psi_{ijb}) = \phi0 + \phi1 \cdot \ln (Q_{ijb}) \\
-        \psi_{ijb} = 1 - exp(-Q_{ijb} \cdot \phi) \\
-        Y_{ijbtp} \sim \mathrm{Normal} (\mu_{ijb}, \sigma_{ijb}) \quad \textnormal{if } Z_{ijbt} = 1 \\
-        \mu_{ijb} = \beta0 + \beta1_{p} \cdot \ln (Q_{ijb}) \\
-        \sigma_{ijb} = \exp(\gamma0 + \gamma1 \cdot \ln (Q_{ijb}))
+        \psi_{tjb} = 1 - exp(-Q_{tjb} \cdot \theta) \\
+        Y_{tjbrp} \sim \mathrm{Normal} (\mu_{tjb}, \sigma_{tjb}) \quad \textnormal{if } Z_{tjbr} = 1 \\
+        \mu_{tjb} = \beta0 + \beta1_{p} \cdot \ln (Q_{tjb}) \\
+        \sigma_{tjb} = \exp(\gamma0 + \gamma1 \cdot \ln (Q_{tjb}))
     \end{array}$
 };
 \node [above=of qPCR_en_air, xshift=2.0cm, yshift=-1.5cm, font=\large\bfseries] {qPCR air model};
@@ -104,7 +105,7 @@
     $\begin{array}{l}
         Z_{kr} \sim \mathrm{Bernoulli} \left(\psi_{k}\right) \\
         %logit(\psi_{k}) = \phi0 + \phi1 \cdot \ln (K_{k}) \\
-        (\psi_{k}) = 1 - exp(-K_{k} \cdot \phi) \\
+        (\psi_{k}) = 1 - exp(-K_{k} \cdot \theta) \\
         Y_{kr} \sim \mathrm{Normal} (\mu_{k}, \sigma_{k}) \quad \textnormal{if } Z_{kr} = 1 \\
         \mu_{k} = \beta0 + \beta1_{p} \cdot \ln (K_{k}) \\
         \sigma_{k} = \exp(\gamma0 + \gamma1 \cdot \ln (K_{k}))
@@ -118,8 +119,8 @@
         \draw [->, thick] (Fish_TRUE) -- node[midway, left] {E} (visual);
         \draw [->, thick] (Fish_TRUE) -- node[midway, left] {$\omega$} (water);
         \draw [->, thick] (water) -- node[midway, above] {$\eta_j,\varepsilon_{ij},\delta_{ijb}$} (air);
-        \draw [<-, thick] (qPCR_en_air) -- node[midway, left] {$A_{ijb}$} (air);
-        \draw [<-, thick] (qPCR_en_wat) -- node[midway, left] {$W_i$} (water);
+        \draw [<-, thick] (qPCR_en_air) -- node[midway, left] {$A_{tjb}$} (air);
+        \draw [<-, thick] (qPCR_en_wat) -- node[midway, left] {$W_t$} (water);
 
         \draw [->, thick] (qPCR_st) -- node[midway, right, xshift=28pt] {
         $\begin{array}{c}
@@ -136,7 +137,7 @@ align=left, right=of qPCR_st, text width=8.1cm, fill=myGrey] at (-11.63,-11.4) {
     &\textbf{Parameters} \\
     $\lambda$ & expected fish accumulated over E days\\
     $\psi$&probability of positive qPCR amplification \\
-    $\phi$ & detection probability intercept function\\
+    $\theta$ & detection probability intercept function\\
     & and DNA concentration (K and U or Q) \\
     $\mu$&mean Ct values of qPCR \\
     $\beta0, \beta1$&intercept and slope between $\mu$ and \\
@@ -161,11 +162,11 @@ align=left, right=of qPCR_st, text width=8.1cm, fill=myGrey] at (-11.63,-11.4) {
 \small{
       \begin{tabular}{cl}
     &\textbf{Subscripts} \\
-    $i$&time \\
+    $t$&time \\
     $j$&filter type \\
     %$j$&sample\\
     $b$&biological replicate\\
-    $t$&technical replicate \\
+    $r$&technical replicate \\
     $p$&qPCR plate \\
     $k$&qPCR standard sample
         \end{tabular}
