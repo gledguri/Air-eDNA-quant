@@ -44,6 +44,16 @@ Ryan P. Kelly$^1$}
 
 %Figure S2 -------------------- 
 
+\begin{figure}[tbhp] 
+\centering
+\includegraphics[width=15.5cm]{Plots/Figure_2.jpg}  
+\caption{Density plots showing posterior distributions of: (A) water-to-air dilution factors ($\eta$), illustrating the magnitude of concentration reduction between aquatic and atmospheric matrices; (B) standard deviation (SD) of the residual error values ($\tau$), representing the congruence (lower = better) between estimated eDNA concentrations between air and water; and (C) standard deviation (SD) of the biological replicability error ($\rho$), quantifying measurement consistency (lower = better) between 
+technical replicates of two air filters (PTFE and gelatin filters). Each parameter is estimated for each of four different air eDNA collection methods (differentiated by colors).}
+\label{fig:fig2}
+\end{figure}
+
+%Figure S3 -------------------- 
+
 \clearpage
 \begin{figure}[tbhp] 
 \centering
@@ -52,19 +62,19 @@ Ryan P. Kelly$^1$}
 \label{fig:diagnostics}
 \end{figure}
 
-%Figure S3 -------------------- 
+%Figure S4 -------------------- 
 
 \clearpage
 \begin{figure}[tbhp] 
 \centering
 \includegraphics[width=15.5cm]{Plots/Diagnostic_Fig_2.jpg}  
 \caption{Prior sensitivity analysis for model parameters ($\beta_0, \beta_1,, 
-\gamma_0,\gamma_1,\varepsilon,\tau,\delta,\rho,\omega,\phi,\eta,X$). Black points and intervals represent posterior means and 95\% confidence intervals respectively and red points and intervals show prior mean and 95\% confidence intervals respectively.}
+\gamma_0,\gamma_1,\varepsilon,\tau,\delta,\rho,\omega,\theta,\eta,X$). Black points and intervals represent posterior means and 95\% confidence intervals respectively and red points and intervals show prior mean and 95\% confidence intervals respectively.}
 \label{fig:prior_sens}
 \end{figure}
 
 
-%Figure S4 -------------------- 
+%Figure S5 -------------------- 
 
 \clearpage
 \begin{figure}[tbhp] 
@@ -112,17 +122,22 @@ $\mu$& mean Ct values of qPCR & - \\
 $\sigma$& standard deviation of qPCR Ct values & - \\
 &&\\
 
+&Fixed parameters&\\
+\hline
+$\phi$& overdispersion parameter of Negative Binomial & - ($\phi = 20$) \\
+&&\\
+
 &Parameters&\\
 \hline
 $\omega$& conversion parameter between fish density
 and DNA concentration & $\mathcal{N}(6,1)$\\
 $\eta$& dilution factor of DNA concentration
 from water to air & $\mathcal{N}(-2,4)$\\
-$\varepsilon$& time ($i$) specific error term (residual) & $\mathcal{N}(0,\tau)$\\
+$\varepsilon$& time ($t$) specific error term (residual) & $\mathcal{N}(0,\tau)$\\
 $\tau$& standard deviation of residuals & $\mathcal{TN}(0,1;0, +\infty)$\\
 $\delta$& biological replicate error term (residual) & $\mathcal{N}(0,\rho)$\\
 $\rho$& standard deviation of biological replicate error & $\mathcal{TN}(0,1;0, +\infty)$\\
-$\phi$& intercept of the qPCR probability of detection ($\psi$) relationship &$\mathcal{N}(-1,1)$\\
+$\theta$& intercept of the qPCR probability of detection ($\psi$) relationship &$\mathcal{N}(-1,1)$\\
 & and eDNA concentration ($K$, $W$, and $A$) \\
 $\beta0$& intercept of the linear relation between the mean Ct values ($\mu$)&$\mathcal{N}(40,1)$\\
 &and eDNA concentration ($K$, $W$, and $A$) & \\
@@ -135,12 +150,12 @@ $\gamma1$& intercept of the linear relation between the standard deviation &$\ma
 &&\\
 &Index&\\
 \hline
-$i$& time (days) & -\\
+$t$& time (days) & -\\
 $j$& filter type & -\\
 $b$& biological sample replicate & -\\
 $p$& qPCR plate & -\\
 $k$& qPCR standard sample & -\\
-$t$& qPCR technical replicate & -\\
+$r$& qPCR technical replicate & -\\
 
 
     \end{tabular}
