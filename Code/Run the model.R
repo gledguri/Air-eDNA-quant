@@ -313,9 +313,8 @@ stanMod_count <- stan(
 	warmup = 5000,
 	chains = 4)
 
-cat('conversion parameter ω of Fish/Day to copies/L::')
-post_table_raw %>% select(omega,omega_lo,omega_up) %>% slice(1) %>% exp()
-cat('so 1 fish/day is ~ 15000 copies/L +- 3000')
+# stanMod_count <- readRDS(here('Output','stanMod_output_3.rds'))
+
 
 
 extract_param(stanMod_count,'X_STATE')
@@ -325,8 +324,8 @@ extract_param(stanMod_count,'eta')
 extract_param(stanMod_count,'delta')
 extract_param(stanMod_count,'delta_raw')
 
-saveRDS(stanMod_count,here('Output','stanMod_output_3.rds'))
-saveRDS(stan_data,here('Output','stan_data_input_3.rds'))
+# saveRDS(stanMod_count,here('Output','stanMod_output_3.rds'))
+# saveRDS(stan_data,here('Output','stan_data_input_3.rds'))
 
 discharge <- samp_tab_ijb %>% 
 	left_join(.,data.frame(t_idx=c(1:6),
@@ -430,6 +429,10 @@ omega <- post_table$omega %>% unique()
 # alpha <- extract_param(stanMod_count,'alpha') %>% pull(mean)
 
 
+cat('conversion parameter ω of Fish/Day to copies/L::')
+post_table_raw %>% select(omega,omega_lo,omega_up) %>% slice(1) %>% exp()
+cat('so 1 fish/day is ~ 15000 copies/L +- 3000')
+
 library(ggtext)
 library(scales)
 library(ggnewscale)
@@ -442,9 +445,10 @@ p1 <-
 	geom_smooth(aes(x=as.Date(time),y=(X_STATE_up)),color='grey50',span=0.5,lty=3)+
 	geom_point(aes(x=as.Date(time),y=(lambda/E)),col='#AB5971',size=5)+
 	geom_errorbar(aes(x=as.Date(time),ymin=(lambda_lo/E),ymax=(lambda_up/E)),col='#AB5971',size=0.7,width = 0.7)+
-	labs(
-		y = "<span style='color:black;'>X - Fish density (count &times; day<sup>-1</sup>)</span><br><br><span style='color:#AB5971;'> (λ &times; E<sup>-1</sup>)</span>"
-	) +
+	labs(y=bquote('X - Fish density\n(count/day)'))+
+	# labs(
+	# 	y = "<span style='color:black;'>X - Fish density (count &times; day<sup>-1</sup>)</span><br><br><span style='color:#AB5971;'> (λ &times; E<sup>-1</sup>)</span>"
+	# ) +
 	scale_y_log10()+
 	scale_x_date(breaks = seq(as.Date("2024-10-17"), as.Date("2024-11-21"), by = "1 week")) +	
 	theme_bw()+
@@ -453,11 +457,13 @@ p1 <-
 		axis.title.x = element_blank(),
 		axis.text.x = element_blank(),
 		axis.ticks.x = element_blank(),
-		axis.title.y = element_markdown( size = 16),
+		axis.title.y = element_text( size = 16),
+		# axis.title.y = element_markdown( size = 16),
 		# axis.title.y = element_text(color = "black", size = 16),
 		axis.text.y = element_text(color = "black", size = 14),
 		legend.position = 'none',
 	)
+
 
 
 p2 <-
@@ -585,7 +591,8 @@ fig_1 <-
 		legend,ncol = 1,rel_heights = c(5,1.2))
 
 fig_1
-ggsave(here('Plots','Figure_1_new.jpg'),fig_1,height = 10,width = 17,dpi =300)
+# ggsave(here('Plots','Figure_1_new.jpg'),fig_1,height = 10,width = 17,dpi =300)
+ggsave(here('Plots','Figure 2.pdf'),fig_1,height = 10,width = 17,dpi =300)
 
 # source(here('Code','Dianostic_plots.R'))
 
@@ -615,7 +622,8 @@ fig_2_a <- rstan::extract(stanMod_count,'eta') %>% as.data.frame() %>%
 	ggplot(aes(x = dilution, y = `Filter type`, fill = `Filter type`)) +
 	geom_density_ridges(scale = 1.2, alpha = 1) +
 	theme_ridges()+
-	labs(x = "Dilution factor (η)")+
+	labs(x = expression("Dilution factor" ~ (italic(eta))))+
+	# labs(x = "Dilution factor (η)")+
 	# labs(x = "Dilution factor (η = log(Air eDNA / Water eDNA))")+
 	scale_fill_manual(
 		name = 'Filter type',
@@ -641,7 +649,8 @@ fig_2_b <-
 	ggplot(aes(x = residuals, y = `Filter type`, fill = `Filter type`)) +
 	geom_density_ridges(scale = 1.2, alpha = 1) +
 	theme_ridges()+
-	labs(x = "SD of residual error (τ)")+
+	labs(x = expression("SD of residual error" ~ (italic(tau))))+
+	# labs(x = "SD of residual error (τ)")+
 	scale_fill_manual(
 		name = 'Filter type',
 		values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
@@ -662,7 +671,8 @@ fig_2_c <-
 	ggplot(aes(x = biological_residuals, y = `Filter type`, fill = `Filter type`)) +
 	geom_density_ridges(scale = 1.2, alpha = 1) +
 	theme_ridges()+
-	labs(x = "SD of biological replicability error (ρ)")+
+	labs(x = expression("SD of biological replicability error" ~ (italic(rho))))+
+	# labs(x = "SD of biological replicability error (ρ)")+
 	scale_fill_manual(
 		name = 'Filter type',
 		values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
@@ -678,10 +688,6 @@ leg <-
 	mutate(filter=gsub('eta.2','MCE Air',filter)) %>% 
 	mutate(filter=gsub('eta.3','MCE DI water',filter)) %>% 
 	mutate(filter=gsub('eta.4','PTFE',filter)) %>% 
-	group_by(filter) %>% 
-	# mutate(mean_filter=mean(dilution)) %>% ungroup() %>% 
-	# mutate(mean=mean(mean_filter)) %>% 
-	# mutate(alpha=dilution-mean) %>% 
 	rename('Filter type'=filter) %>% 
 	ggplot(aes(x = dilution, y = `Filter type`, fill = `Filter type`)) +
 	geom_density_ridges(scale = 1.2, alpha = 1) +
@@ -699,4 +705,5 @@ fig_2_raw <- cowplot::plot_grid(fig_2_a,fig_2_b,fig_2_c,ncol = 1,align = 'v',rel
 fig_2 <- cowplot::plot_grid(fig_2_raw,legend,rel_widths = c(4,1.5))
 fig_2
 
-ggsave(here('Plots','Figure_2.jpg'),fig_2,height = 10,width = 8,dpi =300)
+# ggsave(here('Plots','Figure_2.jpg'),fig_2,height = 10,width = 8,dpi =300)
+ggsave(here('Plots','Supplementary Figure 2.pdf'),fig_2,height = 10,width = 8,dpi =300)

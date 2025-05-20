@@ -19,6 +19,11 @@ scientific <- function(x) {
   )
 }
 
+inverselogit <- function (x) 
+{
+  return(1/(1 + exp(-x)))
+}
+
 scientific_10 <- function(x) {
   c <- log10(x)
   expo <- floor(c)
@@ -332,7 +337,7 @@ df1 <- cowplot::plot_grid(pp3,leg,ncol = 2,rel_widths = c(7,1.5))
 df1
 
 # ggsave(here('Plots','Diagnostic_Fig_1.jpg'),df1,height = 13,width = 9)
-
+# ggsave(here('Plots','Supplementary Figure 3.pdf'),df1,height = 13,width = 9)
 
 # # Prior Sensitivity ---------------------------------------------------------------------------
 
@@ -625,7 +630,7 @@ post_jitter %>% filter(param%in%c('phi','omega')) %>%
           axis.title.y = element_blank())+
   scale_y_discrete(labels = c(
     "omega" = expression(omega),
-    "phi" = expression(phi)))
+    "phi" = expression(theta)))
 
 pp6 <-
 post_jitter %>% filter(param%in%c('eta','X_STATE')) %>% 
@@ -670,7 +675,8 @@ p1 <- cowplot::plot_grid(pp1,pp2,pp3,pp4,pp5,pp6,ncol = 1,align='v')
 df2 <- cowplot::plot_grid(p1,leg,ncol = 2,rel_widths = c(6,1))
 
 df2
-ggsave(here('Plots','Diagnostic_Fig_2.jpg'),df2,height = 12,width = 9)
+# ggsave(here('Plots','Diagnostic_Fig_2.jpg'),df2,height = 12,width = 9)
+# ggsave(here('Plots','Supplementary Figure 4.pdf'),df2,height = 12,width = 9)
 
 
 
@@ -901,7 +907,8 @@ pp1 <- cowplot::plot_grid(p1,p2,p3,ncol = 1,align = 'v',labels=c('A','B','C'))
 df3 <- cowplot::plot_grid(pp1,leg,ncol = 2,rel_widths = c(5,2))
 
 df3
-ggsave(here('Plots','Diagnostic_Fig_3.jpg'),df3,width = 7,height = 12)
+# ggsave(here('Plots','Diagnostic_Fig_3.jpg'),df3,width = 7,height = 12)
+ggsave(here('Plots','Supplementary Figure 5.pdf'),df3,width = 7,height = 12)
 
 
 # qPCR assay efficiency -----------------------------------------------------------------------
