@@ -91,7 +91,7 @@ In summary, we synthesize three methods of observations (visual counting of fish
 
 We model the upstream migration of coho salmon (\textit{Oncorhynchus kisutch}) as arising from the inferred unknown true density of fish. As individuals move upriver, fish accumulate in a holding area immediately downstream of the hatchery river dam. At discrete times $t$, the hatchery staff opens the ladder gate to allow passage into holding tanks. Between successive gate-opening events ($\Delta t$), additional coho salmon arrive and join the backlog in the holding area, increasing the number of individuals awaiting passage. Let $X$ represent the true daily accumulation rate (also fish density at the river dam) in units of fish/day at time $t$, and E denote the number of days elapsed between consecutive gate openings ($ E_t =\Delta t$; hence $ E_{t=1} = 0$). Prior to each gate opening (at time \textit{t}), the crew conducts a visual count $N_t$ of accumulated fish. Assuming $X_t$ remains relatively constant between successive gate-opening events ($\Delta t$), we model the observed fish counts as a Negative Binomial process:
 \begin{equation}
-\lambda_t = X_t \cdot E_t \\
+\lambda_t = X_t \cdot E_t
 \end{equation}
 
 \begin{equation}
