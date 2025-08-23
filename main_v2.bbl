@@ -1,0 +1,539 @@
+\begin{thebibliography}{52}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Dudgeon et~al.(2006)Dudgeon, Arthington, Gessner, Kawabata, Knowler,
+  Lévêque, Naiman, Prieur‐Richard, Soto, Stiassny, and
+  Sullivan]{dudgeon2006}
+David Dudgeon, Angela~H. Arthington, Mark~O. Gessner, Zen‐Ichiro Kawabata,
+  Duncan~J. Knowler, Christian Lévêque, Robert~J. Naiman, Anne‐Hélène
+  Prieur‐Richard, Doris Soto, Melanie L.~J. Stiassny, and Caroline~A.
+  Sullivan.
+\newblock Freshwater biodiversity: Importance, threats, status and conservation
+  challenges.
+\newblock \emph{Biological Reviews}, 81\penalty0 (2):\penalty0 163--182, 2006.
+\newblock \doi{10.1017/S1464793105006950}.
+
+\bibitem[Reid et~al.(2019)Reid, Carlson, Creed, Eliason, Gell, Johnson, Kidd,
+  MacCormack, Olden, Ormerod, Smol, Taylor, Tockner, Vermaire, Dudgeon, and
+  Cooke]{reid2019}
+Andrea~J. Reid, Andrew~K. Carlson, Irena~F. Creed, Erika~J. Eliason, Peter~A.
+  Gell, Pieter T.~J. Johnson, Karen~A. Kidd, Tyson~J. MacCormack, Julian~D.
+  Olden, Steve~J. Ormerod, John~P. Smol, William~W. Taylor, Klement Tockner,
+  Jesse~C. Vermaire, David Dudgeon, and Steven~J. Cooke.
+\newblock Emerging threats and persistent conservation challenges for
+  freshwater biodiversity.
+\newblock \emph{Biological Reviews}, 94\penalty0 (3):\penalty0 849--873, 2019.
+\newblock \doi{10.1111/brv.12480}.
+
+\bibitem[Biggs et~al.(2015)Biggs, Ewald, Valentini, Gaboriaud, Dejean,
+  Griffiths, Foster, Wilkinson, Arnell, Brotherton, Williams, and
+  Dunn]{biggs2015}
+Jeremy Biggs, Naomi Ewald, Alice Valentini, Coline Gaboriaud, Tony Dejean,
+  Richard~A. Griffiths, Jim Foster, John~W. Wilkinson, Andy Arnell, Peter
+  Brotherton, Penny Williams, and Francesca Dunn.
+\newblock Using {{eDNA}} to develop a national citizen science-based monitoring
+  programme for the great crested newt (\textit{Triturus cristatus}).
+\newblock \emph{Biological Conservation}, 183:\penalty0 19--28, 2015.
+\newblock \doi{10.1016/j.biocon.2014.11.029}.
+
+\bibitem[Thomas et~al.(2020)Thomas, Tank, Nguyen, Ponce, Sinnesael, and
+  Goldberg]{thomas2020}
+Austen~C. Thomas, Samantha Tank, Phong~L. Nguyen, Jake Ponce, Mieke Sinnesael,
+  and Caren~S. Goldberg.
+\newblock A system for rapid {{eDNA}} detection of aquatic invasive species.
+\newblock \emph{Environmental DNA}, 2\penalty0 (3):\penalty0 261--270, 2020.
+\newblock \doi{10.1002/edn3.25}.
+
+\bibitem[Wilkinson et~al.(2024)Wilkinson, Gault, Welsh, Smith, David, Hicks,
+  Fake, Suren, Shaffer, Jarman, and Bunce]{wilkinson2024}
+Shaun~P. Wilkinson, Amy~A. Gault, Susan~A. Welsh, Joshua~P. Smith, Bruno~O.
+  David, Andy~S. Hicks, Daniel~R. Fake, Alastair~M. Suren, Megan~R. Shaffer,
+  Simon~N. Jarman, and Michael Bunce.
+\newblock {{TICI}}: A taxon-independent community index for {{eDNA-based}}
+  ecological health assessment.
+\newblock \emph{PeerJ}, 12:\penalty0 e16963, 2024.
+\newblock \doi{10.7717/peerj.16963}.
+
+\bibitem[Allan et~al.(2023)Allan, Kelly, D'Agnese, Garber‐Yonts, Shaffer,
+  Gold, and Shelton]{allan2023}
+Elizabeth~Andruszkiewicz Allan, Ryan~P. Kelly, Erin~R. D'Agnese, Maya~N.
+  Garber‐Yonts, Megan~R. Shaffer, Zachary~J. Gold, and Andrew~O. Shelton.
+\newblock Quantifying impacts of an environmental intervention using
+  environmental {{DNA}}.
+\newblock \emph{Ecological Applications}, 33\penalty0 (8):\penalty0 e2914,
+  2023.
+\newblock \doi{10.1002/eap.2914}.
+
+\bibitem[Guri et~al.(2024{\natexlab{a}})Guri, Shelton, Kelly, Yoccoz, Johansen,
+  Pr{\ae}bel, Hanebrekke, Ray, Fall, and Westgaard]{guri2024a}
+Gledis Guri, Andrew~Olaf Shelton, Ryan~P Kelly, Nigel Yoccoz, Torild Johansen,
+  Kim Pr{\ae}bel, Tanja Hanebrekke, Jessica~Louise Ray, Johanna Fall, and
+  Jon-Ivar Westgaard.
+\newblock Predicting trawl catches using environmental {{DNA}}.
+\newblock \emph{ICES Journal of Marine Science}, 81\penalty0 (8):\penalty0
+  1536--1548, 2024{\natexlab{a}}.
+\newblock \doi{10.1093/icesjms/fsae097}.
+
+\bibitem[Tillotson et~al.(2018)Tillotson, Kelly, Duda, Hoy, Kralj, and
+  Quinn]{tillotson2018}
+Michael~D. Tillotson, Ryan~P. Kelly, Jeffrey~J. Duda, Marshal Hoy, James Kralj,
+  and Thomas~P. Quinn.
+\newblock Concentrations of environmental {{DNA}} ({{eDNA}}) reflect spawning
+  salmon abundance at fine spatial and temporal scales.
+\newblock \emph{Biological Conservation}, 220:\penalty0 1--11, 2018.
+\newblock \doi{10.1016/j.biocon.2018.01.030}.
+
+\bibitem[Clare et~al.(2021)Clare, Economou, Faulkes, Gilbert, Bennett,
+  Drinkwater, and Littlefair]{clare2021}
+Elizabeth~L. Clare, Chloe~K. Economou, Chris~G. Faulkes, James~D. Gilbert,
+  Frances Bennett, Rosie Drinkwater, and Joanne~E. Littlefair.
+\newblock {{eDNAir}}: Proof of concept that animal {{DNA}} can be collected
+  from air sampling.
+\newblock \emph{PeerJ}, 9:\penalty0 e11030, 2021.
+\newblock \doi{10.7717/peerj.11030}.
+
+\bibitem[Garrett et~al.(2023)Garrett, Watkins, Simmons, Fenton,
+  Maeda‐Obregon, Sanchez, Froehlich, Walker, Littlefair, and
+  Clare]{garrett2023}
+Nina~R. Garrett, Jonathan Watkins, Nancy~B. Simmons, Brock Fenton, Alejandro
+  Maeda‐Obregon, Daniel~E. Sanchez, Emma~M. Froehlich, Faith~M. Walker,
+  Joanne~E. Littlefair, and Elizabeth~L. Clare.
+\newblock Airborne {{eDNA}} documents a diverse and ecologically complex
+  tropical bat and other mammal community.
+\newblock \emph{Environmental DNA}, 5\penalty0 (2):\penalty0 350--362, 2023.
+\newblock \doi{10.1002/edn3.385}.
+
+\bibitem[Johnson et~al.(2019)Johnson, Cox, and Barnes]{johnson2019}
+Mark~D. Johnson, Robert~D. Cox, and Matthew~A. Barnes.
+\newblock Analyzing airborne environmental {{DNA}}: {{A}} comparison of
+  extraction methods, primer type, and trap type on the ability to detect
+  airborne {{eDNA}} from terrestrial plant communities.
+\newblock \emph{Environmental DNA}, 1\penalty0 (2):\penalty0 176--185, 2019.
+\newblock \doi{10.1002/edn3.19}.
+
+\bibitem[Johnson et~al.(2023)Johnson, Barnes, Garrett, and Clare]{johnson2023}
+Mark~D. Johnson, Matthew~A. Barnes, Nina~R. Garrett, and Elizabeth~L. Clare.
+\newblock Answers blowing in the wind: {{Detection}} of birds, mammals, and
+  amphibians with airborne environmental {{DNA}} in a natural environment over
+  a yearlong survey.
+\newblock \emph{Environmental DNA}, 5\penalty0 (2):\penalty0 375--387, 2023.
+\newblock \doi{10.1002/edn3.388}.
+
+\bibitem[Lynggaard et~al.(2024)Lynggaard, Frøslev, Johnson, Olsen, and
+  Bohmann]{lynggaard2024}
+Christina Lynggaard, Tobias~Guldberg Frøslev, Matthew~S. Johnson, Morten~Tange
+  Olsen, and Kristine Bohmann.
+\newblock Airborne environmental {{DNA}} captures terrestrial vertebrate
+  diversity in nature.
+\newblock \emph{Molecular Ecology Resources}, 24\penalty0 (1):\penalty0 e13840,
+  2024.
+\newblock \doi{10.1111/1755-0998.13840}.
+
+\bibitem[Roger et~al.(2022)Roger, Ghanavi, Danielsson, Wahlberg, Löndahl,
+  Pettersson, Andersson, Boke~Olén, and Clough]{roger2022}
+Fabian Roger, Hamid~R. Ghanavi, Natalie Danielsson, Niklas Wahlberg, Jakob
+  Löndahl, Lars~B. Pettersson, Georg K.~S. Andersson, Niklas Boke~Olén, and
+  Yann Clough.
+\newblock Airborne environmental {{DNA}} metabarcoding for the monitoring of
+  terrestrial insects—{{A}} proof of concept from the field.
+\newblock \emph{Environmental DNA}, 4\penalty0 (4):\penalty0 790--807, 2022.
+\newblock \doi{10.1002/edn3.290}.
+
+\bibitem[Lynggaard et~al.(2022)Lynggaard, Bertelsen, Jensen, Johnson, Frøslev,
+  Olsen, and Bohmann]{lynggaard2022}
+Christina Lynggaard, Mads~Frost Bertelsen, Casper~V. Jensen, Matthew~S.
+  Johnson, Tobias~Guldberg Frøslev, Morten~Tange Olsen, and Kristine Bohmann.
+\newblock Airborne environmental {{DNA}} for terrestrial vertebrate community
+  monitoring.
+\newblock \emph{Current Biology}, 32\penalty0 (3):\penalty0 701--707.e5, 2022.
+\newblock \doi{10.1016/j.cub.2021.12.014}.
+
+\bibitem[Tournayre et~al.(2025)Tournayre, Littlefair, Garrett, Allerton, Brown,
+  Cristescu, and Clare]{tournayre2025}
+Orianne Tournayre, Joanne~E. Littlefair, Nina~R. Garrett, James~J. Allerton,
+  Andrew~S. Brown, Melania~E. Cristescu, and Elizabeth~L. Clare.
+\newblock First national survey of terrestrial biodiversity using airborne
+  {{eDNA}}.
+\newblock \emph{Scientific Reports}, 15\penalty0 (1):\penalty0 19247, 2025.
+\newblock \doi{10.1038/s41598-025-03650-z}.
+
+\bibitem[Sullivan et~al.(2023)Sullivan, Karlsson, Svensson, Brindefalk,
+  Villegas, Mikko, Bellieny, Siddique, Johansson, Grahn, Sundell, Norman,
+  Esseen, Sjödin, Singh, Brodin, Forsman, and Stenberg]{sullivan2023}
+Alexis~R. Sullivan, Edvin Karlsson, Daniel Svensson, Björn Brindefalk,
+  Jose~Antonio Villegas, Amanda Mikko, Daniel Bellieny, Abu~Bakar Siddique,
+  Anna-Mia Johansson, Håkan Grahn, David Sundell, Anita Norman, Per-Anders
+  Esseen, Andreas Sjödin, Navinder~J Singh, Tomas Brodin, Mats Forsman, and
+  Per Stenberg.
+\newblock Airborne {{eDNA}} captures three decades of ecosystem biodiversity,
+  2023.
+\newblock URL \url{http://biorxiv.org/lookup/doi/10.1101/2023.12.06.569882}.
+
+\bibitem[Klepke et~al.(2022)Klepke, Sigsgaard, Jensen, Olsen, and
+  Thomsen]{klepke2022}
+Martin~Johannesen Klepke, Eva~Egelyng Sigsgaard, Mads~Reinholdt Jensen, Kent
+  Olsen, and Philip~Francis Thomsen.
+\newblock Accumulation and diversity of airborne, eukaryotic environmental
+  {{DNA}}.
+\newblock \emph{Environmental DNA}, 4\penalty0 (6):\penalty0 1323--1339, 2022.
+\newblock \doi{10.1002/edn3.340}.
+
+\bibitem[Lynggaard et~al.(2023)Lynggaard, Calvignac-Spencer, Chapman,
+  Kalbitzer, Leendertz, Omeja, Opito, Sarkar, Bohmann, and
+  Gogarten]{lynggaard2023}
+Christina Lynggaard, Sébastien Calvignac-Spencer, Colin~A. Chapman, Urs
+  Kalbitzer, Fabian~H. Leendertz, Patrick~A. Omeja, Emmanuel~A. Opito, Dipto
+  Sarkar, Kristine Bohmann, and Jan~F. Gogarten.
+\newblock Vertebrate environmental {{DNA}} from leaf swabs.
+\newblock \emph{Current Biology}, 33\penalty0 (16):\penalty0 R853--R854, 2023.
+\newblock \doi{10.1016/j.cub.2023.06.031}.
+
+\bibitem[Folke et~al.(2021)Folke, Polasky, Rockström, Galaz, Westley, Lamont,
+  Scheffer, Österblom, Carpenter, Chapin, Seto, Weber, Crona, Daily, Dasgupta,
+  Gaffney, Gordon, Hoff, Levin, Lubchenco, Steffen, and Walker]{folke2021}
+Carl Folke, Stephen Polasky, Johan Rockström, Victor Galaz, Frances Westley,
+  Michèle Lamont, Marten Scheffer, Henrik Österblom, Stephen~R. Carpenter,
+  F.~Stuart Chapin, Karen~C. Seto, Elke~U. Weber, Beatrice~I. Crona,
+  Gretchen~C. Daily, Partha Dasgupta, Owen Gaffney, Line~J. Gordon, Holger
+  Hoff, Simon~A. Levin, Jane Lubchenco, Will Steffen, and Brian~H. Walker.
+\newblock Our future in the {{Anthropocene}} biosphere.
+\newblock \emph{Ambio}, 50\penalty0 (4):\penalty0 834--869, 2021.
+\newblock \doi{10.1007/s13280-021-01544-8}.
+
+\bibitem[Monahan et~al.(1986)Monahan, Spiel, and Davidson]{monahan1986}
+E.C. Monahan, D.E. Spiel, and K.L. Davidson.
+\newblock A model of marine aerosol generation via whitecaps and wave
+  disruption.
+\newblock In E.C. Monahan and G.M. Niocaill, editors, \emph{Oceanic Whitecaps},
+  volume~2 of \emph{Oceanographic Sciences Library}. Springer, Dordrecht, 1986.
+\newblock ISBN 978-94-009-4668-2.
+\newblock \doi{10.1007/978-94-009-4668-2_16}.
+
+\bibitem[Seinfeld and Pandis(2016)]{seinfeld2016}
+John~H. Seinfeld and Spyros~N. Pandis.
+\newblock \emph{Atmospheric Chemistry and Physics: From Air Pollution to
+  Climate Change}.
+\newblock Wiley, 3 edition, 2016.
+\newblock ISBN 978-1-118-94740-1.
+
+\bibitem[Duchemin et~al.(2002)Duchemin, Popinet, Josserand, and
+  Zaleski]{duchemin2002}
+Laurent Duchemin, Stéphane Popinet, Christophe Josserand, and Stéphane
+  Zaleski.
+\newblock Jet formation in bubbles bursting at a free surface.
+\newblock \emph{Physics of Fluids}, 14\penalty0 (9):\penalty0 3000--3008, 2002.
+\newblock \doi{10.1063/1.1494072}.
+
+\bibitem[Mueller et~al.(2008)Mueller, Southard, May, Pearson, and
+  Cullinan]{mueller2008}
+Robert~P. Mueller, Susan~S. Southard, Christopher~W. May, Walter~H. Pearson,
+  and Valerie~I. Cullinan.
+\newblock Juvenile coho salmon leaping ability and behavior in an experimental
+  culvert test bed.
+\newblock \emph{Transactions of the American Fisheries Society}, 137\penalty0
+  (4):\penalty0 941--950, 2008.
+\newblock \doi{10.1577/T06-244.1}.
+
+\bibitem[Stell et~al.(2020)Stell, Hoover, Fuller, and Parsons]{stell2020}
+E.~Stell, J.~J. Hoover, L.~Fuller, and G.~R. Parsons.
+\newblock Analyzing leap characteristics and water escape velocities of silver
+  carp using in situ video analysis.
+\newblock \emph{North American Journal of Fisheries Management}, 40\penalty0
+  (1):\penalty0 163--174, 2020.
+\newblock \doi{10.1002/nafm.10388}.
+
+\bibitem[Van~Dijk et~al.(2003)Van~Dijk, Bruijnzeel, and Eisma]{vandijk2003}
+A.~I. J.~M. Van~Dijk, L.~A. Bruijnzeel, and E.~H. Eisma.
+\newblock A methodology to study rain splash and wash processes under natural
+  rainfall.
+\newblock \emph{Hydrological Processes}, 17\penalty0 (1):\penalty0 153--167,
+  2003.
+\newblock \doi{10.1002/hyp.1154}.
+
+\bibitem[Altermatt et~al.(2025)Altermatt, Couton, Carraro, Keck,
+  Lawson-Handley, Leese, Zhang, Zhang, and Blackman]{altermatt2025}
+Florian Altermatt, Marjorie Couton, Luca Carraro, François Keck, Lori
+  Lawson-Handley, Florian Leese, Xiaowei Zhang, Yan Zhang, and Rosetta~C.
+  Blackman.
+\newblock Utilizing aquatic environmental {{DNA}} to address global
+  biodiversity targets.
+\newblock \emph{Nature Reviews Biodiversity}, 2025.
+\newblock \doi{10.1038/s44358-025-00044-x}.
+
+\bibitem[Johnson and Barnes(2024)]{johnson2024}
+Mark Johnson and Matthew~A. Barnes.
+\newblock Macrobial airborne environmental {{DNA}} analysis: {{A}} review of
+  progress, challenges, and recommendations for an emerging application.
+\newblock \emph{Molecular Ecology Resources}, 24\penalty0 (7):\penalty0 e13998,
+  2024.
+\newblock \doi{10.1111/1755-0998.13998}.
+
+\bibitem[Wu et~al.(2010)Wu, Shen, and Yao]{wu2010}
+Yan Wu, Fangxia Shen, and Maosheng Yao.
+\newblock Use of gelatin filter and {{BioSampler}} in detecting airborne
+  {{H5N1}} nucleotides, bacteria and allergens.
+\newblock \emph{Journal of Aerosol Science}, 41\penalty0 (9):\penalty0
+  869--879, 2010.
+\newblock \doi{10.1016/j.jaerosci.2010.05.006}.
+
+\bibitem[Harnpicharnchai et~al.(2023)Harnpicharnchai, Pumkaeo, Siriarchawatana,
+  Likhitrattanapisal, Mayteeworakoon, Ingsrisawang, Boonsin, Eurwilaichitr, and
+  Ingsriswang]{harnpicharnchai2023}
+Piyanun Harnpicharnchai, Panyapon Pumkaeo, Paopit Siriarchawatana, Somsak
+  Likhitrattanapisal, Sermsiri Mayteeworakoon, Lily Ingsrisawang, Worawongsin
+  Boonsin, Lily Eurwilaichitr, and Supawadee Ingsriswang.
+\newblock Airdna sampler: {{An}} efficient and simple device enabling
+  high-yield, high-quality airborne environment {{DNA}} for metagenomic
+  applications.
+\newblock \emph{PLOS ONE}, 18\penalty0 (6):\penalty0 e0287567, 2023.
+\newblock \doi{10.1371/journal.pone.0287567}.
+
+\bibitem[Duda et~al.(2021)Duda, Hoy, Chase, Pess, Brenkman, McHenry, and
+  Ostberg]{duda2021}
+Jeffrey~J. Duda, Marshal~S. Hoy, Dorothy~M. Chase, George~R. Pess, Samuel~J.
+  Brenkman, Michael~M. McHenry, and Carl~O. Ostberg.
+\newblock Environmental {{DNA}} is an effective tool to track recolonizing
+  migratory fish following large‐scale dam removal.
+\newblock \emph{Environmental DNA}, 3\penalty0 (1):\penalty0 121--141, 2021.
+\newblock \doi{10.1002/edn3.134}.
+
+\bibitem[Welch and Ishida(1993)]{welch1993}
+David~W. Welch and Yukimasa Ishida.
+\newblock On the statistical distribution of salmon in the sea: Application of
+  the negative binomial distribution, and the influence of sampling effort.
+\newblock \emph{Canadian Journal of Fisheries and Aquatic Sciences},
+  50\penalty0 (5):\penalty0 1029--1038, 1993.
+\newblock \doi{10.1139/f93-119}.
+
+\bibitem[Guri et~al.(2024{\natexlab{b}})Guri, Ray, Shelton, Kelly, Præbel,
+  Andruszkiewicz~Allan, Yoccoz, Johansen, Wangensteen, Hanebrekke, and
+  Westgaard]{guri2024}
+Gledis Guri, Jessica~Louise Ray, Andrew~Olaf Shelton, Ryan~P. Kelly, Kim
+  Præbel, Elizabeth Andruszkiewicz~Allan, Nigel Yoccoz, Torild Johansen,
+  Owen~S. Wangensteen, Tanja Hanebrekke, and Jon-Ivar Westgaard.
+\newblock Quantifying the detection sensitivity and precision of {{qPCR}} and
+  {{ddPCR}} mechanisms for {{eDNA}} samples.
+\newblock \emph{Ecology and Evolution}, 14\penalty0 (12):\penalty0 e70678,
+  2024{\natexlab{b}}.
+\newblock \doi{10.1002/ece3.70678}.
+
+\bibitem[Shelton et~al.(2022)Shelton, Ramón-Laca, Wells, Clemons, Chu, Feist,
+  Kelly, Parker-Stetter, Thomas, Nichols, and Park]{shelton2022}
+Andrew~Olaf Shelton, Ana Ramón-Laca, Abigail Wells, Julia Clemons, Dezhang
+  Chu, Blake~E. Feist, Ryan~P. Kelly, Sandra~L. Parker-Stetter, Rebecca Thomas,
+  Krista~M. Nichols, and Linda Park.
+\newblock Environmental {{DNA}} provides quantitative estimates of {{Pacific}}
+  hake abundance and distribution in the open ocean.
+\newblock \emph{Proceedings of the Royal Society B: Biological Sciences},
+  289\penalty0 (1971):\penalty0 20212613, 2022.
+\newblock \doi{10.1098/rspb.2021.2613}.
+
+\bibitem[Wood et~al.(2021)Wood, Lacoursière-Roussel, LeBlanc, Trudel,
+  Kinnison, Garry~McBrine, Pavey, and Gagné]{wood2021}
+Zachary~T. Wood, Anaïs Lacoursière-Roussel, Francis LeBlanc, Marc Trudel,
+  Michael~T. Kinnison, Colton Garry~McBrine, Scott~A. Pavey, and Nellie Gagné.
+\newblock Spatial heterogeneity of {{eDNA Transport Improves Stream
+  Assessment}} of threatened salmon presence, abundance, and location.
+\newblock \emph{Frontiers in Ecology and Evolution}, 9:\penalty0 650717, 2021.
+\newblock \doi{10.3389/fevo.2021.650717}.
+
+\bibitem[Prather et~al.(2013)Prather, Bertram, Grassian, Deane, Stokes, DeMott,
+  Aluwihare, Palenik, Azam, Seinfeld, Moffet, Molina, Cappa, Geiger, Roberts,
+  Russell, Ault, Baltrusaitis, Collins, Corrigan, Cuadra-Rodriguez, Ebben,
+  Forestieri, Guasco, Hersey, Kim, Lambert, Modini, Mui, Pedler, Ruppel, Ryder,
+  Schoepp, Sullivan, and Zhao]{prather2013}
+Kimberly~A. Prather, Timothy~H. Bertram, Vicki~H. Grassian, Grant~B. Deane,
+  M.~Dale Stokes, Paul~J. DeMott, Lihini~I. Aluwihare, Brian~P. Palenik, Farooq
+  Azam, John~H. Seinfeld, Ryan~C. Moffet, Mario~J. Molina, Christopher~D.
+  Cappa, Franz~M. Geiger, Gregory~C. Roberts, Lynn~M. Russell, Andrew~P. Ault,
+  Jonas Baltrusaitis, Douglas~B. Collins, Craig~E. Corrigan, Luis~A.
+  Cuadra-Rodriguez, Carlena~J. Ebben, Sara~D. Forestieri, Timothy~L. Guasco,
+  Scott~P. Hersey, Michelle~J. Kim, William~F. Lambert, Robin~L. Modini, Wilton
+  Mui, Byron~E. Pedler, Matthew~J. Ruppel, Olivia~S. Ryder, Nathan~G. Schoepp,
+  Ryan~C. Sullivan, and Defeng Zhao.
+\newblock Bringing the ocean into the laboratory to probe the chemical
+  complexity of sea spray aerosol.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 110\penalty0
+  (19):\penalty0 7550--7555, 2013.
+\newblock \doi{10.1073/pnas.1300262110}.
+
+\bibitem[Abrego et~al.(2024)Abrego, Furneaux, Hardwick, Somervuo, Palorinne,
+  Aguilar-Trigueros, Andrew, Babiy, Bao, Bazzano, Bondarchuk, Bonebrake,
+  Brennan, Bret-Harte, Bässler, Cagnolo, Cameron, Chapurlat, Creer, D’Acqui,
+  De~Vere, Desprez-Loustau, Dongmo, Jacobsen, Fisher, Flores De~Jesus, Gilbert,
+  Griffith, Gritsuk, Gross, Grudd, Halme, Hanna, Hansen, Hansen, Hegbe, Hill,
+  Hogg, Hultman, Hyde, Hynson, Ivanova, Karisto, Kerdraon, Knorre,
+  Krisai-Greilhuber, Kurhinen, Kuzmina, Lecomte, Lecomte, Loaiza, Lundin,
+  Meire, Mešić, Miettinen, Monkhouse, Mortimer, Müller, Nilsson, Nonti,
+  Nordén, Nordén, Norros, Paz, Pellikka, Pereira, Petch, Pitkänen, Popa,
+  Potter, Purhonen, Pätsi, Rafiq, Raharinjanahary, Rakos, Rathnayaka,
+  Raundrup, Rebriev, Rikkinen, Rogers, Rogovsky, Rozhkov, Runnel, Saarto,
+  Savchenko, Schlegel, Schmidt, Seibold, Skjøth, Stengel, Sutyrina,
+  Syvänperä, Tedersoo, Timm, Tipton, Toju, Uscka-Perzanowska, Van Der~Bank,
+  Van Der~Bank, Vandenbrink, Ventura, Vignisson, Wang, Weisser, Wijesinghe,
+  Wright, Yang, Yorou, Young, Yu, Zakharov, Hebert, Roslin, and
+  Ovaskainen]{abrego2024}
+Nerea Abrego, Brendan Furneaux, Bess Hardwick, Panu Somervuo, Isabella
+  Palorinne, Carlos~A. Aguilar-Trigueros, Nigel~R. Andrew, Ulyana~V. Babiy, Tan
+  Bao, Gisela Bazzano, Svetlana~N. Bondarchuk, Timothy~C. Bonebrake,
+  Georgina~L. Brennan, Syndonia Bret-Harte, Claus Bässler, Luciano Cagnolo,
+  Erin~K. Cameron, Elodie Chapurlat, Simon Creer, Luigi~P. D’Acqui, Natasha
+  De~Vere, Marie-Laure Desprez-Loustau, Michel A.~K. Dongmo, Ida B.~Dyrholm
+  Jacobsen, Brian~L. Fisher, Miguel Flores De~Jesus, Gregory~S. Gilbert,
+  Gareth~W. Griffith, Anna~A. Gritsuk, Andrin Gross, Håkan Grudd, Panu Halme,
+  Rachid Hanna, Jannik Hansen, Lars~Holst Hansen, Apollon D. M.~T. Hegbe, Sarah
+  Hill, Ian~D. Hogg, Jenni Hultman, Kevin~D. Hyde, Nicole~A. Hynson, Natalia
+  Ivanova, Petteri Karisto, Deirdre Kerdraon, Anastasia Knorre, Irmgard
+  Krisai-Greilhuber, Juri Kurhinen, Masha Kuzmina, Nicolas Lecomte, Erin
+  Lecomte, Viviana Loaiza, Erik Lundin, Alexander Meire, Armin Mešić, Otto
+  Miettinen, Norman Monkhouse, Peter Mortimer, Jörg Müller, R.~Henrik
+  Nilsson, Puani Yannick~C. Nonti, Jenni Nordén, Björn Nordén, Veera Norros,
+  Claudia Paz, Petri Pellikka, Danilo Pereira, Geoff Petch, Juha-Matti
+  Pitkänen, Flavius Popa, Caitlin Potter, Jenna Purhonen, Sanna Pätsi,
+  Abdullah Rafiq, Dimby Raharinjanahary, Niklas Rakos, Achala~R. Rathnayaka,
+  Katrine Raundrup, Yury~A. Rebriev, Jouko Rikkinen, Hanna M.~K. Rogers, Andrey
+  Rogovsky, Yuri Rozhkov, Kadri Runnel, Annika Saarto, Anton Savchenko, Markus
+  Schlegel, Niels~Martin Schmidt, Sebastian Seibold, Carsten Skjøth, Elisa
+  Stengel, Svetlana~V. Sutyrina, Ilkka Syvänperä, Leho Tedersoo, Jebidiah
+  Timm, Laura Tipton, Hirokazu Toju, Maria Uscka-Perzanowska, Michelle Van
+  Der~Bank, F.~Herman Van Der~Bank, Bryan Vandenbrink, Stefano Ventura,
+  Solvi~R. Vignisson, Xiaoyang Wang, Wolfgang~W. Weisser, Subodini~N.
+  Wijesinghe, S.~Joseph Wright, Chunyan Yang, Nourou~S. Yorou, Amanda Young,
+  Douglas~W. Yu, Evgeny~V. Zakharov, Paul D.~N. Hebert, Tomas Roslin, and Otso
+  Ovaskainen.
+\newblock Airborne {{DNA}} reveals predictable spatial and seasonal dynamics of
+  fungi.
+\newblock \emph{Nature}, 631\penalty0 (8022):\penalty0 835--842, 2024.
+\newblock \doi{10.1038/s41586-024-07658-9}.
+
+\bibitem[Giolai et~al.(2024)Giolai, Verweij, Martin, Pearson, Nicholson,
+  Leggett, and Clark]{giolai2024}
+Michael Giolai, Walter Verweij, Samuel Martin, Neil Pearson, Paul Nicholson,
+  Richard~M. Leggett, and Matthew~D. Clark.
+\newblock Measuring air metagenomic diversity in an agricultural ecosystem.
+\newblock \emph{Current Biology}, 34\penalty0 (16):\penalty0 3778--3791.e4,
+  2024.
+\newblock \doi{10.1016/j.cub.2024.07.030}.
+
+\bibitem[Galbán et~al.(2021)Galbán, Justel, González, and
+  Quesada]{galban2021}
+Sofía Galbán, Ana Justel, Sergi González, and Antonio Quesada.
+\newblock Local meteorological conditions, shape and desiccation influence
+  dispersal capabilities for airborne microorganisms.
+\newblock \emph{Science of The Total Environment}, 780:\penalty0 146653, 2021.
+\newblock \doi{10.1016/j.scitotenv.2021.146653}.
+
+\bibitem[Maki et~al.(2023)Maki, Hosaka, Lee, Kawabata, Kajino, Uto, Kita, and
+  Igarashi]{maki2023}
+Teruya Maki, Kentaro Hosaka, Kevin~C. Lee, Yasuhiro Kawabata, Mizuo Kajino,
+  Maoto Uto, Kazuyuki Kita, and Yasuhito Igarashi.
+\newblock Vertical distribution of airborne microorganisms over forest
+  environments: {{A}} potential source of ice-nucleating bioaerosols.
+\newblock \emph{Atmospheric Environment}, 302:\penalty0 119726, 2023.
+\newblock \doi{10.1016/j.atmosenv.2023.119726}.
+
+\bibitem[Jager et~al.(2025)Jager, Trimbos, Luursema, Speksnijder, and
+  Stewart]{jager2025}
+Hugo Jager, Krijn~B. Trimbos, Jan-Maarten Luursema, Adrianus~G.C.L.
+  Speksnijder, and Kathryn~A. Stewart.
+\newblock A breath of fresh air: Comparative evaluation of passive versus
+  active airborne {{eDNA}} sampling strategies, 2025.
+
+\bibitem[Blanchard and Woodcock(1980)]{blanchard1980}
+Duncan~C. Blanchard and Alfred~H. Woodcock.
+\newblock The production, concentration, and vertical distribution of the
+  sea‐salt aerosol.
+\newblock \emph{Annals of the New York Academy of Sciences}, 338\penalty0
+  (1):\penalty0 330--347, 1980.
+\newblock \doi{10.1111/j.1749-6632.1980.tb17130.x}.
+
+\bibitem[Hinds and Zhu(2022)]{hinds2022}
+William~C Hinds and Yifang Zhu.
+\newblock \emph{Aerosol technology: properties, behavior, and measurement of
+  airborne particles}.
+\newblock John Wiley \& Sons, 2022.
+
+\bibitem[Herman(2023)]{herman2023}
+Braden~A. Herman.
+\newblock Use of foreign edna tracers to resolve site- and time-specific edna
+  distributions in natural streams.
+\newblock Master's thesis, Humboldt State University, spring 2023.
+\newblock Master of Science in Natural Resources, option Fisheries.
+
+\bibitem[Brandão‐Dias et~al.(2023)Brandão‐Dias, Hallack, Snyder, Tank,
+  Bolster, Volponi, Shogren, Lamberti, Bibby, and Egan]{brandao-dias2023}
+Pedro F.~P. Brandão‐Dias, Daniel M.~C. Hallack, Elise~D. Snyder, Jennifer~L.
+  Tank, Diogo Bolster, Sabrina Volponi, Arial~J. Shogren, Gary~A. Lamberti,
+  Kyle Bibby, and Scott~P. Egan.
+\newblock Particle size influences decay rates of environmental {{DNA}} in
+  aquatic systems.
+\newblock \emph{Molecular Ecology Resources}, 23\penalty0 (4):\penalty0
+  756--770, 2023.
+\newblock \doi{10.1111/1755-0998.13751}.
+
+\bibitem[Strickler et~al.(2015)Strickler, Fremier, and Goldberg]{strickler2015}
+Katherine~M. Strickler, Alexander~K. Fremier, and Caren~S. Goldberg.
+\newblock Quantifying effects of {{UV-B}}, temperature, and {{pH}} on {{eDNA}}
+  degradation in aquatic microcosms.
+\newblock \emph{Biological Conservation}, 183:\penalty0 85--92, 2015.
+\newblock \doi{10.1016/j.biocon.2014.11.038}.
+
+\bibitem[Barnes and Turner(2016)]{barnes2016}
+Matthew~A. Barnes and Cameron~R. Turner.
+\newblock The ecology of environmental {{DNA}} and implications for
+  conservation genetics.
+\newblock \emph{Conservation Genetics}, 17\penalty0 (1):\penalty0 1--17, 2016.
+\newblock \doi{10.1007/s10592-015-0775-4}.
+
+\bibitem[Harrison et~al.(2019)Harrison, Sunday, and Rogers]{harrison2019}
+Jori~B. Harrison, Jennifer~M. Sunday, and Sean~M. Rogers.
+\newblock Predicting the fate of {{eDNA}} in the environment and implications
+  for studying biodiversity.
+\newblock \emph{Proceedings of the Royal Society B: Biological Sciences},
+  286\penalty0 (1915):\penalty0 20191409, 2019.
+\newblock \doi{10.1098/rspb.2019.1409}.
+
+\bibitem[Bagley et~al.(2019)Bagley, Pilgrim, Knapp, Yoder, Santo~Domingo, and
+  Banerji]{bagley2019}
+Mark Bagley, Erik Pilgrim, Martin Knapp, Chris Yoder, Jorge Santo~Domingo, and
+  Aabir Banerji.
+\newblock High-throughput environmental {{DNA}} analysis informs a biological
+  assessment of an urban stream.
+\newblock \emph{Ecological Indicators}, 104:\penalty0 378--389, 2019.
+\newblock \doi{10.1016/j.ecolind.2019.04.088}.
+
+\bibitem[Kirchgeorg et~al.(2024)Kirchgeorg, Chang, Ip, Jucker, Geckeler,
+  Lüthi, Van Der~Loo, Mächler, Franco-Sierra, Herrera, Pellissier, Deiner,
+  Desiderato, and Mintchev]{kirchgeorg2024}
+Steffen Kirchgeorg, Jia Jin~Marc Chang, Yin Cheong~Aden Ip, Meret Jucker,
+  Christian Geckeler, Martina Lüthi, Enrico Van Der~Loo, Elvira Mächler,
+  Nicolás~D. Franco-Sierra, Mailyn Adriana~Gonzalez Herrera, Loïc Pellissier,
+  Kristy Deiner, Andrea Desiderato, and Stefano Mintchev.
+\newblock {{eProbe}}: {{}} of environmental {{DNA}} within tree canopies with
+  drones.
+\newblock \emph{Environmental Science \& Technology}, 58\penalty0
+  (37):\penalty0 16410--16420, 2024.
+\newblock \doi{10.1021/acs.est.4c05595}.
+
+\bibitem[Shogren et~al.(2017)Shogren, Tank, Andruszkiewicz, Olds, Mahon, Jerde,
+  and Bolster]{shogren2017}
+Arial~J. Shogren, Jennifer~L. Tank, Elizabeth Andruszkiewicz, Brett Olds,
+  Andrew~R. Mahon, Christopher~L. Jerde, and Diogo Bolster.
+\newblock Controls on {{eDNA}} movement in streams: {{Transport}}, retention,
+  and resuspension.
+\newblock \emph{Scientific Reports}, 7\penalty0 (1):\penalty0 5065, 2017.
+\newblock \doi{10.1038/s41598-017-05223-1}.
+
+\bibitem[Brandão-Dias et~al.(2025)Brandão-Dias, Shaffer, Guri, Parsons,
+  Kelly, and Allan]{brandao-dias2025a}
+Pedro~Fp Brandão-Dias, Megan Shaffer, Gledis Guri, Kim~M. Parsons, Ryan~P.
+  Kelly, and Elizabeth~Andruszkiewicz Allan.
+\newblock Differential decay of multiple environmental nucleic acid components.
+\newblock \emph{Scientific Reports}, 15\penalty0 (1):\penalty0 26791, 2025.
+\newblock \doi{10.1038/s41598-025-12916-5}.
+
+\end{thebibliography}

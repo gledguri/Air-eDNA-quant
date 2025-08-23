@@ -1,0 +1,7 @@
+Location,Date,Rain_Y_N,Precipitate_mm,Water_discharge_river
+IssaquahHatchery,20241017,Yes,0.05,4.1
+IssaquahHatchery,20241024,Yes,0.01,4.13
+IssaquahHatchery,20241031,Yes,0.32,4.5
+IssaquahHatchery,20241107,No,0,4.46
+IssaquahHatchery,20241114,Yes,0.29,4.95
+IssaquahHatchery,20241121,No,NA(shelteredbridge),4.91

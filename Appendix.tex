@@ -84,6 +84,15 @@ technical replicates of two air filters (PTFE and gelatin filters). Each paramet
 \label{fig:postpred}
 \end{figure}
 
+%Figure S6 -------------------- 
+
+\clearpage
+\begin{figure}[tbhp] 
+\centering
+\includegraphics[width=12.0cm]{Plots/Supplementary_Fig_1.jpg}  
+\caption{The probability of detection and Ct values along the eDNA concentration from the posterior estimates of the standard samples and water and air environmental samples indicating assay and qPCR machine performance.}
+\label{fig:qpcr}
+\end{figure}
 
 
 
@@ -161,6 +170,22 @@ $r$& qPCR technical replicate & -\\
     \end{tabular}
     \caption{Data, state processes, parameters, transformed parameters, and subscripts employed in the joint Bayesian model and their prior distributions}
     \label{tab:priortable}
+\end{table}
+
+\begin{table}
+    \centering
+    \begin{tabular}{lllll}
+    \textbf{Location}         & \textbf{Date}     & \textbf{Rain Yes/No} & \textbf{Precipitate (mm)}       & \textbf{River water discharge (m)}\\
+\hline
+Issaquah Hatchery & 2024-10-17 & Yes        & 0.05                  & 4.10 \\
+Issaquah Hatchery & 2024-10-24 & Yes        & 0.01                  & 4.13 \\
+Issaquah Hatchery & 2024-10-31 & Yes        & 0.32                  & 4.50 \\
+Issaquah Hatchery & 2024-11-07 & No         & 0                     & 4.46 \\
+Issaquah Hatchery & 2024-11-14 & Yes        & 0.29                  & 4.95 \\
+Issaquah Hatchery & 2024-11-21 & No         & NA (sheltered bridge) & 4.91 \\
+\hline
+\end{tabular}
+\caption{Meteorological metadata collected from NOAA during the sampling events}
 \end{table}
 
 \end{document}
