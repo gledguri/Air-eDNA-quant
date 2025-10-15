@@ -74,6 +74,54 @@ join_ext_param <- function(stanmod,par){
 		mutate(g_idx = as.numeric(g_idx))
 }
 
+# Function to split a binary file into multiple parts
+split_file_binary <- function(input_file, file_size_mb = 90, prefix = NULL) {
+	# Ensure here() or relative paths work
+	input_file <- normalizePath(input_file)
+	
+	# Determine output folder and base name
+	out_dir <- dirname(input_file)
+	if (is.null(prefix)) {
+		prefix <- tools::file_path_sans_ext(basename(input_file))
+	}
+	
+	con <- file(input_file, "rb")
+	size <- file.info(input_file)$size
+	chunk_size <- file_size_mb * 1024^2  # MB → bytes
+	n_chunks <- ceiling(size / chunk_size)
+	
+	message("Splitting ", input_file, " into ", n_chunks, 
+					" parts (~", file_size_mb, " MB each) in folder: ", out_dir)
+	
+	for (i in seq_len(n_chunks)) {
+		bytes <- readBin(con, what = "raw", n = chunk_size)
+		part_name <- file.path(out_dir, paste0(prefix, "_part_", i, ".bin"))
+		writeBin(bytes, part_name)
+		message("→ wrote ", part_name)
+	}
+	
+	close(con)
+	message("✅ Done! Created ", n_chunks, " part files in ", out_dir)
+}
+
+
+# Function to reassemble the parts into a single file
+join_file_binary <- function(input_files, output_file) {
+	output_file <- normalizePath(output_file, mustWork = FALSE)
+	out <- file(output_file, "wb")
+	
+	message("Joining ", length(input_files), " parts into ", output_file)
+	
+	for (file_name in input_files) {
+		bytes <- readBin(file_name, what = "raw", n = file.info(file_name)$size)
+		writeBin(bytes, out)
+		message("→ added ", file_name)
+	}
+	
+	close(out)
+	message("✅ Done! Reconstructed file saved as ", output_file)
+}
+
 # Load data -----------------------------------------------------------------------------------
 
 # file_paths <- list.files('Data', pattern = '\\.csv$', full.names = TRUE)
@@ -319,9 +367,19 @@ stanMod_count <- stan(
 # For not running the model all the time use readRDS
 # saveRDS(stanMod_count,here('Output','stanMod_output_3.rds'))
 # saveRDS(stan_data,here('Output','stan_data_input_3.rds'))
+# split_file_binary(here('Output','stanMod_output_3.rds'),file_size_mb = 90)
 
+# If you're working with the binary files you need to re-assemble them into an RDS file
+# join_file_binary(input_files = here('Output',
+# 																		c('stanMod_output_3_part_1.bin',
+# 																			'stanMod_output_3_part_2.bin',
+# 																			'stanMod_output_3_part_3.bin')),
+# 								 output_file = here('Output','stanMod_output_3'))
+# 
+# Then you can call the RDS file; Otherwise if you're not calling bin files then just read the RDS file in the folder
 # stanMod_count <- readRDS(here('Output','stanMod_output_3.rds'))
 # stan_data <- readRDS(here('Output','stan_data_input_3.rds'))
+
 
 
 # Posteriors ----------------------------------------------------------------------------------
