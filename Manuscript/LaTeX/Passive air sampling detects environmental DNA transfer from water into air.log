@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.12)  15 OCT 2025 12:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.12)  15 OCT 2025 15:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -338,24 +338,24 @@ aux)
 \openout1 = `"Passive air sampling detects environmental DNA transfer from wate
 r into air.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -413,7 +413,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 22.
+Package hyperref Info: Link coloring OFF on input line 25.
 
 (./Passive air sampling detects environmental DNA transfer from water into air.
 out)
@@ -429,17 +429,17 @@ r into air.out"'.
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../../Plots/Figure_1.pdf): P
 DF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<../../Plots/Figure_1.pdf, id=147, 2396.955pt x 1455.4375pt>
+<../../Plots/Figure_1.pdf, id=134, 2396.955pt x 1455.4375pt>
 File: ../../Plots/Figure_1.pdf Graphic file (type pdf)
 <use ../../Plots/Figure_1.pdf>
-Package pdftex.def Info: ../../Plots/Figure_1.pdf  used on input line 62.
+Package pdftex.def Info: ../../Plots/Figure_1.pdf  used on input line 65.
 (pdftex.def)             Requested size: 384.1122pt x 233.23009pt.
 [2] [3 <../../Plots/Figure_1.pdf>] [4{/usr/local/texlive/2024/texmf-dist/fonts/
 enc/dvips/cm-super/cm-super-ts1.enc}] [5] [6]
-<../../Plots/Figure_2.pdf, id=275, 1228.59pt x 867.24pt>
+<../../Plots/Figure_2.pdf, id=255, 1228.59pt x 867.24pt>
 File: ../../Plots/Figure_2.pdf Graphic file (type pdf)
 <use ../../Plots/Figure_2.pdf>
-Package pdftex.def Info: ../../Plots/Figure_2.pdf  used on input line 167.
+Package pdftex.def Info: ../../Plots/Figure_2.pdf  used on input line 170.
 (pdftex.def)             Requested size: 469.47046pt x 331.39401pt.
  [7] [8 <../../Plots/Figure_2.pdf>] [9] [10] [11] [12] [13]
 (./Passive air sampling detects environmental DNA transfer from water into air.
@@ -459,7 +459,7 @@ DNA transfer from water into air".out' has not changed.
 Here is how much of TeX's memory you used:
  10667 strings out of 474116
  164943 string characters out of 5743682
- 1943187 words of memory out of 5000000
+ 1944187 words of memory out of 5000000
  32793 multiletter control sequences out of 15000+600000
  564614 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -480,10 +480,10 @@ ve/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
 2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2
 024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
 Output written on "Passive air sampling detects environmental DNA transfer from
- water into air.pdf" (18 pages, 1645751 bytes).
+ water into air.pdf" (18 pages, 1647625 bytes).
 PDF statistics:
- 502 PDF objects out of 1000 (max. 8388607)
- 423 compressed objects within 5 object streams
+ 488 PDF objects out of 1000 (max. 8388607)
+ 409 compressed objects within 5 object streams
  113 named destinations out of 1000 (max. 500000)
  163 words of extra memory for PDF output out of 10000 (max. 10000000)
 
