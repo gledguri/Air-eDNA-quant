@@ -1,0 +1,472 @@
+"Well","Omit","Target","Dye","Task","Cq","Quantity","Plate_idx","Sample","Location","Date","FilterType","csv","j_idx","t_idx","f_idx","idx","plate_idx"
+"A4",FALSE,"cohoDUDA","SYBR","Standard","20.229454348567153",1e+06,3,NA,NA,NA,NA,NA,123,20,6,123,1
+"A5",FALSE,"cohoDUDA","SYBR","Unknown","31.663575239753598",971.420664317042,3,"Air060","Issaquah waterfall",20241031,"MCE DI water",1,60,13,3,60,1
+"B4",FALSE,"cohoDUDA","SYBR","Standard","23.636918503738748",1e+05,3,NA,NA,NA,NA,NA,123,20,6,123,1
+"B5",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,3,"SAL112","Issaquah Bridge, field negative",20241028,"Water filter MCE",1,107,12,5,107,1
+"C4",FALSE,"cohoDUDA","SYBR","Standard","27.149351181810793",10000,3,NA,NA,NA,NA,NA,123,20,6,123,1
+"C5",FALSE,"cohoDUDA","SYBR","Unknown","24.40962123274737",65349.8146348679,3,"SAL113","Issaquah Bridge, Confluence Park, by hand",20241028,"Water filter MCE",1,108,12,5,108,1
+"D4",FALSE,"cohoDUDA","SYBR","Standard","30.63789104936364",1000,3,NA,NA,NA,NA,NA,123,20,6,123,1
+"D5",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,3,"SAL116","Issaquah Dam, field negative",20241031,"Water filter MCE",1,109,13,5,109,1
+"E4",FALSE,"cohoDUDA","SYBR","Standard","36.57176614486528",100,3,NA,NA,NA,NA,NA,123,20,6,123,1
+"E5",FALSE,"cohoDUDA","SYBR","Unknown","21.554066384249033",342595.329630312,3,"SAL117","Issaquah Dam, by hand",20241031,"Water filter MCE",1,110,13,5,110,1
+"F4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,3,"Air049","Issaquah park bridge",20241028,"Gelatin",1,49,12,1,49,1
+"F5",FALSE,"cohoDUDA","SYBR","Negative Control","Undetermined",NA,3,NA,NA,NA,NA,NA,123,20,6,123,1
+"G4",FALSE,"cohoDUDA","SYBR","Unknown","35.631974891186914",97.1533591158212,3,"Air050","Issaquah park bridge",20241028,"Gelatin",1,50,12,1,50,1
+"G5",FALSE,"cohoDUDA","SYBR","Negative Control","Undetermined",NA,3,NA,NA,NA,NA,NA,123,20,6,123,1
+"H4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,3,"Air051","Issaquah park bridge",20241028,"PTFE",1,51,12,4,51,1
+"H5",FALSE,"cohoDUDA","SYBR","Negative Control","Undetermined",NA,3,NA,NA,NA,NA,NA,123,20,6,123,1
+"I4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,3,"Air052","Issaquah park bridge",20241028,"PTFE",1,52,12,4,52,1
+"J4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,3,"Air053","Issaquah park bridge",20241028,"MCE Air",1,53,12,2,53,1
+"K4",FALSE,"cohoDUDA","SYBR","Unknown","27.795143549877515",9165.73136367495,3,"Air054","Issaquah park bridge",20241028,"MCE DI water",1,54,12,3,54,1
+"L4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,3,"Air055","Issaquah waterfall",20241031,"Gelatin",1,55,13,1,55,1
+"M4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,3,"Air056","Issaquah waterfall",20241031,"Gelatin",1,56,13,1,56,1
+"N4",FALSE,"cohoDUDA","SYBR","Unknown","34.51154422224097",186.115151867859,3,"Air057","Issaquah waterfall",20241031,"PTFE",1,57,13,4,57,1
+"O4",FALSE,"cohoDUDA","SYBR","Unknown","36.23352661167263",68.5298853303638,3,"Air058","Issaquah waterfall",20241031,"PTFE",1,58,13,4,58,1
+"P4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,3,"Air059","Issaquah waterfall",20241031,"MCE Air",1,59,13,2,59,1
+"A4",FALSE,"cohoDUDA","SYBR","Standard","21.057266",1e+06,4,NA,NA,NA,NA,NA,123,20,6,123,2
+"A5",FALSE,"cohoDUDA","SYBR","Unknown","30.313953",2358.9403,4,"Air072","Issaquah waterfall",20241107,"MCE DI water",2,72,15,3,72,2
+"B4",FALSE,"cohoDUDA","SYBR","Standard","24.39733",1e+05,4,NA,NA,NA,NA,NA,123,20,6,123,2
+"B5",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,4,"SAL124","Issaquah Bridge, field negative",20241105,"Water filter MCE",2,111,14,5,111,2
+"C4",FALSE,"cohoDUDA","SYBR","Standard","27.85039",10000,4,NA,NA,NA,NA,NA,123,20,6,123,2
+"C5",FALSE,"cohoDUDA","SYBR","Unknown","23.090712",241529.5,4,"SAL125","Issaquah Bridge, Confluence Park, by hand",20241105,"Water filter MCE",2,112,14,5,112,2
+"D4",FALSE,"cohoDUDA","SYBR","Standard","31.545034",1000,4,NA,NA,NA,NA,NA,123,20,6,123,2
+"D5",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,4,"SAL128","Issaquah Dam, field negative",20241107,"Water filter MCE",2,113,15,5,113,2
+"E4",FALSE,"cohoDUDA","SYBR","Standard","35.449688",100,4,NA,NA,NA,NA,NA,123,20,6,123,2
+"E5",FALSE,"cohoDUDA","SYBR","Unknown","23.35115",204403.87,4,"SAL129","Issaquah Dam, by hand",20241107,"Water filter MCE",2,114,15,5,114,2
+"F4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,4,"Air061","Issaquah park bridge",20241105,"Gelatin",2,61,14,1,61,2
+"F5",FALSE,"cohoDUDA","SYBR","Negative Control","Undetermined",NA,4,NA,NA,NA,NA,NA,123,20,6,123,2
+"G4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,4,"Air062","Issaquah park bridge",20241105,"Gelatin",2,62,14,1,62,2
+"G5",FALSE,"cohoDUDA","SYBR","Negative Control","Undetermined",NA,4,NA,NA,NA,NA,NA,123,20,6,123,2
+"H4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,4,"Air063","Issaquah park bridge",20241105,"PTFE",2,63,14,4,63,2
+"H5",FALSE,"cohoDUDA","SYBR","Negative Control","Undetermined",NA,4,NA,NA,NA,NA,NA,123,20,6,123,2
+"I4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,4,"Air064","Issaquah park bridge",20241105,"PTFE",2,64,14,4,64,2
+"J4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,4,"Air065","Issaquah park bridge",20241105,"MCE Air",2,65,14,2,65,2
+"K4",FALSE,"cohoDUDA","SYBR","Unknown","33.143547",384.79662,4,"Air066","Issaquah park bridge",20241105,"MCE DI water",2,66,14,3,66,2
+"L4",FALSE,"cohoDUDA","SYBR","Unknown","35.615967",78.91295,4,"Air067","Issaquah waterfall",20241107,"Gelatin",2,67,15,1,67,2
+"M4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,4,"Air068","Issaquah waterfall",20241107,"Gelatin",2,68,15,1,68,2
+"N4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,4,"Air069","Issaquah waterfall",20241107,"PTFE",2,69,15,4,69,2
+"O4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,4,"Air070","Issaquah waterfall",20241107,"PTFE",2,70,15,4,70,2
+"P4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,4,"Air071","Issaquah waterfall",20241107,"MCE Air",2,71,15,2,71,2
+"A4",FALSE,"cohoDUDA","SYBR","Standard","20.521683",1e+06,5,NA,NA,NA,NA,NA,123,20,6,123,3
+"A5",FALSE,"cohoDUDA","SYBR","Unknown","29.156397",2873.5556,5,"Air084","Issaquah waterfall",20241114,"MCE DI water",3,84,17,3,84,3
+"B4",FALSE,"cohoDUDA","SYBR","Standard","23.82771",1e+05,5,NA,NA,NA,NA,NA,123,20,6,123,3
+"B5",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,5,"SAL136","Issaquah Bridge, field negative",20241112,"Water filter MCE",3,115,16,5,115,3
+"C4",FALSE,"cohoDUDA","SYBR","Standard","27.418064",10000,5,NA,NA,NA,NA,NA,123,20,6,123,3
+"C5",FALSE,"cohoDUDA","SYBR","Unknown","24.975483",48066.13,5,"SAL137","Issaquah Bridge, Confluence Park, by hand",20241112,"Water filter MCE",3,116,16,5,116,3
+"D4",FALSE,"cohoDUDA","SYBR","Standard","30.474705",1000,5,NA,NA,NA,NA,NA,123,20,6,123,3
+"D5",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,5,"SAL140","Issaquah Dam, field negative",20241114,"Water filter MCE",3,117,17,5,117,3
+"E4",FALSE,"cohoDUDA","SYBR","Standard","34.28543",100,5,NA,NA,NA,NA,NA,123,20,6,123,3
+"E5",FALSE,"cohoDUDA","SYBR","Unknown","23.412365",137796.73,5,"SAL141","Issaquah Dam, by hand",20241114,"Water filter MCE",3,118,17,5,118,3
+"F4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,5,"Air073","Issaquah park bridge",20241112,"Gelatin",3,73,16,1,73,3
+"F5",FALSE,"cohoDUDA","SYBR","Negative Control","Undetermined",NA,5,NA,NA,NA,NA,NA,123,20,6,123,3
+"G4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,5,"Air074","Issaquah park bridge",20241112,"Gelatin",3,74,16,1,74,3
+"G5",FALSE,"cohoDUDA","SYBR","Negative Control","Undetermined",NA,5,NA,NA,NA,NA,NA,123,20,6,123,3
+"H4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,5,"Air075","Issaquah park bridge",20241112,"PTFE",3,75,16,4,75,3
+"H5",FALSE,"cohoDUDA","SYBR","Negative Control","Undetermined",NA,5,NA,NA,NA,NA,NA,123,20,6,123,3
+"I4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,5,"Air076","Issaquah park bridge",20241112,"PTFE",3,76,16,4,76,3
+"J4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,5,"Air077","Issaquah park bridge",20241112,"MCE Air",3,77,16,2,77,3
+"K4",FALSE,"cohoDUDA","SYBR","Unknown","29.477337",2314.7606,5,"Air078","Issaquah park bridge",20241112,"MCE DI water",3,78,16,3,78,3
+"L4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,5,"Air079","Issaquah waterfall",20241114,"Gelatin",3,79,17,1,79,3
+"M4",FALSE,"cohoDUDA","SYBR","Unknown","41.951794",0.5178799,5,"Air080","Issaquah waterfall",20241114,"Gelatin",3,80,17,1,80,3
+"N4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,5,"Air081","Issaquah waterfall",20241114,"PTFE",3,81,17,4,81,3
+"O4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,5,"Air082","Issaquah waterfall",20241114,"PTFE",3,82,17,4,82,3
+"P4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,5,"Air083","Issaquah waterfall",20241114,"MCE Air",3,83,17,2,83,3
+"A4",FALSE,"cohoDUDA","SYBR","Standard","20.987312",1e+06,6,NA,NA,NA,NA,NA,123,20,6,123,4
+"A5",FALSE,"cohoDUDA","SYBR","Standard","21.113325",1e+06,6,NA,NA,NA,NA,NA,123,20,6,123,4
+"B4",FALSE,"cohoDUDA","SYBR","Standard","24.61576",1e+05,6,NA,NA,NA,NA,NA,123,20,6,123,4
+"B5",FALSE,"cohoDUDA","SYBR","Standard","24.234985",1e+05,6,NA,NA,NA,NA,NA,123,20,6,123,4
+"C4",FALSE,"cohoDUDA","SYBR","Standard","27.997133",10000,6,NA,NA,NA,NA,NA,123,20,6,123,4
+"C5",FALSE,"cohoDUDA","SYBR","Standard","27.879509",10000,6,NA,NA,NA,NA,NA,123,20,6,123,4
+"D4",FALSE,"cohoDUDA","SYBR","Standard","31.064205",1000,6,NA,NA,NA,NA,NA,123,20,6,123,4
+"D5",FALSE,"cohoDUDA","SYBR","Standard","32.4417",1000,6,NA,NA,NA,NA,NA,123,20,6,123,4
+"E4",FALSE,"cohoDUDA","SYBR","Standard","34.643696",100,6,NA,NA,NA,NA,NA,123,20,6,123,4
+"E5",FALSE,"cohoDUDA","SYBR","Standard","35.905453",100,6,NA,NA,NA,NA,NA,123,20,6,123,4
+"F4",FALSE,"cohoDUDA","SYBR","Standard","Undetermined",10,6,NA,NA,NA,NA,NA,123,20,6,123,4
+"F5",FALSE,"cohoDUDA","SYBR","Standard","Undetermined",10,6,NA,NA,NA,NA,NA,123,20,6,123,4
+"G4",FALSE,"cohoDUDA","SYBR","Standard","Undetermined",1,6,NA,NA,NA,NA,NA,123,20,6,123,4
+"G5",FALSE,"cohoDUDA","SYBR","Standard","Undetermined",1,6,NA,NA,NA,NA,NA,123,20,6,123,4
+"H4",FALSE,"cohoDUDA","SYBR","Negative Control","Undetermined",NA,6,NA,NA,NA,NA,NA,123,20,6,123,4
+"A1",FALSE,"cohoDUDA","SYBR","Standard","18.958397454999513",1e+06,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"A2",FALSE,"cohoDUDA","SYBR","Standard","18.956925525603154",1e+06,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"A3",FALSE,"cohoDUDA","SYBR","Standard","18.974232520753347",1e+06,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"A4",FALSE,"cohoDUDA","SYBR","Standard","19.16379099736652",1e+06,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"A5",FALSE,"cohoDUDA","SYBR","Negative Control","Undetermined",NA,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"A6",FALSE,"cohoDUDA","SYBR","Negative Control","Undetermined",NA,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"A7",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air027","Issaquah waterfall",20240830,"Gelatin",5,27,5,1,27,5
+"A8",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air027","Issaquah waterfall",20240830,"Gelatin",5,27,5,1,27,5
+"A9",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air027","Issaquah waterfall",20240830,"Gelatin",5,27,5,1,27,5
+"A10",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air039","Issaquah park bridge",20241022,"PTFE",5,39,8,4,39,5
+"A11",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air039","Issaquah park bridge",20241022,"PTFE",5,39,8,4,39,5
+"A12",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air039","Issaquah park bridge",20241022,"PTFE",5,39,8,4,39,5
+"A13",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air049","Issaquah park bridge",20241028,"Gelatin",5,49,12,1,49,5
+"A14",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air049","Issaquah park bridge",20241028,"Gelatin",5,49,12,1,49,5
+"A15",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air049","Issaquah park bridge",20241028,"Gelatin",5,49,12,1,49,5
+"A16",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air061","Issaquah park bridge",20241105,"Gelatin",5,61,14,1,61,5
+"A17",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air061","Issaquah park bridge",20241105,"Gelatin",5,61,14,1,61,5
+"A18",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air061","Issaquah park bridge",20241105,"Gelatin",5,61,14,1,61,5
+"A19",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air073","Issaquah park bridge",20241112,"Gelatin",5,73,16,1,73,5
+"A20",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air073","Issaquah park bridge",20241112,"Gelatin",5,73,16,1,73,5
+"A21",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air073","Issaquah park bridge",20241112,"Gelatin",5,73,16,1,73,5
+"A22",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air085","Issaquah park bridge",20241119,"Gelatin",5,85,18,1,85,5
+"A23",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air085","Issaquah park bridge",20241119,"Gelatin",5,85,18,1,85,5
+"A24",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air085","Issaquah park bridge",20241119,"Gelatin",5,85,18,1,85,5
+"B1",FALSE,"cohoDUDA","SYBR","Standard","22.578371337461014",1e+05,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"B2",FALSE,"cohoDUDA","SYBR","Standard","22.485388370267643",1e+05,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"B3",FALSE,"cohoDUDA","SYBR","Standard","22.534337788351657",1e+05,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"B4",FALSE,"cohoDUDA","SYBR","Standard","22.815651574429282",1e+05,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"B5",FALSE,"cohoDUDA","SYBR","Standard","22.134756777522412",1e+05,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"B6",FALSE,"cohoDUDA","SYBR","Standard","22.961560683010617",1e+05,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"B7",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air028","Issaquah waterfall",20240830,"PTFE",5,28,5,4,28,5
+"B8",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air028","Issaquah waterfall",20240830,"PTFE",5,28,5,4,28,5
+"B9",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air028","Issaquah waterfall",20240830,"PTFE",5,28,5,4,28,5
+"B10",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air040","Issaquah park bridge",20241022,"PTFE",5,40,8,4,40,5
+"B11",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air040","Issaquah park bridge",20241022,"PTFE",5,40,8,4,40,5
+"B12",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air040","Issaquah park bridge",20241022,"PTFE",5,40,8,4,40,5
+"B13",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air050","Issaquah park bridge",20241028,"Gelatin",5,50,12,1,50,5
+"B14",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air050","Issaquah park bridge",20241028,"Gelatin",5,50,12,1,50,5
+"B15",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air050","Issaquah park bridge",20241028,"Gelatin",5,50,12,1,50,5
+"B16",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air062","Issaquah park bridge",20241105,"Gelatin",5,62,14,1,62,5
+"B17",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air062","Issaquah park bridge",20241105,"Gelatin",5,62,14,1,62,5
+"B18",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air062","Issaquah park bridge",20241105,"Gelatin",5,62,14,1,62,5
+"B19",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air074","Issaquah park bridge",20241112,"Gelatin",5,74,16,1,74,5
+"B20",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air074","Issaquah park bridge",20241112,"Gelatin",5,74,16,1,74,5
+"B21",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air074","Issaquah park bridge",20241112,"Gelatin",5,74,16,1,74,5
+"B22",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air086","Issaquah park bridge",20241119,"Gelatin",5,86,18,1,86,5
+"B23",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air086","Issaquah park bridge",20241119,"Gelatin",5,86,18,1,86,5
+"B24",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air086","Issaquah park bridge",20241119,"Gelatin",5,86,18,1,86,5
+"C1",FALSE,"cohoDUDA","SYBR","Standard","25.75068225188143",10000,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"C2",FALSE,"cohoDUDA","SYBR","Standard","26.361314427461302",10000,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"C3",FALSE,"cohoDUDA","SYBR","Standard","25.919831013555026",10000,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"C4",FALSE,"cohoDUDA","SYBR","Standard","26.078943400227963",10000,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"C5",FALSE,"cohoDUDA","SYBR","Standard","25.63475932731582",10000,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"C6",FALSE,"cohoDUDA","SYBR","Standard","26.111768342013107",10000,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"C7",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air029","Issaquah waterfall",20240830,"PTFE",5,29,5,4,29,5
+"C8",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air029","Issaquah waterfall",20240830,"PTFE",5,29,5,4,29,5
+"C9",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air029","Issaquah waterfall",20240830,"PTFE",5,29,5,4,29,5
+"C10",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air041","Issaquah park bridge",20241022,"MCE Air",5,41,8,2,41,5
+"C11",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air041","Issaquah park bridge",20241022,"MCE Air",5,41,8,2,41,5
+"C12",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air041","Issaquah park bridge",20241022,"MCE Air",5,41,8,2,41,5
+"C13",FALSE,"cohoDUDA","SYBR","Unknown","34.64370603846385",28.6621308033915,9,"Air051","Issaquah park bridge",20241028,"PTFE",5,51,12,4,51,5
+"C14",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air051","Issaquah park bridge",20241028,"PTFE",5,51,12,4,51,5
+"C15",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air051","Issaquah park bridge",20241028,"PTFE",5,51,12,4,51,5
+"C16",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air063","Issaquah park bridge",20241105,"PTFE",5,63,14,4,63,5
+"C17",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air063","Issaquah park bridge",20241105,"PTFE",5,63,14,4,63,5
+"C18",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air063","Issaquah park bridge",20241105,"PTFE",5,63,14,4,63,5
+"C19",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air075","Issaquah park bridge",20241112,"PTFE",5,75,16,4,75,5
+"C20",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air075","Issaquah park bridge",20241112,"PTFE",5,75,16,4,75,5
+"C21",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air075","Issaquah park bridge",20241112,"PTFE",5,75,16,4,75,5
+"C22",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air087","Issaquah park bridge",20241119,"PTFE",5,87,18,4,87,5
+"C23",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air087","Issaquah park bridge",20241119,"PTFE",5,87,18,4,87,5
+"C24",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air087","Issaquah park bridge",20241119,"PTFE",5,87,18,4,87,5
+"D1",FALSE,"cohoDUDA","SYBR","Standard","30.444580833053372",1000,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"D2",FALSE,"cohoDUDA","SYBR","Standard","29.12894402241117",1000,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"D3",FALSE,"cohoDUDA","SYBR","Standard","28.630881378095708",1000,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"D4",FALSE,"cohoDUDA","SYBR","Standard","29.55064043704258",1000,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"D5",FALSE,"cohoDUDA","SYBR","Standard","29.099810591065875",1000,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"D6",FALSE,"cohoDUDA","SYBR","Standard","30.206262227280035",1000,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"D7",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air030","Issaquah waterfall",20240830,"MCE Air",5,30,5,2,30,5
+"D8",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air030","Issaquah waterfall",20240830,"MCE Air",5,30,5,2,30,5
+"D9",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air030","Issaquah waterfall",20240830,"MCE Air",5,30,5,2,30,5
+"D10",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air042","Issaquah park bridge",20241022,"MCE DI water",5,42,8,3,42,5
+"D11",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air042","Issaquah park bridge",20241022,"MCE DI water",5,42,8,3,42,5
+"D12",FALSE,"cohoDUDA","SYBR","Unknown","32.96799843568465",89.2600240346635,9,"Air042","Issaquah park bridge",20241022,"MCE DI water",5,42,8,3,42,5
+"D13",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air052","Issaquah park bridge",20241028,"PTFE",5,52,12,4,52,5
+"D14",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air052","Issaquah park bridge",20241028,"PTFE",5,52,12,4,52,5
+"D15",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air052","Issaquah park bridge",20241028,"PTFE",5,52,12,4,52,5
+"D16",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air064","Issaquah park bridge",20241105,"PTFE",5,64,14,4,64,5
+"D17",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air064","Issaquah park bridge",20241105,"PTFE",5,64,14,4,64,5
+"D18",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air064","Issaquah park bridge",20241105,"PTFE",5,64,14,4,64,5
+"D19",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air076","Issaquah park bridge",20241112,"PTFE",5,76,16,4,76,5
+"D20",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air076","Issaquah park bridge",20241112,"PTFE",5,76,16,4,76,5
+"D21",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air076","Issaquah park bridge",20241112,"PTFE",5,76,16,4,76,5
+"D22",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air088","Issaquah park bridge",20241119,"PTFE",5,88,18,4,88,5
+"D23",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air088","Issaquah park bridge",20241119,"PTFE",5,88,18,4,88,5
+"D24",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air088","Issaquah park bridge",20241119,"PTFE",5,88,18,4,88,5
+"E1",FALSE,"cohoDUDA","SYBR","Standard","33.539891138168656",100,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"E2",FALSE,"cohoDUDA","SYBR","Standard","33.1599006483073",100,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"E3",FALSE,"cohoDUDA","SYBR","Standard","34.71131667623382",100,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"E4",FALSE,"cohoDUDA","SYBR","Standard","32.653629797136375",100,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"E5",FALSE,"cohoDUDA","SYBR","Standard","32.66542693340509",100,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"E6",FALSE,"cohoDUDA","SYBR","Standard","32.28388070260702",100,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"E7",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL041","Issaquah Dam, field negative",20240828,"Water filter MCE",5,97,4,5,97,5
+"E8",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL041","Issaquah Dam, field negative",20240828,"Water filter MCE",5,97,4,5,97,5
+"E9",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL041","Issaquah Dam, field negative",20240828,"Water filter MCE",5,97,4,5,97,5
+"E10",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air043","Issaquah waterfall",20241024,"Gelatin",5,43,10,1,43,5
+"E11",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air043","Issaquah waterfall",20241024,"Gelatin",5,43,10,1,43,5
+"E12",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air043","Issaquah waterfall",20241024,"Gelatin",5,43,10,1,43,5
+"E13",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air053","Issaquah park bridge",20241028,"MCE Air",5,53,12,2,53,5
+"E14",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air053","Issaquah park bridge",20241028,"MCE Air",5,53,12,2,53,5
+"E15",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air053","Issaquah park bridge",20241028,"MCE Air",5,53,12,2,53,5
+"E16",FALSE,"cohoDUDA","SYBR","Unknown","40.16513751735239",0.678785353345818,9,"Air065","Issaquah park bridge",20241105,"MCE Air",5,65,14,2,65,5
+"E17",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air065","Issaquah park bridge",20241105,"MCE Air",5,65,14,2,65,5
+"E18",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air065","Issaquah park bridge",20241105,"MCE Air",5,65,14,2,65,5
+"E19",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air077","Issaquah park bridge",20241112,"MCE Air",5,77,16,2,77,5
+"E20",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air077","Issaquah park bridge",20241112,"MCE Air",5,77,16,2,77,5
+"E21",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air077","Issaquah park bridge",20241112,"MCE Air",5,77,16,2,77,5
+"E22",FALSE,"cohoDUDA","SYBR","Unknown","33.82164350440526",50.0418776808475,9,"Air089","Issaquah park bridge",20241119,"MCE Air",5,89,18,2,89,5
+"E23",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air089","Issaquah park bridge",20241119,"MCE Air",5,89,18,2,89,5
+"E24",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air089","Issaquah park bridge",20241119,"MCE Air",5,89,18,2,89,5
+"F1",FALSE,"cohoDUDA","SYBR","Standard","Undetermined",10,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"F2",FALSE,"cohoDUDA","SYBR","Standard","Undetermined",10,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"F3",FALSE,"cohoDUDA","SYBR","Standard","Undetermined",10,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"F4",FALSE,"cohoDUDA","SYBR","Standard","Undetermined",10,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"F5",FALSE,"cohoDUDA","SYBR","Standard","34.40951574369255",100,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"F6",FALSE,"cohoDUDA","SYBR","Standard","32.86959254752037",100,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"F7",FALSE,"cohoDUDA","SYBR","Unknown","23.982228396814506",39461.7244182502,9,"SAL042","Issaquah Dam, by hand",20240828,"Water filter MCE",5,98,4,5,98,5
+"F8",FALSE,"cohoDUDA","SYBR","Unknown","24.05252131637363",37625.3870478666,9,"SAL042","Issaquah Dam, by hand",20240828,"Water filter MCE",5,98,4,5,98,5
+"F9",FALSE,"cohoDUDA","SYBR","Unknown","24.1908833905703",34256.6991004397,9,"SAL042","Issaquah Dam, by hand",20240828,"Water filter MCE",5,98,4,5,98,5
+"F10",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air044","Issaquah waterfall",20241024,"Gelatin",5,44,10,1,44,5
+"F11",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air044","Issaquah waterfall",20241024,"Gelatin",5,44,10,1,44,5
+"F12",FALSE,"cohoDUDA","SYBR","Unknown","33.77716771608421",51.5736424941911,9,"Air044","Issaquah waterfall",20241024,"Gelatin",5,44,10,1,44,5
+"F13",FALSE,"cohoDUDA","SYBR","Unknown","26.48861098773086",7215.50612728688,9,"Air054","Issaquah park bridge",20241028,"MCE DI water",5,54,12,3,54,5
+"F14",FALSE,"cohoDUDA","SYBR","Unknown","26.56088763271461",6870.48955877297,9,"Air054","Issaquah park bridge",20241028,"MCE DI water",5,54,12,3,54,5
+"F15",FALSE,"cohoDUDA","SYBR","Unknown","26.573063663293617",6814.01230832327,9,"Air054","Issaquah park bridge",20241028,"MCE DI water",5,54,12,3,54,5
+"F16",FALSE,"cohoDUDA","SYBR","Unknown","30.550712791797054",459.552405080686,9,"Air066","Issaquah park bridge",20241105,"MCE DI water",5,66,14,3,66,5
+"F17",FALSE,"cohoDUDA","SYBR","Unknown","30.40281837947289",508.015474978828,9,"Air066","Issaquah park bridge",20241105,"MCE DI water",5,66,14,3,66,5
+"F18",FALSE,"cohoDUDA","SYBR","Unknown","30.791664906163533",390.297559067216,9,"Air066","Issaquah park bridge",20241105,"MCE DI water",5,66,14,3,66,5
+"F19",FALSE,"cohoDUDA","SYBR","Unknown","29.336352017805012",1046.78502065846,9,"Air078","Issaquah park bridge",20241112,"MCE DI water",5,78,16,3,78,5
+"F20",FALSE,"cohoDUDA","SYBR","Unknown","28.968191966681204",1343.53275242052,9,"Air078","Issaquah park bridge",20241112,"MCE DI water",5,78,16,3,78,5
+"F21",FALSE,"cohoDUDA","SYBR","Unknown","29.209611995404543",1140.69960271122,9,"Air078","Issaquah park bridge",20241112,"MCE DI water",5,78,16,3,78,5
+"F22",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air090","Issaquah park bridge",20241119,"MCE DI water",5,90,18,3,90,5
+"F23",FALSE,"cohoDUDA","SYBR","Unknown","34.43445284806566",33.0304991184372,9,"Air090","Issaquah park bridge",20241119,"MCE DI water",5,90,18,3,90,5
+"F24",FALSE,"cohoDUDA","SYBR","Unknown","33.24942690987537",73.7566295976724,9,"Air090","Issaquah park bridge",20241119,"MCE DI water",5,90,18,3,90,5
+"G1",FALSE,"cohoDUDA","SYBR","Standard","Undetermined",10,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"G2",FALSE,"cohoDUDA","SYBR","Standard","34.5241074275129",10,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"G3",FALSE,"cohoDUDA","SYBR","Standard","Undetermined",10,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"G4",FALSE,"cohoDUDA","SYBR","Standard","34.477686877579714",10,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"G5",FALSE,"cohoDUDA","SYBR","Standard","Undetermined",10,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"G6",FALSE,"cohoDUDA","SYBR","Negative Control","Undetermined",NA,9,NA,NA,NA,NA,NA,123,20,6,123,5
+"G7",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL048","Issaquah Dam, field negative",20240830,"Water filter MCE",5,99,5,5,99,5
+"G8",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL048","Issaquah Dam, field negative",20240830,"Water filter MCE",5,99,5,5,99,5
+"G9",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL048","Issaquah Dam, field negative",20240830,"Water filter MCE",5,99,5,5,99,5
+"G10",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air045","Issaquah waterfall",20241024,"PTFE",5,45,10,4,45,5
+"G11",FALSE,"cohoDUDA","SYBR","Unknown","33.13855372296507",79.5139752225258,9,"Air045","Issaquah waterfall",20241024,"PTFE",5,45,10,4,45,5
+"G12",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air045","Issaquah waterfall",20241024,"PTFE",5,45,10,4,45,5
+"G13",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air055","Issaquah waterfall",20241031,"Gelatin",5,55,13,1,55,5
+"G14",FALSE,"cohoDUDA","SYBR","Unknown","33.767185370679755",51.9238310683887,9,"Air055","Issaquah waterfall",20241031,"Gelatin",5,55,13,1,55,5
+"G15",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air055","Issaquah waterfall",20241031,"Gelatin",5,55,13,1,55,5
+"G16",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air067","Issaquah waterfall",20241107,"Gelatin",5,67,15,1,67,5
+"G17",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air067","Issaquah waterfall",20241107,"Gelatin",5,67,15,1,67,5
+"G18",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air067","Issaquah waterfall",20241107,"Gelatin",5,67,15,1,67,5
+"G19",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air079","Issaquah waterfall",20241114,"Gelatin",5,79,17,1,79,5
+"G20",FALSE,"cohoDUDA","SYBR","Unknown","33.18056413501584",77.281420146693,9,"Air079","Issaquah waterfall",20241114,"Gelatin",5,79,17,1,79,5
+"G21",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air079","Issaquah waterfall",20241114,"Gelatin",5,79,17,1,79,5
+"G22",FALSE,"cohoDUDA","SYBR","Unknown","32.78629348904265",100.960879907768,9,"Air091","Issaquah waterfall",20241121,"Gelatin",5,91,19,1,91,5
+"G23",FALSE,"cohoDUDA","SYBR","Unknown","32.71570564351906",105.909529789245,9,"Air091","Issaquah waterfall",20241121,"Gelatin",5,91,19,1,91,5
+"G24",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air091","Issaquah waterfall",20241121,"Gelatin",5,91,19,1,91,5
+"H1",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air001","Wallace 156A",20240816,"Gelatin",5,1,1,1,1,5
+"H2",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air002","Wallace 156A",20240816,"Gelatin",5,2,1,1,2,5
+"H3",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air003","Wallace 156A",20240816,"PTFE",5,3,1,4,3,5
+"H4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air004","Wallace 156A",20240816,"PTFE",5,4,1,4,4,5
+"H5",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air005","Wallace 156A",20240816,"MCE Air",5,5,1,2,5,5
+"H6",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air006","Wallace 156A",20240816,"MCE DI water",5,6,1,3,6,5
+"H7",FALSE,"cohoDUDA","SYBR","Unknown","22.29609216222517",123764.160441203,9,"SAL049","Issaquah Dam, by hand",20240830,"Water filter MCE",5,100,5,5,100,5
+"H8",FALSE,"cohoDUDA","SYBR","Unknown","22.470883100136234",109934.584716536,9,"SAL049","Issaquah Dam, by hand",20240830,"Water filter MCE",5,100,5,5,100,5
+"H9",FALSE,"cohoDUDA","SYBR","Unknown","22.51138516261488",106957.204785179,9,"SAL049","Issaquah Dam, by hand",20240830,"Water filter MCE",5,100,5,5,100,5
+"H10",FALSE,"cohoDUDA","SYBR","Unknown","32.10653798157537",160.059459346592,9,"Air046","Issaquah waterfall",20241024,"PTFE",5,46,10,4,46,5
+"H11",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air046","Issaquah waterfall",20241024,"PTFE",5,46,10,4,46,5
+"H12",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air046","Issaquah waterfall",20241024,"PTFE",5,46,10,4,46,5
+"H13",FALSE,"cohoDUDA","SYBR","Unknown","31.643864557574247",219.027164588794,9,"Air056","Issaquah waterfall",20241031,"Gelatin",5,56,13,1,56,5
+"H14",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air056","Issaquah waterfall",20241031,"Gelatin",5,56,13,1,56,5
+"H15",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air056","Issaquah waterfall",20241031,"Gelatin",5,56,13,1,56,5
+"H16",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air068","Issaquah waterfall",20241107,"Gelatin",5,68,15,1,68,5
+"H17",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air068","Issaquah waterfall",20241107,"Gelatin",5,68,15,1,68,5
+"H18",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air068","Issaquah waterfall",20241107,"Gelatin",5,68,15,1,68,5
+"H19",FALSE,"cohoDUDA","SYBR","Unknown","34.15369578004169",39.9552086376402,9,"Air080","Issaquah waterfall",20241114,"Gelatin",5,80,17,1,80,5
+"H20",FALSE,"cohoDUDA","SYBR","Unknown","33.636012198722895",56.7525907674155,9,"Air080","Issaquah waterfall",20241114,"Gelatin",5,80,17,1,80,5
+"H21",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air080","Issaquah waterfall",20241114,"Gelatin",5,80,17,1,80,5
+"H22",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air092","Issaquah waterfall",20241121,"Gelatin",5,92,19,1,92,5
+"H23",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air092","Issaquah waterfall",20241121,"Gelatin",5,92,19,1,92,5
+"H24",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air092","Issaquah waterfall",20241121,"Gelatin",5,92,19,1,92,5
+"I1",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air007","Fisheries pond",20240819,"Gelatin",5,7,2,1,7,5
+"I2",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air008","Fisheries pond",20240819,"Gelatin",5,8,2,1,8,5
+"I3",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air009","Fisheries pond",20240819,"PTFE",5,9,2,4,9,5
+"I4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air019","Issaquah waterfall",20240828,"Gelatin",5,19,4,1,19,5
+"I5",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air019","Issaquah waterfall",20240828,"Gelatin",5,19,4,1,19,5
+"I6",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air019","Issaquah waterfall",20240828,"Gelatin",5,19,4,1,19,5
+"I7",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air031","Issaquah waterfall",20241017,"Gelatin",5,31,6,1,31,5
+"I8",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air031","Issaquah waterfall",20241017,"Gelatin",5,31,6,1,31,5
+"I9",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air031","Issaquah waterfall",20241017,"Gelatin",5,31,6,1,31,5
+"I10",FALSE,"cohoDUDA","SYBR","Unknown","33.793488682948336",51.006170226642,9,"Air047","Issaquah waterfall",20241024,"MCE Air",5,47,10,2,47,5
+"I11",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air047","Issaquah waterfall",20241024,"MCE Air",5,47,10,2,47,5
+"I12",FALSE,"cohoDUDA","SYBR","Unknown","33.09822418644261",81.717856813225,9,"Air047","Issaquah waterfall",20241024,"MCE Air",5,47,10,2,47,5
+"I13",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air057","Issaquah waterfall",20241031,"PTFE",5,57,13,4,57,5
+"I14",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air057","Issaquah waterfall",20241031,"PTFE",5,57,13,4,57,5
+"I15",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air057","Issaquah waterfall",20241031,"PTFE",5,57,13,4,57,5
+"I16",FALSE,"cohoDUDA","SYBR","Unknown","33.77358887182308",51.6989187666434,9,"Air069","Issaquah waterfall",20241107,"PTFE",5,69,15,4,69,5
+"I17",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air069","Issaquah waterfall",20241107,"PTFE",5,69,15,4,69,5
+"I18",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air069","Issaquah waterfall",20241107,"PTFE",5,69,15,4,69,5
+"I19",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air081","Issaquah waterfall",20241114,"PTFE",5,81,17,4,81,5
+"I20",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air081","Issaquah waterfall",20241114,"PTFE",5,81,17,4,81,5
+"I21",FALSE,"cohoDUDA","SYBR","Unknown","33.7462848464139",52.664758215996,9,"Air081","Issaquah waterfall",20241114,"PTFE",5,81,17,4,81,5
+"I22",FALSE,"cohoDUDA","SYBR","Unknown","31.795289914252756",197.658970936129,9,"Air093","Issaquah waterfall",20241121,"PTFE",5,93,19,4,93,5
+"I23",FALSE,"cohoDUDA","SYBR","Unknown","31.4059695389574",257.357686193371,9,"Air093","Issaquah waterfall",20241121,"PTFE",5,93,19,4,93,5
+"I24",FALSE,"cohoDUDA","SYBR","Unknown","31.78354590806942",199.238887019299,9,"Air093","Issaquah waterfall",20241121,"PTFE",5,93,19,4,93,5
+"J1",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air010","Fisheries pond",20240819,"PTFE",5,10,2,4,10,5
+"J2",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air011","Fisheries pond",20240819,"MCE Air",5,11,2,2,11,5
+"J3",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air012","Fisheries pond",20240819,"MCE DI water",5,12,2,3,12,5
+"J4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air020","Issaquah waterfall",20240828,"Gelatin",5,20,4,1,20,5
+"J5",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air020","Issaquah waterfall",20240828,"Gelatin",5,20,4,1,20,5
+"J6",FALSE,"cohoDUDA","SYBR","Unknown","42.62970579475388",0.127683224350041,9,"Air020","Issaquah waterfall",20240828,"Gelatin",5,20,4,1,20,5
+"J7",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air032","Issaquah waterfall",20241017,"Gelatin",5,32,6,1,32,5
+"J8",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air032","Issaquah waterfall",20241017,"Gelatin",5,32,6,1,32,5
+"J9",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air032","Issaquah waterfall",20241017,"Gelatin",5,32,6,1,32,5
+"J10",FALSE,"cohoDUDA","SYBR","Unknown","32.083784795953434",162.54744888697,9,"Air048","Issaquah waterfall",20241024,"MCE DI water",5,48,10,3,48,5
+"J11",FALSE,"cohoDUDA","SYBR","Unknown","34.71222815790398",27.3611744666331,9,"Air048","Issaquah waterfall",20241024,"MCE DI water",5,48,10,3,48,5
+"J12",FALSE,"cohoDUDA","SYBR","Unknown","31.964269505948977",176.265330829792,9,"Air048","Issaquah waterfall",20241024,"MCE DI water",5,48,10,3,48,5
+"J13",FALSE,"cohoDUDA","SYBR","Unknown","37.36511483261401",4.52994476796269,9,"Air058","Issaquah waterfall",20241031,"PTFE",5,58,13,4,58,5
+"J14",FALSE,"cohoDUDA","SYBR","Unknown","35.40425534308142",17.1156574814807,9,"Air058","Issaquah waterfall",20241031,"PTFE",5,58,13,4,58,5
+"J15",FALSE,"cohoDUDA","SYBR","Unknown","34.91111348726032",23.9100506445272,9,"Air058","Issaquah waterfall",20241031,"PTFE",5,58,13,4,58,5
+"J16",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air070","Issaquah waterfall",20241107,"PTFE",5,70,15,4,70,5
+"J17",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air070","Issaquah waterfall",20241107,"PTFE",5,70,15,4,70,5
+"J18",FALSE,"cohoDUDA","SYBR","Unknown","34.6500982148726",28.5381975410611,9,"Air070","Issaquah waterfall",20241107,"PTFE",5,70,15,4,70,5
+"J19",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air082","Issaquah waterfall",20241114,"PTFE",5,82,17,4,82,5
+"J20",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air082","Issaquah waterfall",20241114,"PTFE",5,82,17,4,82,5
+"J21",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air082","Issaquah waterfall",20241114,"PTFE",5,82,17,4,82,5
+"J22",FALSE,"cohoDUDA","SYBR","Unknown","32.32990097954375",137.569001601557,9,"Air094","Issaquah waterfall",20241121,"PTFE",5,94,19,4,94,5
+"J23",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air094","Issaquah waterfall",20241121,"PTFE",5,94,19,4,94,5
+"J24",FALSE,"cohoDUDA","SYBR","Unknown","36.065578455324925",10.9318103205937,9,"Air094","Issaquah waterfall",20241121,"PTFE",5,94,19,4,94,5
+"K1",FALSE,"cohoDUDA","SYBR","Unknown","34.83829423565176",25.1199841950859,9,"Air013","Issaquah waterfall",20240826,"Gelatin",5,13,3,1,13,5
+"K2",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air013","Issaquah waterfall",20240826,"Gelatin",5,13,3,1,13,5
+"K3",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air013","Issaquah waterfall",20240826,"Gelatin",5,13,3,1,13,5
+"K4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air021","Issaquah waterfall",20240828,"PTFE",5,21,4,4,21,5
+"K5",FALSE,"cohoDUDA","SYBR","Unknown","33.720274618835816",53.6016081242144,9,"Air021","Issaquah waterfall",20240828,"PTFE",5,21,4,4,21,5
+"K6",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air021","Issaquah waterfall",20240828,"PTFE",5,21,4,4,21,5
+"K7",FALSE,"cohoDUDA","SYBR","Unknown","34.890273450813325",24.2502407237153,9,"Air033","Issaquah waterfall",20241017,"PTFE",5,33,6,4,33,5
+"K8",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air033","Issaquah waterfall",20241017,"PTFE",5,33,6,4,33,5
+"K9",FALSE,"cohoDUDA","SYBR","Unknown","34.77013187460483",26.3079606071989,9,"Air033","Issaquah waterfall",20241017,"PTFE",5,33,6,4,33,5
+"K10",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL092","Issaquah Dam, field negative",20241017,"Water filter MCE",5,101,6,5,101,5
+"K11",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL092","Issaquah Dam, field negative",20241017,"Water filter MCE",5,101,6,5,101,5
+"K12",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL092","Issaquah Dam, field negative",20241017,"Water filter MCE",5,101,6,5,101,5
+"K13",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air059","Issaquah waterfall",20241031,"MCE Air",5,59,13,2,59,5
+"K14",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air059","Issaquah waterfall",20241031,"MCE Air",5,59,13,2,59,5
+"K15",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air059","Issaquah waterfall",20241031,"MCE Air",5,59,13,2,59,5
+"K16",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air071","Issaquah waterfall",20241107,"MCE Air",5,71,15,2,71,5
+"K17",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air071","Issaquah waterfall",20241107,"MCE Air",5,71,15,2,71,5
+"K18",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air071","Issaquah waterfall",20241107,"MCE Air",5,71,15,2,71,5
+"K19",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air083","Issaquah waterfall",20241114,"MCE Air",5,83,17,2,83,5
+"K20",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air083","Issaquah waterfall",20241114,"MCE Air",5,83,17,2,83,5
+"K21",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air083","Issaquah waterfall",20241114,"MCE Air",5,83,17,2,83,5
+"K22",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air095","Issaquah waterfall",20241121,"MCE Air",5,95,19,2,95,5
+"K23",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air095","Issaquah waterfall",20241121,"MCE Air",5,95,19,2,95,5
+"K24",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air095","Issaquah waterfall",20241121,"MCE Air",5,95,19,2,95,5
+"L1",FALSE,"cohoDUDA","SYBR","Unknown","36.04655519784676",11.0737002604868,9,"Air014","Issaquah waterfall",20240826,"Gelatin",5,14,3,1,14,5
+"L2",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air014","Issaquah waterfall",20240826,"Gelatin",5,14,3,1,14,5
+"L3",FALSE,"cohoDUDA","SYBR","Unknown","33.50823178023943",61.8879059490244,9,"Air014","Issaquah waterfall",20240826,"Gelatin",5,14,3,1,14,5
+"L4",FALSE,"cohoDUDA","SYBR","Unknown","33.705706992812495",54.1335743912712,9,"Air022","Issaquah waterfall",20240828,"PTFE",5,22,4,4,22,5
+"L5",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air022","Issaquah waterfall",20240828,"PTFE",5,22,4,4,22,5
+"L6",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air022","Issaquah waterfall",20240828,"PTFE",5,22,4,4,22,5
+"L7",FALSE,"cohoDUDA","SYBR","Unknown","34.47765954829839",32.0770604597286,9,"Air034","Issaquah waterfall",20241017,"PTFE",5,34,6,4,34,5
+"L8",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air034","Issaquah waterfall",20241017,"PTFE",5,34,6,4,34,5
+"L9",FALSE,"cohoDUDA","SYBR","Unknown","34.78174507977678",26.1016592177911,9,"Air034","Issaquah waterfall",20241017,"PTFE",5,34,6,4,34,5
+"L10",FALSE,"cohoDUDA","SYBR","Unknown","20.006014463471352",584549.631350498,9,"SAL093","Issaquah Dam, by hand",20241017,"Water filter MCE",5,102,6,5,102,5
+"L11",FALSE,"cohoDUDA","SYBR","Unknown","20.22745250549182",503068.773983798,9,"SAL093","Issaquah Dam, by hand",20241017,"Water filter MCE",5,102,6,5,102,5
+"L12",FALSE,"cohoDUDA","SYBR","Unknown","20.57485794202639",397509.041332333,9,"SAL093","Issaquah Dam, by hand",20241017,"Water filter MCE",5,102,6,5,102,5
+"L13",FALSE,"cohoDUDA","SYBR","Unknown","29.87238167249776",727.853383045305,9,"Air060","Issaquah waterfall",20241031,"MCE DI water",5,60,13,3,60,5
+"L14",FALSE,"cohoDUDA","SYBR","Unknown","30.63068112631575",435.302740490025,9,"Air060","Issaquah waterfall",20241031,"MCE DI water",5,60,13,3,60,5
+"L15",FALSE,"cohoDUDA","SYBR","Unknown","30.458919607153838",489.057658074293,9,"Air060","Issaquah waterfall",20241031,"MCE DI water",5,60,13,3,60,5
+"L16",FALSE,"cohoDUDA","SYBR","Unknown","27.63921053117243",3307.62616693904,9,"Air072","Issaquah waterfall",20241107,"MCE DI water",5,72,15,3,72,5
+"L17",FALSE,"cohoDUDA","SYBR","Unknown","28.35987522453933",2029.28966106405,9,"Air072","Issaquah waterfall",20241107,"MCE DI water",5,72,15,3,72,5
+"L18",FALSE,"cohoDUDA","SYBR","Unknown","28.309393517124853",2099.93796914227,9,"Air072","Issaquah waterfall",20241107,"MCE DI water",5,72,15,3,72,5
+"L19",FALSE,"cohoDUDA","SYBR","Unknown","27.534592083008796",3550.7275657279,9,"Air084","Issaquah waterfall",20241114,"MCE DI water",5,84,17,3,84,5
+"L20",FALSE,"cohoDUDA","SYBR","Unknown","27.51697401450042",3593.38974111468,9,"Air084","Issaquah waterfall",20241114,"MCE DI water",5,84,17,3,84,5
+"L21",FALSE,"cohoDUDA","SYBR","Unknown","27.369025068502474",3972.48510451259,9,"Air084","Issaquah waterfall",20241114,"MCE DI water",5,84,17,3,84,5
+"L22",FALSE,"cohoDUDA","SYBR","Unknown","27.676073972103687",3225.99267892072,9,"Air096","Issaquah waterfall",20241121,"MCE DI water",5,96,19,3,96,5
+"L23",FALSE,"cohoDUDA","SYBR","Unknown","28.124092578691027",2381.0104253016,9,"Air096","Issaquah waterfall",20241121,"MCE DI water",5,96,19,3,96,5
+"L24",FALSE,"cohoDUDA","SYBR","Unknown","27.997539337245705",2594.29941294123,9,"Air096","Issaquah waterfall",20241121,"MCE DI water",5,96,19,3,96,5
+"M1",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air015","Issaquah waterfall",20240826,"PTFE",5,15,3,4,15,5
+"M2",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air015","Issaquah waterfall",20240826,"PTFE",5,15,3,4,15,5
+"M3",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air015","Issaquah waterfall",20240826,"PTFE",5,15,3,4,15,5
+"M4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air023","Issaquah waterfall",20240828,"MCE Air",5,23,4,2,23,5
+"M5",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air023","Issaquah waterfall",20240828,"MCE Air",5,23,4,2,23,5
+"M6",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air023","Issaquah waterfall",20240828,"MCE Air",5,23,4,2,23,5
+"M7",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air035","Issaquah waterfall",20241017,"MCE Air",5,35,6,2,35,5
+"M8",FALSE,"cohoDUDA","SYBR","Unknown","33.678726891373614",55.1327900994942,9,"Air035","Issaquah waterfall",20241017,"MCE Air",5,35,6,2,35,5
+"M9",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air035","Issaquah waterfall",20241017,"MCE Air",5,35,6,2,35,5
+"M10",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL100","Issaquah Bridge, field negative",20241023,"Water filter MCE",5,103,9,5,103,5
+"M11",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL100","Issaquah Bridge, field negative",20241023,"Water filter MCE",5,103,9,5,103,5
+"M12",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL100","Issaquah Bridge, field negative",20241023,"Water filter MCE",5,103,9,5,103,5
+"M13",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL112","Issaquah Bridge, field negative",20241028,"Water filter MCE",5,107,12,5,107,5
+"M14",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL112","Issaquah Bridge, field negative",20241028,"Water filter MCE",5,107,12,5,107,5
+"M15",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL112","Issaquah Bridge, field negative",20241028,"Water filter MCE",5,107,12,5,107,5
+"M16",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL124","Issaquah Bridge, field negative",20241105,"Water filter MCE",5,111,14,5,111,5
+"M17",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL124","Issaquah Bridge, field negative",20241105,"Water filter MCE",5,111,14,5,111,5
+"M18",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL124","Issaquah Bridge, field negative",20241105,"Water filter MCE",5,111,14,5,111,5
+"M19",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL136","Issaquah Bridge, field negative",20241112,"Water filter MCE",5,115,16,5,115,5
+"M20",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL136","Issaquah Bridge, field negative",20241112,"Water filter MCE",5,115,16,5,115,5
+"M21",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL136","Issaquah Bridge, field negative",20241112,"Water filter MCE",5,115,16,5,115,5
+"M22",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL148","Issaquah Bridge, field negative",20241019,"Water filter MCE",5,119,7,5,119,5
+"M23",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL148","Issaquah Bridge, field negative",20241019,"Water filter MCE",5,119,7,5,119,5
+"M24",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL148","Issaquah Bridge, field negative",20241019,"Water filter MCE",5,119,7,5,119,5
+"N1",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air016","Issaquah waterfall",20240826,"PTFE",5,16,3,4,16,5
+"N2",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air016","Issaquah waterfall",20240826,"PTFE",5,16,3,4,16,5
+"N3",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air016","Issaquah waterfall",20240826,"PTFE",5,16,3,4,16,5
+"N4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air024","Issaquah waterfall",20240828,"MCE DI water",5,24,4,3,24,5
+"N5",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air024","Issaquah waterfall",20240828,"MCE DI water",5,24,4,3,24,5
+"N6",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air024","Issaquah waterfall",20240828,"MCE DI water",5,24,4,3,24,5
+"N7",FALSE,"cohoDUDA","SYBR","Unknown","34.655001489963254",28.4434948127492,9,"Air036","Issaquah waterfall",20241017,"MCE DI water",5,36,6,3,36,5
+"N8",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air036","Issaquah waterfall",20241017,"MCE DI water",5,36,6,3,36,5
+"N9",FALSE,"cohoDUDA","SYBR","Unknown","33.12921768212945",80.0188138048968,9,"Air036","Issaquah waterfall",20241017,"MCE DI water",5,36,6,3,36,5
+"N10",FALSE,"cohoDUDA","SYBR","Unknown","20.900693740530926",318725.655332765,9,"SAL101","Issaquah Bridge, Confluence Park, by hand",20241023,"Water filter MCE",5,104,9,5,104,5
+"N11",FALSE,"cohoDUDA","SYBR","Unknown","21.206910845758465",258978.084454351,9,"SAL101","Issaquah Bridge, Confluence Park, by hand",20241023,"Water filter MCE",5,104,9,5,104,5
+"N12",FALSE,"cohoDUDA","SYBR","Unknown","21.227401243774672",255405.587448034,9,"SAL101","Issaquah Bridge, Confluence Park, by hand",20241023,"Water filter MCE",5,104,9,5,104,5
+"N13",FALSE,"cohoDUDA","SYBR","Unknown","23.065173344504558",73479.8270823788,9,"SAL113","Issaquah Bridge, Confluence Park, by hand",20241028,"Water filter MCE",5,108,12,5,108,5
+"N14",FALSE,"cohoDUDA","SYBR","Unknown","23.01631927903096",75954.1226662348,9,"SAL113","Issaquah Bridge, Confluence Park, by hand",20241028,"Water filter MCE",5,108,12,5,108,5
+"N15",FALSE,"cohoDUDA","SYBR","Unknown","23.074485048718124",73017.4475906254,9,"SAL113","Issaquah Bridge, Confluence Park, by hand",20241028,"Water filter MCE",5,108,12,5,108,5
+"N16",FALSE,"cohoDUDA","SYBR","Unknown","20.909471913351645",316834.614642624,9,"SAL125","Issaquah Bridge, Confluence Park, by hand",20241105,"Water filter MCE",5,112,14,5,112,5
+"N17",FALSE,"cohoDUDA","SYBR","Unknown","21.248759776803283",251734.178289976,9,"SAL125","Issaquah Bridge, Confluence Park, by hand",20241105,"Water filter MCE",5,112,14,5,112,5
+"N18",FALSE,"cohoDUDA","SYBR","Unknown","21.40091268028265",227063.085299328,9,"SAL125","Issaquah Bridge, Confluence Park, by hand",20241105,"Water filter MCE",5,112,14,5,112,5
+"N19",FALSE,"cohoDUDA","SYBR","Unknown","23.69001189047706",48106.98315999,9,"SAL137","Issaquah Bridge, Confluence Park, by hand",20241112,"Water filter MCE",5,116,16,5,116,5
+"N20",FALSE,"cohoDUDA","SYBR","Unknown","23.6293600782397",50126.1959648798,9,"SAL137","Issaquah Bridge, Confluence Park, by hand",20241112,"Water filter MCE",5,116,16,5,116,5
+"N21",FALSE,"cohoDUDA","SYBR","Unknown","23.769147262535306",45594.2120638602,9,"SAL137","Issaquah Bridge, Confluence Park, by hand",20241112,"Water filter MCE",5,116,16,5,116,5
+"N22",FALSE,"cohoDUDA","SYBR","Unknown","25.090003802928983",18622.3129609374,9,"SAL149","Issaquah Bridge, Confluence Park, by hand",20241019,"Water filter MCE",5,120,7,5,120,5
+"N23",FALSE,"cohoDUDA","SYBR","Unknown","24.987636875342076",19960.5120874916,9,"SAL149","Issaquah Bridge, Confluence Park, by hand",20241019,"Water filter MCE",5,120,7,5,120,5
+"N24",FALSE,"cohoDUDA","SYBR","Unknown","25.095123772826113",18557.7893238968,9,"SAL149","Issaquah Bridge, Confluence Park, by hand",20241019,"Water filter MCE",5,120,7,5,120,5
+"O1",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air017","Issaquah waterfall",20240826,"MCE Air",5,17,3,2,17,5
+"O2",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air017","Issaquah waterfall",20240826,"MCE Air",5,17,3,2,17,5
+"O3",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air017","Issaquah waterfall",20240826,"MCE Air",5,17,3,2,17,5
+"O4",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air025","Issaquah waterfall",20240830,"MCE DI water",5,25,5,3,25,5
+"O5",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air025","Issaquah waterfall",20240830,"MCE DI water",5,25,5,3,25,5
+"O6",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air025","Issaquah waterfall",20240830,"MCE DI water",5,25,5,3,25,5
+"O7",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air037","Issaquah park bridge",20241022,"Gelatin",5,37,8,1,37,5
+"O8",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air037","Issaquah park bridge",20241022,"Gelatin",5,37,8,1,37,5
+"O9",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air037","Issaquah park bridge",20241022,"Gelatin",5,37,8,1,37,5
+"O10",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL104","Issaquah Dam, field negative",20241025,"Water filter MCE",5,105,11,5,105,5
+"O11",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL104","Issaquah Dam, field negative",20241025,"Water filter MCE",5,105,11,5,105,5
+"O12",FALSE,"cohoDUDA","SYBR","Unknown","34.05721943746599",42.6557125866711,9,"SAL104","Issaquah Dam, field negative",20241025,"Water filter MCE",5,105,11,5,105,5
+"O13",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL116","Issaquah Dam, field negative",20241031,"Water filter MCE",5,109,13,5,109,5
+"O14",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL116","Issaquah Dam, field negative",20241031,"Water filter MCE",5,109,13,5,109,5
+"O15",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL116","Issaquah Dam, field negative",20241031,"Water filter MCE",5,109,13,5,109,5
+"O16",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL128","Issaquah Dam, field negative",20241107,"Water filter MCE",5,113,15,5,113,5
+"O17",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL128","Issaquah Dam, field negative",20241107,"Water filter MCE",5,113,15,5,113,5
+"O18",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL128","Issaquah Dam, field negative",20241107,"Water filter MCE",5,113,15,5,113,5
+"O19",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL140","Issaquah Dam, field negative",20241114,"Water filter MCE",5,117,17,5,117,5
+"O20",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL140","Issaquah Dam, field negative",20241114,"Water filter MCE",5,117,17,5,117,5
+"O21",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL140","Issaquah Dam, field negative",20241114,"Water filter MCE",5,117,17,5,117,5
+"O22",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL152","Issaquah Dam, field negative",20241121,"Water filter MCE",5,121,19,5,121,5
+"O23",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"SAL152","Issaquah Dam, field negative",20241121,"Water filter MCE",5,121,19,5,121,5
+"O24",FALSE,"cohoDUDA","SYBR","Unknown","35.89047128626055",12.3096512746057,9,"SAL152","Issaquah Dam, field negative",20241121,"Water filter MCE",5,121,19,5,121,5
+"P1",FALSE,"cohoDUDA","SYBR","Unknown","33.83405976980211",49.6224381099907,9,"Air018","Issaquah waterfall",20240826,"MCE DI water",5,18,3,3,18,5
+"P2",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air018","Issaquah waterfall",20240826,"MCE DI water",5,18,3,3,18,5
+"P3",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air018","Issaquah waterfall",20240826,"MCE DI water",5,18,3,3,18,5
+"P4",FALSE,"cohoDUDA","SYBR","Unknown","34.777844080881124",26.1707769695573,9,"Air026","Issaquah waterfall",20240830,"Gelatin",5,26,5,1,26,5
+"P5",FALSE,"cohoDUDA","SYBR","Unknown","34.756779640024746",26.5471706628179,9,"Air026","Issaquah waterfall",20240830,"Gelatin",5,26,5,1,26,5
+"P6",FALSE,"cohoDUDA","SYBR","Unknown","34.64533803318406",28.6304381727556,9,"Air026","Issaquah waterfall",20240830,"Gelatin",5,26,5,1,26,5
+"P7",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air038","Issaquah park bridge",20241022,"Gelatin",5,38,8,1,38,5
+"P8",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air038","Issaquah park bridge",20241022,"Gelatin",5,38,8,1,38,5
+"P9",FALSE,"cohoDUDA","SYBR","Unknown","Undetermined",NA,9,"Air038","Issaquah park bridge",20241022,"Gelatin",5,38,8,1,38,5
+"P10",FALSE,"cohoDUDA","SYBR","Unknown","21.34627697854944",235630.738360569,9,"SAL105","Issaquah Dam, by hand",20241025,"Water filter MCE",5,106,11,5,106,5
+"P11",FALSE,"cohoDUDA","SYBR","Unknown","21.41288401834629",225227.81746957,9,"SAL105","Issaquah Dam, by hand",20241025,"Water filter MCE",5,106,11,5,106,5
+"P12",FALSE,"cohoDUDA","SYBR","Unknown","22.64006630365519",98022.2720720588,9,"SAL105","Issaquah Dam, by hand",20241025,"Water filter MCE",5,106,11,5,106,5
+"P13",FALSE,"cohoDUDA","SYBR","Unknown","20.080979475660897",555585.3523954,9,"SAL117","Issaquah Dam, by hand",20241031,"Water filter MCE",5,110,13,5,110,5
+"P14",FALSE,"cohoDUDA","SYBR","Unknown","20.255144394285907",493712.968422967,9,"SAL117","Issaquah Dam, by hand",20241031,"Water filter MCE",5,110,13,5,110,5
+"P15",FALSE,"cohoDUDA","SYBR","Unknown","20.502163761602667",417589.004203053,9,"SAL117","Issaquah Dam, by hand",20241031,"Water filter MCE",5,110,13,5,110,5
+"P16",FALSE,"cohoDUDA","SYBR","Unknown","21.22431460870068",255940.572213268,9,"SAL129","Issaquah Dam, by hand",20241107,"Water filter MCE",5,114,15,5,114,5
+"P17",FALSE,"cohoDUDA","SYBR","Unknown","21.650934582726343",191662.465965845,9,"SAL129","Issaquah Dam, by hand",20241107,"Water filter MCE",5,114,15,5,114,5
+"P18",FALSE,"cohoDUDA","SYBR","Unknown","21.791867614750252",174198.610854708,9,"SAL129","Issaquah Dam, by hand",20241107,"Water filter MCE",5,114,15,5,114,5
+"P19",FALSE,"cohoDUDA","SYBR","Unknown","22.481836525930603",109121.297059119,9,"SAL141","Issaquah Dam, by hand",20241114,"Water filter MCE",5,118,17,5,118,5
+"P20",FALSE,"cohoDUDA","SYBR","Unknown","22.519417957269447",106376.35202979,9,"SAL141","Issaquah Dam, by hand",20241114,"Water filter MCE",5,118,17,5,118,5
+"P21",FALSE,"cohoDUDA","SYBR","Unknown","22.291316864572217",124165.46100781,9,"SAL141","Issaquah Dam, by hand",20241114,"Water filter MCE",5,118,17,5,118,5
+"P22",FALSE,"cohoDUDA","SYBR","Unknown","22.296620387816773",123719.849817194,9,"SAL153","Issaquah Dam, by hand",20241121,"Water filter MCE",5,122,19,5,122,5
+"P23",FALSE,"cohoDUDA","SYBR","Unknown","22.27207435933206",125795.768011569,9,"SAL153","Issaquah Dam, by hand",20241121,"Water filter MCE",5,122,19,5,122,5
+"P24",FALSE,"cohoDUDA","SYBR","Unknown","22.364502599173534",118155.527256103,9,"SAL153","Issaquah Dam, by hand",20241121,"Water filter MCE",5,122,19,5,122,5

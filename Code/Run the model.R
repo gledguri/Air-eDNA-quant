@@ -11,6 +11,10 @@ library(tidyr)
 library(stringr)
 library(purrr)
 library(ggu.base.fun)
+library(ggridges)
+library(ggtext)
+library(scales)
+library(ggnewscale)
 
 
 # Functions -----------------------------------------------------------------------------------
@@ -96,6 +100,9 @@ meta <- lapply(seq_along(file_paths_meta), function(idx) {
 qpcr <- lapply(seq_along(file_paths_data), function(idx) {
 	read_csv(file_paths_data[idx]) %>% mutate(plate = idx)}) %>%
 	bind_rows()
+
+
+# Data manipulation ---------------------------------------------------------------------------
 
 # Rename the targets to the same target
 qpcr <- qpcr %>% 
@@ -199,23 +206,14 @@ qpcr_coho_en_prep <-
 	filter(time>as.Date('2024-10-1')) %>% 
 	filter(FilterType!='Water filter MCE')
 
-### Filtering only the good Gelatin filters ###
-#filter(!(Well%in%c('E10','E11','E12')&FilterType=='Gelatin'&time=='2024-10-24')) %>%
-#filter(!(Well%in%c('M4','H16','H17','H18')&FilterType=='Gelatin'&time=='2024-11-07')) %>%
-#filter(!(Well%in%c('H22','H23','H24')&FilterType=='Gelatin'&time=='2024-11-21'))
-
 qpcr_coho_air_en <-
 	qpcr_coho_en_prep %>% 
-	# filter(FilterType!='Gelatin') %>%
-	# filter(FilterType!='PTFE') %>%
-	# filter(FilterType!='MCE Air') %>%
 	arrange(FilterType,Date) %>% 
 	make_index("FilterType", "f_idx") %>%
 	make_index("Date", "t_idx") %>% 
 	make_index("Sample", "j_idx") %>% 
 	combine_index(c('f_idx','t_idx','j_idx'),'idx') %>%
 	combine_index(c('f_idx','t_idx'),'ft_idx') %>% 
-	# arrange(j_idx) %>% 
 	as.data.frame()
 
 count_fish_effort_selected <-
@@ -239,6 +237,9 @@ bio_rep_idx =
 N_samp_w_bio_rep = sum(bio_rep_idx-1)
 N_samp <- length(bio_rep_idx)
 N_samp_bio_rep <- sum(bio_rep_idx)
+
+
+# Create stan_list ----------------------------------------------------------------------------
 
 # This is supposed to be TRUE!
 identical(qpcr_coho_air_en %>% distinct(time,t_idx), qpcr_coho_wat_en %>% distinct(time,t_idx))
@@ -306,26 +307,30 @@ stan_data <- list(N_st_q = nrow(qpcr_coho_st),
 )
 
 
+# Run stan model ------------------------------------------------------------------------------
+
 stanMod_count <- stan(
-	file = here('Code','Count_model_3.stan'),
+	file = here('Code','Joined_model.stan'),
 	data = stan_data,
 	iter = 10000,
 	warmup = 5000,
 	chains = 4)
 
+# For not running the model all the time use readRDS
+# saveRDS(stanMod_count,here('Output','stanMod_output_3.rds'))
+# saveRDS(stan_data,here('Output','stan_data_input_3.rds'))
+
 # stanMod_count <- readRDS(here('Output','stanMod_output_3.rds'))
+# stan_data <- readRDS(here('Output','stan_data_input_3.rds'))
 
 
+# Posteriors ----------------------------------------------------------------------------------
 
 extract_param(stanMod_count,'X_STATE')
 extract_param(stanMod_count,'omega')
-extract_param(stanMod_count,'alpha')
 extract_param(stanMod_count,'eta')
 extract_param(stanMod_count,'delta')
-extract_param(stanMod_count,'delta_raw')
-
-# saveRDS(stanMod_count,here('Output','stanMod_output_3.rds'))
-# saveRDS(stan_data,here('Output','stan_data_input_3.rds'))
+extract_param(stanMod_count,'epsilon')
 
 discharge <- samp_tab_ijb %>% 
 	left_join(.,data.frame(t_idx=c(1:6),
@@ -346,14 +351,17 @@ post_table_raw <-
 	left_join(.,
 						cbind(extract_param(stanMod_count,'lambda'),
 									as.data.frame(stan_data$E) %>% setNames('E'),
+									as.data.frame(stan_data$N) %>% setNames('N'),
 									as.data.frame(count_fish_effort_selected$t_idx) %>% setNames('g_idx')) %>%
-							select(mean,`2.5%`,`97.5%`,E,g_idx) %>%
+							select(mean,`2.5%`,`97.5%`,E,N,g_idx) %>%
 							rename(lambda='mean',lambda_lo='2.5%',lambda_up='97.5%'),
 						by=c('a_i'='g_idx')) %>%
 	left_join(.,
 						join_ext_param(stanMod_count,'log_A') %>% 
-							select(mean,g_idx) %>% 
-							rename(log_A='mean'),
+							select(mean,`2.5%`,`97.5%`,g_idx) %>%
+							rename(log_A='mean',log_A_lo='2.5%',log_A_up='97.5%'),
+							# select(mean,g_idx) %>% 
+							# rename(log_A='mean'),
 						by=c('a_ijb'='g_idx')) %>% 
 	left_join(.,
 						join_ext_param(stanMod_count,'delta') %>% 
@@ -382,7 +390,7 @@ post_table_raw <-
 				 	extract_param(stanMod_count,'omega') %>%
 				 	pull(`2.5%`)) %>%
 	mutate(omega_up=
-				 	extract_param(stanMod_count,'omega') %>%
+				 	extract_param(stanMod_count,'omega') %>% 
 				 	pull(`97.5%`)) %>%
 	left_join(.,
 						bind_cols(
@@ -402,7 +410,11 @@ post_table_raw <-
 							stan_data$j_qen_air_idx %>% as.data.frame() %>% setNames('j_qen_air_idx')) %>% 
 							group_by(j_qen_air_idx) %>% 
 							summarise(psi_un_air=mean(mean)) %>% as.data.frame(),
-						by=c('a_ijb'='j_qen_air_idx'))
+						by=c('a_ijb'='j_qen_air_idx')) %>% 
+	mutate(neg_bin_lo=qnbinom(0.025,size = 20, mu = X_STATE_lo),
+				 neg_bin_up=qnbinom(0.975,size = 20, mu = X_STATE_up)) %>% 
+	mutate(neg_bin_lo=if_else(is.na(E),NA,neg_bin_lo),
+				 neg_bin_up=if_else(is.na(E),NA,neg_bin_up))
 
 post_table <- post_table_raw %>%
 	left_join(stan_data$label_time,
@@ -433,9 +445,10 @@ cat('conversion parameter ω of Fish/Day to copies/L::')
 post_table_raw %>% select(omega,omega_lo,omega_up) %>% slice(1) %>% exp()
 cat('so 1 fish/day is ~ 15000 copies/L +- 3000')
 
-library(ggtext)
-library(scales)
-library(ggnewscale)
+neg_binom_var <- post_table$X_STATE %>% unique() %>% 
+	as.data.frame() %>% t()
+
+# Figure 1 ------------------------------------------------------------------------------------
 
 p1 <-
 	post_table %>% filter(!duplicated(a_i)) %>% 
@@ -443,9 +456,11 @@ p1 <-
 	geom_smooth(aes(x=as.Date(time),y=(X_STATE)),color='black',span=0.5)+
 	geom_smooth(aes(x=as.Date(time),y=(X_STATE_lo)),color='grey50',span=0.5,lty=3)+
 	geom_smooth(aes(x=as.Date(time),y=(X_STATE_up)),color='grey50',span=0.5,lty=3)+
-	geom_point(aes(x=as.Date(time),y=(lambda/E)),col='#AB5971',size=5)+
-	geom_errorbar(aes(x=as.Date(time),ymin=(lambda_lo/E),ymax=(lambda_up/E)),col='#AB5971',size=0.7,width = 0.7)+
-	labs(y=bquote('X - Fish density\n(count/day)'))+
+	geom_point(aes(x=as.Date(time)+0.2,y=(N/E)),col='#AB5971',size=5)+
+	geom_point(aes(x=as.Date(time),y=(lambda/E)),col='black',size=5)+
+	geom_errorbar(aes(x=as.Date(time)+0.2,ymin=(neg_bin_lo),ymax=(neg_bin_up)),col='#AB5971',size=0.7,width = 0.7)+
+	geom_errorbar(aes(x=as.Date(time),ymin=(lambda_lo/E),ymax=(lambda_up/E)),col='black',size=0.7,width = 0.7)+
+	labs(y=bquote('Fish density\n(count/day)'))+
 	# labs(
 	# 	y = "<span style='color:black;'>X - Fish density (count &times; day<sup>-1</sup>)</span><br><br><span style='color:#AB5971;'> (λ &times; E<sup>-1</sup>)</span>"
 	# ) +
@@ -463,8 +478,6 @@ p1 <-
 		axis.text.y = element_text(color = "black", size = 14),
 		legend.position = 'none',
 	)
-
-
 
 p2 <-
 	post_table %>% filter(!duplicated(a_i)) %>%
@@ -493,9 +506,17 @@ p2 <-
 p3 <-
 	post_table %>% 
 		mutate(log_A_corr=log_A-log(surf_effort)+log(10)) %>% 
+		mutate(log_A_lo_corr=log_A_lo-log(surf_effort)+log(10)) %>% 
+		mutate(log_A_up_corr=log_A_up-log(surf_effort)+log(10)) %>% 
 		# mutate(log_A_corr1=log_A-log(surf_effort)+log(10)-delta) %>% 
 		# mutate(log_W_corr=log_A-eta-log(surf_effort)+log(10)) %>% 
 	mutate(log_A_corr=if_else(psi_un_air < -2,(-1/0),log_A_corr)) %>%
+	mutate(log_A_lo_corr=if_else(psi_un_air < -2,(-1/0),log_A_lo_corr)) %>%
+	mutate(log_A_up_corr=if_else(psi_un_air < -2,(-1/0),log_A_up_corr)) %>%
+	mutate(flag = if_else(duplicated(a_ij), 2, 1)) %>% 
+	mutate(flag = if_else(FilterType=='Gelatin'|FilterType=='PTFE',flag,0)) %>% 
+	mutate(time_flag=if_else(flag==1,-0.2,0)) %>%
+	mutate(time_flag=if_else(flag==2,+0.2,time_flag)) %>% 
 	# mutate(log_A_corr=if_else(log_A_corr < 10.5,(-1/0),log_A_corr)) %>%
 	# mutate(log_A=if_else(psi_un_air < -2.5 & FilterType=='Gelatin',(1),log_A)) %>%
 	# mutate(log_A=if_else(psi_un_air < -2.5 & FilterType=='MCE Air',(0.4),log_A)) %>%
@@ -506,12 +527,14 @@ p3 <-
 	geom_smooth(aes(x=as.Date(time),y=exp(log_W_up+eta)),color='grey50',span=0.5,lty=3)+
 	# geom_smooth(aes(x=as.Date(time),y=exp(log(X_STATE_lo)+omega+alpha+eta+log(surf_effort)-log(10))),color='grey50',span=0.5,lty=3)+
 	# geom_smooth(aes(x=as.Date(time),y=exp(log(X_STATE_up)+omega+alpha+eta+log(surf_effort)-log(10))),color='grey50',span=0.5,lty=3)+
-	geom_point(aes(x=as.Date(time),y=exp(log_A_corr),col=FilterType),pch=19, size=5)+
+	geom_point(aes(x=as.Date(time)+time_flag,y=exp(log_A_corr),col=FilterType),pch=19, size=5)+
+	geom_errorbar(aes(x=as.Date(time)+time_flag,ymin = exp(log_A_lo_corr),ymax=exp(log_A_up_corr),col=FilterType),size=0.7,width = 0.7)+
+	
 	# geom_point(aes(x=as.Date(time),y=exp(log_A_corr2),col=FilterType),pch=19, size=5)+
 	# geom_smooth(aes(x=as.Date(time),y=exp(log_A_corr),col=FilterType),span=0.5,se=F)+
 	# scale_y_log10(labels=scientific_10,breaks=c(5,10,20,40,80,200,500,1000,2000))+
 	scale_y_log10(labels=scientific_10,breaks=c(1,4,10,20,40))+
-		labs(y = bquote('eDNA air concentration (copies/L/cm'^2*')'))+
+		labs(y = bquote('eDNA air concentration (copies/cm'^2*'/day)'))+
 		scale_x_date(
 		breaks = seq(as.Date("2024-10-17"), as.Date("2024-11-21"), by = "1 week"), 
 		labels = date_format("%b %d")) +	
@@ -532,6 +555,7 @@ leg_1 <- data.frame(x = 1:2,y1 = rep(10,2),y2 = rep(10,2),
 										group = factor(c(1:2))) %>% 
 	ggplot() +
 	geom_line(aes(x = x, y = y1, linetype = 'X (fish/day)'), color = 'black', size = 1.2) +
+	
 	scale_linetype_manual(
 		name = 'Unobserved state',
 		values = 'solid') +
@@ -539,7 +563,7 @@ leg_1 <- data.frame(x = 1:2,y1 = rep(10,2),y2 = rep(10,2),
 	
 	geom_point(data = . %>% filter(group == 1), aes(x = x, y = y1, color = group), size = 4) +
 	scale_color_manual(
-		name = 'Observed state - visually',
+		name = 'Observtions',
 		values = c('#AB5971'),
 		labels = c('Visual counts')) +
 	guides(color = guide_legend(order = 2)) +
@@ -591,119 +615,13 @@ fig_1 <-
 		legend,ncol = 1,rel_heights = c(5,1.2))
 
 fig_1
-# ggsave(here('Plots','Figure_1_new.jpg'),fig_1,height = 10,width = 17,dpi =300)
-ggsave(here('Plots','Figure 2.pdf'),fig_1,height = 10,width = 17,dpi =300)
+# ggsave(here('Plots','Figure_1_new_new.jpg'),fig_1,height = 12,width = 17,dpi =300)
+# ggsave(here('Plots','Figure 2.pdf'),fig_1,height = 12,width = 17,dpi =300)
 
 # source(here('Code','Dianostic_plots.R'))
 
-post_table %>% filter(!duplicated(a_i)) %>%
-	ggplot()+
-	geom_point(aes(x=as.Date(time),y=discharge),color='orange',size=3)+
-	geom_smooth(aes(x=as.Date(time),y=discharge),color='orange',span=0.5)+
-	theme_bw()
-
-
-
-# Figure 2 ------------------------------------------------------------------------------------
-
-
-
-fig_2_a <- rstan::extract(stanMod_count,'eta') %>% as.data.frame() %>% 
-	pivot_longer(cols = everything(), names_to = "filter", values_to = "dilution") %>% 
-	mutate(filter=gsub('eta.1','Gelatin',filter)) %>% 
-	mutate(filter=gsub('eta.2','MCE Air',filter)) %>% 
-	mutate(filter=gsub('eta.3','MCE DI water',filter)) %>% 
-	mutate(filter=gsub('eta.4','PTFE',filter)) %>% 
-	group_by(filter) %>% 
-	mutate(mean_filter=mean(dilution)) %>% ungroup() %>% 
-	mutate(mean=mean(mean_filter)) %>% 
-	mutate(alpha=dilution-mean) %>% 
-	rename('Filter type'=filter) %>% 
-	ggplot(aes(x = dilution, y = `Filter type`, fill = `Filter type`)) +
-	geom_density_ridges(scale = 1.2, alpha = 1) +
-	theme_ridges()+
-	labs(x = expression("Dilution factor" ~ (italic(eta))))+
-	# labs(x = "Dilution factor (η)")+
-	# labs(x = "Dilution factor (η = log(Air eDNA / Water eDNA))")+
-	scale_fill_manual(
-		name = 'Filter type',
-		values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
-		labels = c('Gelatin', 'MCE (air eDNA)', 'MCE (Mili-q water)', 'PTFE')) +
-	theme(axis.title.y = element_blank(),
-				axis.title.x = element_text(hjust = 0.5),
-				legend.position = 'none')
-
-
-fig_2_b <- 
-	rstan::extract(stanMod_count,'tau') %>% as.data.frame() %>% 
-	pivot_longer(cols = everything(), names_to = "filter", values_to = "residuals") %>% 
-	mutate(filter=gsub('tau.1','Gelatin',filter)) %>% 
-	mutate(filter=gsub('tau.2','MCE Air',filter)) %>% 
-	mutate(filter=gsub('tau.3','MCE DI water',filter)) %>% 
-	mutate(filter=gsub('tau.4','PTFE',filter)) %>% 
-	# group_by(filter) %>% 
-	# mutate(mean_filter=mean(residuals)) %>% ungroup() %>% 
-	# mutate(mean=mean(mean_filter)) %>% 
-	# mutate(alpha=dilution-mean) %>% 
-	rename('Filter type'=filter) %>% 
-	ggplot(aes(x = residuals, y = `Filter type`, fill = `Filter type`)) +
-	geom_density_ridges(scale = 1.2, alpha = 1) +
-	theme_ridges()+
-	labs(x = expression("SD of residual error" ~ (italic(tau))))+
-	# labs(x = "SD of residual error (τ)")+
-	scale_fill_manual(
-		name = 'Filter type',
-		values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
-		labels = c('Gelatin', 'MCE (air eDNA)', 'MCE (Mili-q water)', 'PTFE')) +
-	theme(axis.title.y = element_blank(),
-				axis.title.x = element_text(hjust = 0.5),
-				legend.position = 'none')
-
-fig_2_c <- 
-	rstan::extract(stanMod_count,'tau_raw') %>% as.data.frame() %>% 
-	pivot_longer(cols = everything(), names_to = "filter", values_to = "biological_residuals") %>% 
-	mutate(filter=gsub('tau_raw.1','Gelatin',filter)) %>% 
-	mutate(filter=gsub('tau_raw.2','MCE Air',filter)) %>% 
-	mutate(filter=gsub('tau_raw.3','MCE DI water',filter)) %>% 
-	mutate(filter=gsub('tau_raw.4','PTFE',filter)) %>% 
-	filter(!(filter%in%c('MCE DI water','MCE Air'))) %>% 
-	rename('Filter type'=filter) %>% 
-	ggplot(aes(x = biological_residuals, y = `Filter type`, fill = `Filter type`)) +
-	geom_density_ridges(scale = 1.2, alpha = 1) +
-	theme_ridges()+
-	labs(x = expression("SD of biological replicability error" ~ (italic(rho))))+
-	# labs(x = "SD of biological replicability error (ρ)")+
-	scale_fill_manual(
-		name = 'Filter type',
-		values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
-		labels = c('Gelatin', 'MCE (air eDNA)', 'MCE (Mili-q water)', 'PTFE')) +
-	theme(axis.title.y = element_blank(),
-				axis.title.x = element_text(hjust = 0.5),
-				legend.position = 'none')
-
-leg <- 
-	rstan::extract(stanMod_count,'eta') %>% as.data.frame() %>% 
-	pivot_longer(cols = everything(), names_to = "filter", values_to = "dilution") %>% 
-	mutate(filter=gsub('eta.1','Gelatin',filter)) %>% 
-	mutate(filter=gsub('eta.2','MCE Air',filter)) %>% 
-	mutate(filter=gsub('eta.3','MCE DI water',filter)) %>% 
-	mutate(filter=gsub('eta.4','PTFE',filter)) %>% 
-	rename('Filter type'=filter) %>% 
-	ggplot(aes(x = dilution, y = `Filter type`, fill = `Filter type`)) +
-	geom_density_ridges(scale = 1.2, alpha = 1) +
-	theme_ridges()+
-	scale_fill_manual(
-		name = 'Filter type',
-		values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
-		labels = c('Gelatin', 'MCE (air eDNA)', 'MCE (Mili-q water)', 'PTFE')) +
-	theme(axis.title.y = element_blank(),
-				axis.title.x = element_text(hjust = 0.5)) 
-
-legend <- cowplot::get_legend(leg)
-
-fig_2_raw <- cowplot::plot_grid(fig_2_a,fig_2_b,fig_2_c,ncol = 1,align = 'v',rel_heights = c(4,4,2.5),labels = c('A','B','C'))
-fig_2 <- cowplot::plot_grid(fig_2_raw,legend,rel_widths = c(4,1.5))
-fig_2
-
-# ggsave(here('Plots','Figure_2.jpg'),fig_2,height = 10,width = 8,dpi =300)
-ggsave(here('Plots','Supplementary Figure 2.pdf'),fig_2,height = 10,width = 8,dpi =300)
+# post_table %>% filter(!duplicated(a_i)) %>%
+# 	ggplot()+
+# 	geom_point(aes(x=as.Date(time),y=discharge),color='orange',size=3)+
+# 	geom_smooth(aes(x=as.Date(time),y=discharge),color='orange',span=0.5)+
+# 	theme_bw()

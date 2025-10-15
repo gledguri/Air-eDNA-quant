@@ -6,8 +6,12 @@ library(dplyr)
 library(ggplot2)
 library(stringr)
 library(tibble)
+library(tidyr)
 library(here)
 library(MASS)
+library(showtext)
+showtext_auto()
+
 select <- dplyr::select
 
 # Functions -----------------------------------------------------------------------------------
@@ -68,8 +72,123 @@ join_ext_param_num <- function(stanmod,par){
 stan_post <- readRDS(here('Output','stanMod_output_3.rds'))
 stan_data <- readRDS(here('Output','stan_data_input_3.rds'))
 
+# stan_post <- stanMod_count
 
-# ESS -----------------------------------------------------------------------------------------
+
+# Supplementary Figure S2 ------------------------------------------------------------------------------------
+
+# Delete xxxx
+# post_table %>% filter(!duplicated(a_i)) %>%
+#   ggplot()+
+#   geom_point(aes(x=as.Date(time),y=discharge),color='orange',size=3)+
+#   geom_smooth(aes(x=as.Date(time),y=discharge),color='orange',span=0.5)+
+#   theme_bw()
+
+
+
+fig_s2_a <- rstan::extract(stan_post,'eta') %>% as.data.frame() %>% 
+  pivot_longer(cols = everything(), names_to = "filter", values_to = "dilution") %>% 
+  mutate(filter=gsub('eta.1','Gelatin',filter)) %>% 
+  mutate(filter=gsub('eta.2','MCE Air',filter)) %>% 
+  mutate(filter=gsub('eta.3','MCE DI water',filter)) %>% 
+  mutate(filter=gsub('eta.4','PTFE',filter)) %>% 
+  group_by(filter) %>% 
+  mutate(mean_filter=mean(dilution)) %>% ungroup() %>% 
+  mutate(mean=mean(mean_filter)) %>% 
+  mutate(alpha=dilution-mean) %>% 
+  rename('Filter type'=filter) %>% 
+  ggplot(aes(x = dilution, y = `Filter type`, fill = `Filter type`)) +
+  geom_density_ridges(scale = 1.2, alpha = 1) +
+  theme_ridges()+
+  labs(x = "Dilution factor (η) log(Air eDNA / Water eDNA)")+
+  scale_fill_manual(
+    name = 'Filter type',
+    values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
+    labels = c('Gelatin', 'MCE (air eDNA)', 'MCE (Mili-q water)', 'PTFE')) +
+  theme(axis.title.y = element_blank(),
+        axis.title.x = element_text(hjust = 0.5),
+        legend.position = 'none')
+
+
+fig_s2_b <- 
+  rstan::extract(stan_post,'tau') %>% as.data.frame() %>% 
+  pivot_longer(cols = everything(), names_to = "filter", values_to = "residuals") %>% 
+  mutate(filter=gsub('tau.1','Gelatin',filter)) %>% 
+  mutate(filter=gsub('tau.2','MCE Air',filter)) %>% 
+  mutate(filter=gsub('tau.3','MCE DI water',filter)) %>% 
+  mutate(filter=gsub('tau.4','PTFE',filter)) %>% 
+  # group_by(filter) %>% 
+  # mutate(mean_filter=mean(residuals)) %>% ungroup() %>% 
+  # mutate(mean=mean(mean_filter)) %>% 
+  # mutate(alpha=dilution-mean) %>% 
+  rename('Filter type'=filter) %>% 
+  ggplot(aes(x = residuals, y = `Filter type`, fill = `Filter type`)) +
+  geom_density_ridges(scale = 1.2, alpha = 1) +
+  theme_ridges()+
+  labs(x = "Air eDNA filter type residual error (ε)")+
+  scale_fill_manual(
+    name = 'Filter type',
+    values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
+    labels = c('Gelatin', 'MCE (air eDNA)', 'MCE (Mili-q water)', 'PTFE')) +
+  theme(axis.title.y = element_blank(),
+        axis.title.x = element_text(hjust = 0.5),
+        legend.position = 'none')
+
+fig_2_c <- 
+  rstan::extract(stan_post,'tau_raw') %>% as.data.frame() %>% 
+  pivot_longer(cols = everything(), names_to = "filter", values_to = "biological_residuals") %>% 
+  mutate(filter=gsub('tau_raw.1','Gelatin',filter)) %>% 
+  mutate(filter=gsub('tau_raw.2','MCE Air',filter)) %>% 
+  mutate(filter=gsub('tau_raw.3','MCE DI water',filter)) %>% 
+  mutate(filter=gsub('tau_raw.4','PTFE',filter)) %>% 
+  filter(!(filter%in%c('MCE DI water','MCE Air'))) %>% 
+  rename('Filter type'=filter) %>% 
+  ggplot(aes(x = biological_residuals, y = `Filter type`, fill = `Filter type`)) +
+  geom_density_ridges(scale = 1.2, alpha = 1) +
+  theme_ridges()+
+  labs(x = "Air eDNA filter type biological replicability error (δ)")+
+  scale_fill_manual(
+    name = 'Filter type',
+    values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
+    labels = c('Gelatin', 'MCE (air eDNA)', 'MCE (Mili-q water)', 'PTFE')) +
+  theme(axis.title.y = element_blank(),
+        axis.title.x = element_text(hjust = 0.5),
+        legend.position = 'none')
+
+leg <- 
+  rstan::extract(stan_post,'eta') %>% as.data.frame() %>% 
+  pivot_longer(cols = everything(), names_to = "filter", values_to = "dilution") %>% 
+  mutate(filter=gsub('eta.1','Gelatin',filter)) %>% 
+  mutate(filter=gsub('eta.2','MCE Air',filter)) %>% 
+  mutate(filter=gsub('eta.3','MCE DI water',filter)) %>% 
+  mutate(filter=gsub('eta.4','PTFE',filter)) %>% 
+  group_by(filter) %>% 
+  # mutate(mean_filter=mean(dilution)) %>% ungroup() %>% 
+  # mutate(mean=mean(mean_filter)) %>% 
+  # mutate(alpha=dilution-mean) %>% 
+  rename('Filter type'=filter) %>% 
+  ggplot(aes(x = dilution, y = `Filter type`, fill = `Filter type`)) +
+  geom_density_ridges(scale = 1.2, alpha = 1) +
+  theme_ridges()+
+  scale_fill_manual(
+    name = 'Filter type',
+    values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
+    labels = c('Gelatin', 'MCE (air eDNA)', 'MCE (Mili-q water)', 'PTFE')) +
+  theme(axis.title.y = element_blank(),
+        axis.title.x = element_text(hjust = 0.5)) 
+
+legend <- cowplot::get_legend(leg)
+
+fig_s2_raw <- cowplot::plot_grid(fig_s2_a,fig_s2_b,fig_2_c,ncol = 1,align = 'v')
+fig_s2 <- cowplot::plot_grid(fig_s2_raw,legend,rel_widths = c(4,1.5))
+
+# ggsave(here('Plots','Supplementary Figure 2.jpg'),fig_2,height = 10,width = 8,dpi =300)
+# ggsave(here('Plots','Supplementary Figure 2.pdf'),fig_2,height = 10,width = 8,dpi =300)
+
+
+# Supplementary Figure S3 ----------------------------------------------------------------------
+
+# ESS 
 stan_post_df <- extract_param(stan_post)
 
 # Determine the range of ESS
@@ -110,7 +229,7 @@ stan_post_df %>%
   )
 
 
-# Rhat ----------------------------------------------------------------------------------------
+# Rhat 
 
 # Determine the range of Rhat
 rhat_range <-
@@ -153,9 +272,8 @@ stan_post_df %>%
 pp1 <- cowplot::plot_grid(p1,p2,nrow = 1)
 
 pp1
-# ggsave(here('plots','Diagnostic_fig_1_convergance.jpg'),sfxxx1,height = 6,width = 12)
 
-# Tree depth ----------------------------------------------------------------------------------
+# Tree depth
 sampler_params <- get_sampler_params(stan_post, inc_warmup = T)
 
 warmup_it <- stan_post@stan_args[[1]]$warmup
@@ -332,15 +450,14 @@ leg <- cowplot::get_legend(legend)
 pp2 <- cowplot::plot_grid(p5,p4,p1,p2,p3,ncol = 1,align = 'v',rel_heights = c(5,5,5,2.2,6))
 
 pp3 <- cowplot::plot_grid(pp1,pp2,ncol = 1,rel_heights = c(1,3),labels = c('A','B'),label_x = 1)
-df1 <- cowplot::plot_grid(pp3,leg,ncol = 2,rel_widths = c(7,1.5))
+fig_s3 <- cowplot::plot_grid(pp3,leg,ncol = 2,rel_widths = c(7,1.5))
 
-df1
+fig_s3
 
-# ggsave(here('Plots','Diagnostic_Fig_1.jpg'),df1,height = 13,width = 9)
-# ggsave(here('Plots','Supplementary Figure 3.pdf'),df1,height = 13,width = 9)
+# ggsave(here('Plots','Supplementary Figure 3.jpg'),fig_s3,height = 13,width = 9)
+# ggsave(here('Plots','Supplementary Figure 3.pdf'),fig_s3,height = 13,width = 9)
 
-# # Prior Sensitivity ---------------------------------------------------------------------------
-
+# Supplementary Figure S4 ---------------------------------------------------------------------------
 
 X_STATE <-
   extract_param(stan_post,'X_STATE') %>%
@@ -672,17 +789,15 @@ leg <- cowplot::get_legend(legend)
 
 p1 <- cowplot::plot_grid(pp1,pp2,pp3,pp4,pp5,pp6,ncol = 1,align='v')
 
-df2 <- cowplot::plot_grid(p1,leg,ncol = 2,rel_widths = c(6,1))
+fig_s4 <- cowplot::plot_grid(p1,leg,ncol = 2,rel_widths = c(6,1))
 
-df2
-# ggsave(here('Plots','Diagnostic_Fig_2.jpg'),df2,height = 12,width = 9)
-# ggsave(here('Plots','Supplementary Figure 4.pdf'),df2,height = 12,width = 9)
-
-
+fig_s4
+# ggsave(here('Plots','Supplementary Figure 4.jpg'),fig_s4,height = 12,width = 9)
+# ggsave(here('Plots','Supplementary Figure 4.pdf'),fig_s4,height = 12,width = 9)
 
 
 
-# Posterior Predictive Checks -----------------------------------------------------------------
+# Supplementary Figure S5 -----------------------------------------------------------------
 
 st_pred_pd <- data.frame(S_q=seq(-2,13,by=0.1)) %>% 
   mutate(phi=join_ext_param(stan_post,'logit_phi') %>% pull(mean) %>% inverselogit()) %>%
@@ -904,14 +1019,14 @@ p3 <- N_data %>%
 
 
 pp1 <- cowplot::plot_grid(p1,p2,p3,ncol = 1,align = 'v',labels=c('A','B','C'))
-df3 <- cowplot::plot_grid(pp1,leg,ncol = 2,rel_widths = c(5,2))
+fig_s5 <- cowplot::plot_grid(pp1,leg,ncol = 2,rel_widths = c(5,2))
 
-df3
-# ggsave(here('Plots','Diagnostic_Fig_3.jpg'),df3,width = 7,height = 12)
-ggsave(here('Plots','Supplementary Figure 5.pdf'),df3,width = 7,height = 12)
+fig_s5
+# ggsave(here('Plots','Supplementary Figure 5.jpg'),fig_s5,width = 7,height = 12)
+# ggsave(here('Plots','Supplementary Figure 5.pdf'),fig_s5,width = 7,height = 12)
 
 
-# qPCR assay efficiency -----------------------------------------------------------------------
+# Supplementary Figure S6 -----------------------------------------------------------------------
 
 legend <- ggplot(data.frame(x = rep(1, 3),y = rep(1, 3),group = factor(rep(1:3))), 
                  aes(x = x, y = y, group = group, color = group,linetype = group)) +
@@ -966,116 +1081,9 @@ pred_cm %>% mutate(p=as.factor(p)) %>%
         axis.text = element_text(size=13))
 
 pp1 <- cowplot::plot_grid(p4,p5,ncol = 1,align = 'v',labels=c('A','B'))
-df3 <- cowplot::plot_grid(pp1,leg,ncol = 2,rel_widths = c(5,1))
+fig_s6 <- cowplot::plot_grid(pp1,leg,ncol = 2,rel_widths = c(5,1))
 
-ggsave(here('Plots','Supplementary_Fig_1.jpg'),df3,width = 10,height = 10)
-
-
-# Figure 2 ------------------------------------------------------------------------------------
+# ggsave(here('Plots','Supplementary Figure 6.jpg'),fig_s6,width = 10,height = 10)
+ggsave(here('Plots','Supplementary Figure 6.pdf'),fig_s6,width = 10,height = 10)
 
 
-post_table %>% filter(!duplicated(a_i)) %>%
-  ggplot()+
-  geom_point(aes(x=as.Date(time),y=discharge),color='orange',size=3)+
-  geom_smooth(aes(x=as.Date(time),y=discharge),color='orange',span=0.5)+
-  theme_bw()
-
-
-
-fig_2_a <- rstan::extract(stanMod_count,'eta') %>% as.data.frame() %>% 
-  pivot_longer(cols = everything(), names_to = "filter", values_to = "dilution") %>% 
-  mutate(filter=gsub('eta.1','Gelatin',filter)) %>% 
-  mutate(filter=gsub('eta.2','MCE Air',filter)) %>% 
-  mutate(filter=gsub('eta.3','MCE DI water',filter)) %>% 
-  mutate(filter=gsub('eta.4','PTFE',filter)) %>% 
-  group_by(filter) %>% 
-  mutate(mean_filter=mean(dilution)) %>% ungroup() %>% 
-  mutate(mean=mean(mean_filter)) %>% 
-  mutate(alpha=dilution-mean) %>% 
-  rename('Filter type'=filter) %>% 
-  ggplot(aes(x = dilution, y = `Filter type`, fill = `Filter type`)) +
-  geom_density_ridges(scale = 1.2, alpha = 1) +
-  theme_ridges()+
-  labs(x = "Dilution factor (η) log(Air eDNA / Water eDNA)")+
-  scale_fill_manual(
-    name = 'Filter type',
-    values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
-    labels = c('Gelatin', 'MCE (air eDNA)', 'MCE (Mili-q water)', 'PTFE')) +
-  theme(axis.title.y = element_blank(),
-        axis.title.x = element_text(hjust = 0.5),
-        legend.position = 'none')
-
-
-fig_2_b <- 
-rstan::extract(stanMod_count,'tau') %>% as.data.frame() %>% 
-  pivot_longer(cols = everything(), names_to = "filter", values_to = "residuals") %>% 
-  mutate(filter=gsub('tau.1','Gelatin',filter)) %>% 
-  mutate(filter=gsub('tau.2','MCE Air',filter)) %>% 
-  mutate(filter=gsub('tau.3','MCE DI water',filter)) %>% 
-  mutate(filter=gsub('tau.4','PTFE',filter)) %>% 
-  # group_by(filter) %>% 
-  # mutate(mean_filter=mean(residuals)) %>% ungroup() %>% 
-  # mutate(mean=mean(mean_filter)) %>% 
-  # mutate(alpha=dilution-mean) %>% 
-  rename('Filter type'=filter) %>% 
-  ggplot(aes(x = residuals, y = `Filter type`, fill = `Filter type`)) +
-  geom_density_ridges(scale = 1.2, alpha = 1) +
-  theme_ridges()+
-  labs(x = "Air eDNA filter type residual error (ε)")+
-  scale_fill_manual(
-    name = 'Filter type',
-    values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
-    labels = c('Gelatin', 'MCE (air eDNA)', 'MCE (Mili-q water)', 'PTFE')) +
-  theme(axis.title.y = element_blank(),
-        axis.title.x = element_text(hjust = 0.5),
-        legend.position = 'none')
-
-fig_2_c <- 
-  rstan::extract(stanMod_count,'tau_raw') %>% as.data.frame() %>% 
-  pivot_longer(cols = everything(), names_to = "filter", values_to = "biological_residuals") %>% 
-  mutate(filter=gsub('tau_raw.1','Gelatin',filter)) %>% 
-  mutate(filter=gsub('tau_raw.2','MCE Air',filter)) %>% 
-  mutate(filter=gsub('tau_raw.3','MCE DI water',filter)) %>% 
-  mutate(filter=gsub('tau_raw.4','PTFE',filter)) %>% 
-  filter(!(filter%in%c('MCE DI water','MCE Air'))) %>% 
-  rename('Filter type'=filter) %>% 
-  ggplot(aes(x = biological_residuals, y = `Filter type`, fill = `Filter type`)) +
-  geom_density_ridges(scale = 1.2, alpha = 1) +
-  theme_ridges()+
-  labs(x = "Air eDNA filter type biological replicability error (δ)")+
-  scale_fill_manual(
-    name = 'Filter type',
-    values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
-    labels = c('Gelatin', 'MCE (air eDNA)', 'MCE (Mili-q water)', 'PTFE')) +
-  theme(axis.title.y = element_blank(),
-        axis.title.x = element_text(hjust = 0.5),
-        legend.position = 'none')
-
-leg <- 
-  rstan::extract(stanMod_count,'eta') %>% as.data.frame() %>% 
-  pivot_longer(cols = everything(), names_to = "filter", values_to = "dilution") %>% 
-  mutate(filter=gsub('eta.1','Gelatin',filter)) %>% 
-  mutate(filter=gsub('eta.2','MCE Air',filter)) %>% 
-  mutate(filter=gsub('eta.3','MCE DI water',filter)) %>% 
-  mutate(filter=gsub('eta.4','PTFE',filter)) %>% 
-  group_by(filter) %>% 
-  # mutate(mean_filter=mean(dilution)) %>% ungroup() %>% 
-  # mutate(mean=mean(mean_filter)) %>% 
-  # mutate(alpha=dilution-mean) %>% 
-  rename('Filter type'=filter) %>% 
-  ggplot(aes(x = dilution, y = `Filter type`, fill = `Filter type`)) +
-  geom_density_ridges(scale = 1.2, alpha = 1) +
-  theme_ridges()+
-  scale_fill_manual(
-    name = 'Filter type',
-    values=c('#61BEA4','#D79FA7','#F49D4D','#D85A44'),
-    labels = c('Gelatin', 'MCE (air eDNA)', 'MCE (Mili-q water)', 'PTFE')) +
-  theme(axis.title.y = element_blank(),
-        axis.title.x = element_text(hjust = 0.5)) 
-
-legend <- cowplot::get_legend(leg)
-
-fig_2_raw <- cowplot::plot_grid(fig_2_a,fig_2_b,fig_2_c,ncol = 1,align = 'v')
-fig_2 <- cowplot::plot_grid(fig_2_raw,legend,rel_widths = c(4,1.5))
-
-ggsave(here('Plots','Figure_2_new.jpg'),fig_2,height = 10,width = 8,dpi =300)

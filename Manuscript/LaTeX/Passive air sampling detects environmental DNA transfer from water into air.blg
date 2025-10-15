@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Passive air sampling detects environmental DNA transfer from water into air.aux
+The style file: unsrtnat.bst
+Database file #1: Bib.bib
+You've used 53 entries,
+            2481 wiz_defined-function locations,
+            912 strings with 23504 characters,
+and the built_in function-call counts, 30739 in all, are:
+= -- 1925
+> -- 3165
+< -- 9
++ -- 1109
+- -- 1002
+* -- 3299
+:= -- 5582
+add.period$ -- 210
+call.type$ -- 53
+change.case$ -- 106
+chr.to.int$ -- 52
+cite$ -- 53
+duplicate$ -- 997
+empty$ -- 1961
+format.name$ -- 1069
+if$ -- 5956
+int.to.chr$ -- 2
+int.to.str$ -- 54
+missing$ -- 52
+newline$ -- 323
+num.names$ -- 161
+pop$ -- 344
+preamble$ -- 1
+purify$ -- 53
+quote$ -- 0
+skip$ -- 539
+stack$ -- 0
+substring$ -- 1210
+swap$ -- 110
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 365
+warning$ -- 0
+while$ -- 181
+width$ -- 0
+write$ -- 795
