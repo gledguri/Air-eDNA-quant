@@ -35,16 +35,20 @@ Ryan P. Kelly$^1$}
 %Figure S1 -------------------- 
 
 \clearpage
-\begin{figure}[tbhp] 
+\renewcommand{\thefigure}{S1}
+\begin{figure}[tbhp]
 \centering
 \includegraphics[width=16.5cm]{../../Plots/Supplementary Figure 1.pdf}  
 \caption{Directed acyclic graph (DAG) of joint Bayesian model for linking salmon migration dynamics from visual observation, water and air eDNA concentration.}
 \label{fig:DAG}
 \end{figure}
 
+
 %Figure S2 -------------------- 
 
-\begin{figure}[tbhp] 
+\clearpage
+\renewcommand{\thefigure}{S2}
+\begin{figure}[tbhp]
 \centering
 \includegraphics[width=15.5cm]{../../Plots/Supplementary Figure 2.pdf}  
 \caption{Density plots showing posterior distributions of: (A) water-to-air dilution factors ($\eta$), illustrating the magnitude of concentration reduction between aquatic and atmospheric matrices; (B) standard deviation (SD) of the residual error values ($\tau$), representing the congruence (lower = better) between estimated eDNA concentrations between air and water; and (C) standard deviation (SD) of the biological replicability error ($\rho$), quantifying measurement consistency (lower = better) between 
@@ -52,12 +56,14 @@ technical replicates of two air filters (PTFE and gelatin filters). Each paramet
 \label{fig:fig2}
 \end{figure}
 
+
 %Figure S3 -------------------- 
 
 \clearpage
-\begin{figure}[tbhp] 
+\renewcommand{\thefigure}{S3}
+\begin{figure}[tbhp]
 \centering
-\includegraphics[width=14.2cm]{../../Plots/Supplementary Figure 3.pdf}  
+\includegraphics[width=14.2cm]{../../Plots/Supplementary Figure 3.pdf}
 \caption{Bayesian model convergence diagnostics indicating (A) the distributions of effective sample size (ESS, left) and $\hat{R}$ values (right) for all parameters and (B) convergence metrics across iterations, including posterior likelihood, acceptance rate, tree depth, divergence transitions, and step size for four MCMC chains. Warmup and sampling phases are distinguished by background shading.}
 \label{fig:diagnostics}
 \end{figure}
@@ -65,7 +71,8 @@ technical replicates of two air filters (PTFE and gelatin filters). Each paramet
 %Figure S4 -------------------- 
 
 \clearpage
-\begin{figure}[tbhp] 
+\renewcommand{\thefigure}{S4}
+\begin{figure}[tbhp]
 \centering
 \includegraphics[width=15.5cm]{../../Plots/Supplementary Figure 4.pdf}  
 \caption{Prior sensitivity analysis for model parameters ($\beta_0, \beta_1,, 
@@ -77,7 +84,8 @@ technical replicates of two air filters (PTFE and gelatin filters). Each paramet
 %Figure S5 -------------------- 
 
 \clearpage
-\begin{figure}[tbhp] 
+\renewcommand{\thefigure}{S5}
+\begin{figure}[tbhp]
 \centering
 \includegraphics[width=12.0cm]{../../Plots/Supplementary Figure 5.pdf}  
 \caption{Posterior predictive checks comparing observed vs. model-predicted values for (A) detection probability of air and water samples alongside standard samples, (B) Ct values for air and water samples alongside standard, and (C) visual counts of fish (N).}
@@ -87,7 +95,8 @@ technical replicates of two air filters (PTFE and gelatin filters). Each paramet
 %Figure S6 -------------------- 
 
 \clearpage
-\begin{figure}[tbhp] 
+\renewcommand{\thefigure}{S6}
+\begin{figure}[tbhp]
 \centering
 \includegraphics[width=12.0cm]{../../Plots/Supplementary Figure 6.pdf}  
 \caption{The probability of detection and Ct values along the eDNA concentration from the posterior estimates of the standard samples and water and air environmental samples indicating assay and qPCR machine performance.}
@@ -98,8 +107,9 @@ technical replicates of two air filters (PTFE and gelatin filters). Each paramet
 
 %Table -------------------- 
 \clearpage
-\begin{table}
-    \centering
+    \renewcommand{\thetable}{S1}
+\begin{table}[tbhp]
+\centering
     \begin{tabular}{lll}
          & \textbf{Description} & \textbf{Prior} \\
 &Data & \\
@@ -168,27 +178,28 @@ $p$& qPCR plate & -\\
 $k$& qPCR standard sample & -\\
 $r$& qPCR technical replicate & -\\
 
-
     \end{tabular}
-    \caption{Data, state processes, parameters, transformed parameters, and subscripts employed in the joint Bayesian model and their prior distributions}
+    \caption{Data, state processes, parameters, transformed parameters, and subscripts employed in the joint Bayesian model and their prior distributions.}
     \label{tab:priortable}
 \end{table}
 
 \begin{table}
     \centering
+    \renewcommand{\thetable}{S2}
     \begin{tabular}{lllll}
-    \textbf{Location}         & \textbf{Date}     & \textbf{Rain Yes/No} & \textbf{Precipitate (mm)}       & \textbf{River water discharge (m)}\\
-\hline
-Issaquah Hatchery & 2024-10-17 & Yes        & 0.05                  & 4.10 \\
-Issaquah Hatchery & 2024-10-24 & Yes        & 0.01                  & 4.13 \\
-Issaquah Hatchery & 2024-10-31 & Yes        & 0.32                  & 4.50 \\
-Issaquah Hatchery & 2024-11-07 & No         & 0                     & 4.46 \\
-Issaquah Hatchery & 2024-11-14 & Yes        & 0.29                  & 4.95 \\
-Issaquah Hatchery & 2024-11-21 & No         & NA (sheltered bridge) & 4.91 \\
-\hline
-\end{tabular}
-\caption{Meteorological metadata collected from NOAA during the sampling events}
+    \textbf{Location} & \textbf{Date} & \textbf{Rain Yes/No} & \textbf{Precipitate (mm)} & \textbf{River water discharge (m)}\\
+    \hline
+    Issaquah Hatchery & 2024-10-17 & Yes & 0.05 & 4.10 \\
+    Issaquah Hatchery & 2024-10-24 & Yes & 0.01 & 4.13 \\
+    Issaquah Hatchery & 2024-10-31 & Yes & 0.32 & 4.50 \\
+    Issaquah Hatchery & 2024-11-07 & No  & 0    & 4.46 \\
+    Issaquah Hatchery & 2024-11-14 & Yes & 0.29 & 4.95 \\
+    Issaquah Hatchery & 2024-11-21 & No  & NA (sheltered bridge) & 4.91 \\
+    \hline
+    \end{tabular}
+    \caption{Meteorological metadata collected from NOAA during the sampling events}
 \end{table}
+\addtocounter{table}{-1}
 
 \end{document}
 
